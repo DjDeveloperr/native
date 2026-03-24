@@ -160,6 +160,20 @@ Pointer<Char>? getProtocolMethodSignature(
   return sig == nullptr ? null : sig;
 }
 
+/// Only for use by ffigen bindings.
+Pointer<Char>? getInterfaceMethodSignature(
+  ObjectPtr clazz,
+  Pointer<r.ObjCSelector> sel,
+) {
+  _ensureDartAPI();
+  final method = r.getInstanceMethod(clazz, sel);
+  if (method == nullptr) {
+    return null;
+  }
+  final sig = r.getTypeEncoding(method);
+  return sig == nullptr ? null : sig;
+}
+
 /// Only for use by FFIgen bindings.
 final msgSendPointer = Native.addressOf<NativeFunction<Void Function()>>(
   r.msgSend,

@@ -38,6 +38,9 @@ String makeDoc(String text) {
   return s.toString();
 }
 
+String stripGeneratedNameSuffix(String name) =>
+    name.replaceFirst(RegExp(r'\$\d+$'), '');
+
 String makeNativeAnnotation(
   Writer w, {
   required String? nativeType,

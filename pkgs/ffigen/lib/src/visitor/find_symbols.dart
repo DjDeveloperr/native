@@ -86,8 +86,13 @@ class FindSymbolsVisitation extends Visitation {
     // to them. But we want to add each method's symbols to all its classes's,
     // so we explicitly visit them here.
     for (final m in node.methods) {
-      node.methodNameScope!.add(m.symbol);
-      node.methodNameScope!.add(m.protocolMethodName);
+      if (m.isClassMethod) {
+        node.classMethodNameScope!.add(m.symbol);
+        node.classMethodNameScope!.add(m.protocolMethodName);
+      } else {
+        node.methodNameScope!.add(m.symbol);
+        node.methodNameScope!.add(m.protocolMethodName);
+      }
     }
 
     visitBinding(node as Binding); // All ObjCMethods are Bindings.

@@ -8,6 +8,12 @@
 
 #include "protocol_test.h"
 
+__attribute__((constructor))
+static void forceEmitProtocols(void) {
+  (void)@protocol(EmptyProtocol);
+  (void)@protocol(UnusedProtocol);
+}
+
 const char* class_getName(Class cls);
 
 const char* getClassName(void* cls) {
@@ -55,6 +61,12 @@ void* getClass(id object) {
   int32_t x = [protocol optionalMethod:s];
   return [protocol otherMethod:x b:1 c:10 d:100];
 }
+
+- (BOOL)callMethodWithError:(id<MyProtocol>)protocol {
+  NSError* error = nil;
+  BOOL result = [protocol methodWithError:YES error:&error];
+  return result && error == nil;
+}
 @end
 
 
@@ -85,6 +97,18 @@ void* getClass(id object) {
 
 - (id<MyProtocol>)returnsMyProtocol {
   return self;
+}
+
+- (BOOL)methodWithError:(BOOL)isOk error:(NSError**)error {
+  if (isOk) {
+    return YES;
+  }
+  if (error != nil) {
+    *error = [NSError errorWithDomain:@"ProtocolTest"
+                                 code:1
+                             userInfo:nil];
+  }
+  return NO;
 }
 
 @end

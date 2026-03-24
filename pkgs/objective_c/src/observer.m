@@ -10,6 +10,13 @@
 #error "This file must be compiled with ARC enabled"
 #endif
 
+// Keep the protocol metadata linked so objc_getProtocol("Observer") works
+// without requiring generated Objective-C glue.
+__attribute__((used)) static Protocol* _dobjcObserverProtocolAnchor;
+__attribute__((constructor)) static void _dobjcAnchorObserverProtocol(void) {
+  _dobjcObserverProtocolAnchor = @protocol(Observer);
+}
+
 @implementation DOBJCObservation {
   id _object;
   id<Observer> _observer;

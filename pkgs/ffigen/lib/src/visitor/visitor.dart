@@ -96,8 +96,6 @@ abstract class Visitation {
   void visitGlobal(Global node) => visitLookUpBinding(node);
   void visitTypealias(Typealias node) => visitBindingType(node);
   void visitPointerType(PointerType node) => visitType(node);
-  void visitObjCProtocolMethodTrampoline(ObjCProtocolMethodTrampoline node) =>
-      visitAstNode(node);
   void visitImportedType(ImportedType node) => visitType(node);
   void visitLibraryImport(LibraryImport node) => visitAstNode(node);
   void visitSymbol(Symbol node) => visitAstNode(node);
@@ -105,6 +103,8 @@ abstract class Visitation {
   void visitObjCMsgSendVariantFunc(ObjCMsgSendVariantFunc node) =>
       visitNoLookUpBinding(node);
   void visitObjCBlockWrapperFuncs(ObjCBlockWrapperFuncs node) =>
+      visitAstNode(node);
+  void visitObjCProtocolMethodTrampoline(ObjCProtocolMethodTrampoline node) =>
       visitAstNode(node);
   void visitObjCMethod(ObjCMethod node) => visitAstNode(node);
 

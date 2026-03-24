@@ -80,6 +80,7 @@ const typedefs = 'typedefs';
 const objcInterfaces = 'objc-interfaces';
 const objcProtocols = 'objc-protocols';
 const objcCategories = 'objc-categories';
+const objcSubclass = 'subclass';
 
 const excludeAllByDefault = 'exclude-all-by-default';
 const includeUnusedTypedefs = 'include-unused-typedefs';

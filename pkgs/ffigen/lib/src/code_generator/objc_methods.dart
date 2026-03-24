@@ -25,6 +25,7 @@ mixin ObjCMethods {
   Map<String, ObjCMethod> _methods = <String, ObjCMethod>{};
   List<String> _order = <String>[];
   Scope? methodNameScope;
+  Scope? classMethodNameScope;
 
   Iterable<ObjCMethod> get methods =>
       _order.map((key) => _methods[key]).nonNulls;
@@ -40,9 +41,95 @@ mixin ObjCMethods {
     if (oldMethod == null) {
       _methods[method.key] = method;
       _order.add(method.key);
+      _disambiguateMethodNames();
     } else if (_shouldReplaceMethod(oldMethod, method)) {
       _methods[method.key] = method;
+      _disambiguateMethodNames();
     }
+  }
+
+  void _disambiguateMethodNames() {
+    final uniqueMethods = <Symbol, ObjCMethod>{};
+    for (final method in methods) {
+      uniqueMethods.putIfAbsent(method.symbol, () => method);
+    }
+
+    final groups = <String, List<ObjCMethod>>{};
+    for (final method in uniqueMethods.values) {
+      groups
+          .putIfAbsent(method.symbol.oldName, () => <ObjCMethod>[])
+          .add(method);
+    }
+
+    var needsUniquePass = false;
+    var changed = false;
+    for (final group in groups.values) {
+      if (group.length < 2) continue;
+      if (group.any((m) => !m.isProperty)) {
+        needsUniquePass = true;
+      }
+      for (final method in group) {
+        if (method.isProperty) continue;
+        final preferred = _selectorDerivedName(method.originalName);
+        if (method.symbol.oldName != preferred) {
+          method.symbol.oldName = preferred;
+          changed = true;
+        }
+      }
+    }
+
+    if (!changed && !needsUniquePass) return;
+    _ensureUniqueMethodNames(uniqueMethods.values);
+  }
+
+  void _ensureUniqueMethodNames(Iterable<ObjCMethod> uniqueMethods) {
+    final used = <String, ObjCMethod>{};
+    for (final method in uniqueMethods.where((method) => method.isProperty)) {
+      used.putIfAbsent(method.symbol.oldName, () => method);
+    }
+    for (final method in uniqueMethods.where((method) => !method.isProperty)) {
+      var name = method.symbol.oldName;
+      if (!used.containsKey(name)) {
+        used[name] = method;
+        continue;
+      }
+
+      if (method.isClassMethod && !name.endsWith('Class')) {
+        final classCandidate = '${name}Class';
+        if (!used.containsKey(classCandidate)) {
+          method.symbol.oldName = classCandidate;
+          used[classCandidate] = method;
+          continue;
+        }
+        name = classCandidate;
+      }
+
+      var i = 2;
+      var candidate = '$name$i';
+      while (used.containsKey(candidate)) {
+        i++;
+        candidate = '$name$i';
+      }
+      method.symbol.oldName = candidate;
+      used[candidate] = method;
+    }
+  }
+
+  String _selectorDerivedName(String selector) {
+    final chunks = selector.split(':');
+    final hasNoParams = chunks.length == 1;
+    final hasExpectedSuffix = chunks.last.isEmpty;
+    if (hasNoParams || !hasExpectedSuffix) {
+      return selector.replaceAll(':', '_');
+    }
+
+    var name = chunks.first;
+    for (var i = 1; i < chunks.length - 1; i++) {
+      final chunk = chunks[i];
+      if (chunk.isEmpty) continue;
+      name += chunk[0].toUpperCase() + chunk.substring(1);
+    }
+    return name;
   }
 
   void visitMethods(Visitor visitor) {
@@ -301,6 +388,38 @@ class ObjCMethod extends AstNode with HasLocalScope {
     );
   }
 
+  /// Returns a copy of this method with fresh symbols/local scope state.
+  ///
+  /// This is used when a method is copied from a super type/protocol into
+  /// another binding. Reusing the same symbol objects across bindings can cause
+  /// cross-scope name collisions in generated Dart APIs.
+  ObjCMethod copyForInheritance() {
+    return ObjCMethod.withSymbol(
+      context: context,
+      originalName: originalName,
+      symbol: Symbol(symbol.oldName, SymbolKind.method),
+      protocolMethodName: originalProtocolMethodName,
+      dartDoc: dartDoc,
+      kind: kind,
+      isClassMethod: isClassMethod,
+      isOptional: isOptional,
+      returnType: returnType,
+      family: family,
+      apiAvailability: apiAvailability,
+      params: [
+        for (final p in _params)
+          Parameter(
+            originalName: p.originalName,
+            name: p.symbol.oldName,
+            type: p.type,
+            objCConsumed: p.objCConsumed,
+          ),
+      ],
+      ownershipAttribute: ownershipAttribute,
+      consumesSelfAttribute: consumesSelfAttribute,
+    );
+  }
+
   String get name => symbol.name;
   Iterable<Parameter> get params => _params;
 
@@ -330,7 +449,7 @@ class ObjCMethod extends AstNode with HasLocalScope {
         ..._params,
       ],
       returnsRetained: returnsRetained,
-    )..fillProtocolTrampoline();
+    );
   }
 
   bool sameAs(ObjCMethod other) {

@@ -33,9 +33,14 @@ class ObjCBuiltInFunctions {
   static const respondsToSelector = ObjCImport('respondsToSelector');
   static const newPointerBlock = ObjCImport('newPointerBlock');
   static const newClosureBlock = ObjCImport('newClosureBlock');
+  static const wrapListenerBlock = ObjCImport('wrapListenerBlock');
+  static const wrapBlockingBlock = ObjCImport('wrapBlockingBlock');
   static const getBlockClosure = ObjCImport('getBlockClosure');
   static const getProtocolMethodSignature = ObjCImport(
     'getProtocolMethodSignature',
+  );
+  static const getInterfaceMethodSignature = ObjCImport(
+    'getInterfaceMethodSignature',
   );
   static const getProtocol = ObjCImport('getProtocol');
   static const objectRelease = ObjCImport('objectRelease');
@@ -52,9 +57,11 @@ class ObjCBuiltInFunctions {
   );
   static const protocolClass = ObjCImport('Protocol');
   static const protocolBuilder = ObjCImport('ObjCProtocolBuilder');
+  static const subclassBuilder = ObjCImport('ObjCSubclassBuilder');
   static const unimplementedOptionalMethodException = ObjCImport(
     'UnimplementedOptionalMethodException',
   );
+  static const objCRuntimeError = ObjCImport('ObjCRuntimeError');
   static const nsErrorException = ObjCImport('NSErrorException');
   static const checkOsVersion = ObjCImport('checkOsVersionInternal');
 
@@ -157,6 +164,35 @@ class ObjCBuiltInFunctions {
     );
   }
 
+  final _protocolTrampolines = <String, ObjCProtocolMethodTrampoline>{};
+  ObjCProtocolMethodTrampoline? getProtocolMethodTrampoline(ObjCBlock block) {
+    final (id, idHash) = _methodSigId(block.returnType, block.params);
+    return _protocolTrampolines[id] ??= ObjCProtocolMethodTrampoline(
+      Func(
+        name: '_${libraryId}_protocolTrampoline_$idHash',
+        returnType: block.returnType,
+        parameters: [
+          Parameter(
+            name: 'target',
+            type: PointerType(objCObjectType),
+            objCConsumed: false,
+          ),
+          Parameter(
+            name: 'sel',
+            type: PointerType(voidType),
+            objCConsumed: false,
+          ),
+          ...block.params.skip(1),
+        ],
+        objCReturnsRetained: false,
+        isLeaf: false,
+        isInternal: true,
+        useNameForLookup: true,
+        loadFromNativeAsset: true,
+      ),
+    );
+  }
+
   Func _blockTrampolineFunc(String name, {bool blocking = false}) => Func(
     name: name,
     returnType: PointerType(objCBlockType),
@@ -185,30 +221,6 @@ class ObjCBuiltInFunctions {
     useNameForLookup: true,
     loadFromNativeAsset: true,
   );
-
-  final _protocolTrampolines = <String, ObjCProtocolMethodTrampoline>{};
-  ObjCProtocolMethodTrampoline? getProtocolMethodTrampoline(ObjCBlock block) {
-    final (id, idHash) = _methodSigId(block.returnType, block.params);
-    return _protocolTrampolines[id] ??= ObjCProtocolMethodTrampoline(
-      Func(
-        name: '_${libraryId}_protocolTrampoline_$idHash',
-        returnType: block.returnType,
-        parameters: [
-          Parameter(
-            name: 'target',
-            type: PointerType(objCObjectType),
-            objCConsumed: false,
-          ),
-          ...block.params,
-        ],
-        objCReturnsRetained: false,
-        isLeaf: false,
-        isInternal: true,
-        useNameForLookup: true,
-        loadFromNativeAsset: true,
-      ),
-    );
-  }
 
   static bool isInstanceType(Type type) {
     if (type is ObjCInstanceType) return true;
@@ -259,7 +271,6 @@ class ObjCProtocolMethodTrampoline extends AstNode {
   void visitChildren(Visitor visitor) {
     super.visitChildren(visitor);
     visitor.visit(func);
-    visitor.visit(objcPkgImport);
   }
 
   @override

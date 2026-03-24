@@ -24,6 +24,76 @@ typedef OptionalMethodBlock = ObjCBlock_Int32_ffiVoid_SomeStruct;
 typedef VoidMethodBlock = ObjCBlock_ffiVoid_ffiVoid_Int32;
 typedef OtherMethodBlock = ObjCBlock_Int32_ffiVoid_Int32_Int32_Int32_Int32;
 
+final class MyProtocolSugar
+    with MyProtocolDefaults, MyProtocolAdapter
+    implements MyProtocolSpec {
+  MyProtocolSugar({this.onVoidMethod, this.onIntPtrMethod});
+
+  final void Function(int value)? onVoidMethod;
+  final void Function(Pointer<Int32> ptr)? onIntPtrMethod;
+
+  @override
+  int disabledMethod() => 777;
+
+  @override
+  NSString instanceMethod(NSString s, {required double withDouble}) {
+    return 'MyProtocolSugar: ${s.toDartString()}: $withDouble'.toNSString();
+  }
+
+  @override
+  void intPtrMethod(Pointer<Int32> ptr) {
+    final callback = onIntPtrMethod;
+    if (callback != null) {
+      callback(ptr);
+      return;
+    }
+    ptr.value = 4321;
+  }
+
+  @override
+  bool methodWithError(bool isOk) => isOk;
+
+  @override
+  int optionalMethod(SomeStruct s) => s.y - s.x;
+
+  @override
+  void voidMethod(int x) {
+    onVoidMethod?.call(x);
+  }
+}
+
+final class CombinedProtocolSugar
+    with MyProtocolDefaults, MyProtocolAdapter, SecondaryProtocolAdapter
+    implements MyProtocolSpec, SecondaryProtocolSpec {
+  @override
+  int disabledMethod() => 999;
+
+  @override
+  NSString instanceMethod(NSString s, {required double withDouble}) {
+    return 'CombinedProtocolSugar: ${s.toDartString()}: $withDouble'
+        .toNSString();
+  }
+
+  @override
+  void intPtrMethod(Pointer<Int32> ptr) {
+    ptr.value = 2468;
+  }
+
+  @override
+  int optionalMethod(SomeStruct s) => s.x + s.y;
+
+  @override
+  bool methodWithError(bool isOk) => isOk;
+
+  @override
+  int otherMethod(int a, {required int b, required int c, required int d}) {
+    return a * b * c * d;
+  }
+
+  @override
+  void voidMethod(int x) {}
+}
+
 void main() {
   late ProtocolTestObjCLibrary lib;
 
@@ -38,7 +108,9 @@ void main() {
         ),
       );
       verifySetupFile(dylib);
-      lib = ProtocolTestObjCLibrary(DynamicLibrary.open(dylib.absolute.path));
+      lib = ProtocolTestObjCLibrary(
+        loadDylibGlobally(dylib.absolute.path),
+      );
       generateBindingsForCoverage('protocol');
     });
 
@@ -394,6 +466,84 @@ void main() {
         final result = consumer.callInstanceMethod(myProtocol);
         expect(result.toDartString(), 'DirectImpl: Hello from ObjC: 3.14');
       });
+
+      test('Class-based protocol adapter', () {
+        final consumer = ProtocolConsumer();
+        final myProtocol = MyProtocolSugar().asMyProtocol;
+
+        expect(MyProtocol.conformsTo(myProtocol), isTrue);
+
+        final result = consumer.callInstanceMethod(myProtocol);
+        expect(
+          result.toDartString(),
+          'MyProtocolSugar: Hello from ObjC: 3.14',
+        );
+
+        final intResult = consumer.callOptionalMethod(myProtocol);
+        expect(intResult, 333);
+
+        final didSucceed = consumer.callMethodWithError(myProtocol);
+        expect(didSucceed, isTrue);
+      });
+
+      test('Class-based multi protocol adapter', () {
+        final consumer = ProtocolConsumer();
+        final protocolBuilder = ObjCProtocolBuilder();
+        final implementation = CombinedProtocolSugar();
+
+        MyProtocol$Builder.addToBuilderFrom(protocolBuilder, implementation);
+        SecondaryProtocol$Builder.addToBuilderFrom(
+          protocolBuilder,
+          implementation,
+        );
+
+        final protocolImpl = protocolBuilder.build();
+        final asMyProtocol = MyProtocol.as(protocolImpl);
+        final asSecondaryProtocol = SecondaryProtocol.as(protocolImpl);
+
+        final result = consumer.callInstanceMethod(asMyProtocol);
+        expect(
+          result.toDartString(),
+          'CombinedProtocolSugar: Hello from ObjC: 3.14',
+        );
+
+        final otherIntResult = consumer.callOtherMethod(asSecondaryProtocol);
+        expect(otherIntResult, 24);
+
+        final twoMethodResult = consumer.callTwoMethods(asMyProtocol);
+        expect(twoMethodResult, 468000);
+
+        final didSucceed = consumer.callMethodWithError(asMyProtocol);
+        expect(didSucceed, isTrue);
+      });
+
+      test('Class-based listener adapter', () async {
+        final consumer = ProtocolConsumer();
+        final listenerCompleter = Completer<int>();
+        final implementation = MyProtocolSugar(
+          onVoidMethod: listenerCompleter.complete,
+        );
+
+        consumer.callMethodOnRandomThread(implementation.asMyProtocolListener);
+        expect(await listenerCompleter.future, 123);
+      });
+
+      test('Class-based blocking adapter', () async {
+        final consumer = ProtocolConsumer();
+        final listenerCompleter = Completer<int>();
+        final implementation = MyProtocolSugar(
+          onVoidMethod: listenerCompleter.complete,
+          onIntPtrMethod: (Pointer<Int32> ptr) {
+            waitSync(Duration(milliseconds: 100));
+            ptr.value = 654321;
+          },
+        );
+
+        consumer.callBlockingMethodOnRandomThread(
+          implementation.asMyProtocolBlocking,
+        );
+        expect(await listenerCompleter.future, 654321);
+      });
     });
 
     test('Filters', () {
@@ -418,9 +568,18 @@ void main() {
 
       expect(bindings, contains('MyProtocol'));
       expect(bindings, isNot(contains('MyProtocol is a stub')));
+      expect(bindings, contains('abstract interface class MyProtocolSpec'));
+      expect(bindings, contains('abstract interface class MyProtocolOptional'));
+      expect(bindings, contains('mixin MyProtocolAdapter'));
+      expect(bindings, contains('static MyProtocol implementFrom('));
 
       expect(bindings, contains('SecondaryProtocol'));
       expect(bindings, isNot(contains('SecondaryProtocol is a stub')));
+      expect(
+        bindings,
+        contains('abstract interface class SecondaryProtocolSpec'),
+      );
+      expect(bindings, contains('mixin SecondaryProtocolAdapter'));
 
       expect(bindings, contains('SuperProtocol is a stub'));
 

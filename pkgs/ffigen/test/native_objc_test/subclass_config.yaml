@@ -1,0 +1,17 @@
+name: SubclassTestObjCLibrary
+description: 'Tests generated Objective-C subclass helpers'
+language: objc
+output:
+  bindings: 'subclass_bindings.dart'
+  objc-bindings: 'subclass_bindings.m'
+exclude-all-by-default: true
+objc-interfaces:
+  include:
+    - SubclassBase
+    - SubclassConsumer
+  subclass:
+    include:
+      - SubclassBase
+headers:
+  entry-points:
+    - 'subclass_test.h'

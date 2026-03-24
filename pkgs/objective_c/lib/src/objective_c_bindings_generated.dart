@@ -29,7 +29,7 @@ import 'package:ffi/ffi.dart' as pkg_ffi;
 >()
 external int _1wx624s_protocolTrampoline_17ap02x(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<NSFastEnumerationState> arg1,
   ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> arg2,
   int arg3,
@@ -44,7 +44,7 @@ external int _1wx624s_protocolTrampoline_17ap02x(
 >()
 external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_18nsem0(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<NSZone> arg1,
 );
 
@@ -57,7 +57,7 @@ external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_18nsem0(
 >()
 external void _1wx624s_protocolTrampoline_18v1jvf(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCObjectImpl> arg1,
 );
 
@@ -69,7 +69,7 @@ external void _1wx624s_protocolTrampoline_18v1jvf(
 >()
 external ffi.Pointer<NSZone> _1wx624s_protocolTrampoline_1a8cl66(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
 );
 
 @ffi.Native<
@@ -80,7 +80,7 @@ external ffi.Pointer<NSZone> _1wx624s_protocolTrampoline_1a8cl66(
 >()
 external int _1wx624s_protocolTrampoline_1ckyi24(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
 );
 
 @ffi.Native<
@@ -92,7 +92,7 @@ external int _1wx624s_protocolTrampoline_1ckyi24(
 >()
 external int _1wx624s_protocolTrampoline_1ldqghh(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCObjectImpl> arg1,
 );
 
@@ -104,7 +104,7 @@ external int _1wx624s_protocolTrampoline_1ldqghh(
 >()
 external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_1mbt9g9(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
 );
 
 @ffi.Native<
@@ -117,7 +117,7 @@ external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_1mbt9g9(
 >()
 external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_1mllhpc(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCSelector> arg1,
   ffi.Pointer<objc.ObjCObjectImpl> arg2,
 );
@@ -132,7 +132,7 @@ external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_1mllhpc(
 >()
 external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_1q0i84(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCObjectImpl> arg1,
   ffi.Pointer<objc.ObjCBlockImpl> arg2,
 );
@@ -149,7 +149,7 @@ external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_1q0i84(
 >()
 external void _1wx624s_protocolTrampoline_1sr3ozv(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCObjectImpl> arg1,
   ffi.Pointer<objc.ObjCObjectImpl> arg2,
   ffi.Pointer<objc.ObjCObjectImpl> arg3,
@@ -165,7 +165,7 @@ external void _1wx624s_protocolTrampoline_1sr3ozv(
 >()
 external bool _1wx624s_protocolTrampoline_3su7tt(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCObjectImpl> arg1,
 );
 
@@ -178,7 +178,7 @@ external bool _1wx624s_protocolTrampoline_3su7tt(
 >()
 external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_50as9u(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCSelector> arg1,
 );
 
@@ -193,7 +193,7 @@ external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_50as9u(
 >()
 external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_c7gk2u(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCSelector> arg1,
   ffi.Pointer<objc.ObjCObjectImpl> arg2,
   ffi.Pointer<objc.ObjCObjectImpl> arg3,
@@ -204,7 +204,7 @@ external ffi.Pointer<objc.ObjCObjectImpl> _1wx624s_protocolTrampoline_c7gk2u(
 >()
 external bool _1wx624s_protocolTrampoline_e3qsqz(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
 );
 
 @ffi.Native<
@@ -217,7 +217,7 @@ external bool _1wx624s_protocolTrampoline_e3qsqz(
 >()
 external void _1wx624s_protocolTrampoline_hoampi(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCObjectImpl> arg1,
   int arg2,
 );
@@ -227,7 +227,7 @@ external void _1wx624s_protocolTrampoline_hoampi(
 >()
 external void _1wx624s_protocolTrampoline_ovsamd(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
 );
 
 @ffi.Native<
@@ -239,7 +239,7 @@ external void _1wx624s_protocolTrampoline_ovsamd(
 >()
 external bool _1wx624s_protocolTrampoline_w1e3k0(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCSelector> arg1,
 );
 
@@ -252,7 +252,7 @@ external bool _1wx624s_protocolTrampoline_w1e3k0(
 >()
 external instancetype _1wx624s_protocolTrampoline_xr62hr(
   ffi.Pointer<objc.ObjCObjectImpl> target,
-  ffi.Pointer<ffi.Void> arg0,
+  ffi.Pointer<ffi.Void> sel,
   ffi.Pointer<objc.ObjCObjectImpl> arg1,
 );
 
@@ -1318,6 +1318,16 @@ extension DartProtocolBuilder$Methods on DartProtocolBuilder {
     return DartProtocol.fromPointer($ret, retain: true, release: true);
   }
 
+  /// buildObject:
+  NSObject buildObject(int port) {
+    final $ret = _objc_msgSend_1ya1kjn(
+      object$.ref.pointer,
+      _sel_buildObject_,
+      port,
+    );
+    return NSObject.fromPointer($ret, retain: true, release: true);
+  }
+
   /// implementMethod:withBlock:withTrampoline:withSignature:
   void implementMethod(
     ffi.Pointer<objc.ObjCSelector> sel, {
@@ -1355,6 +1365,20 @@ extension DartProtocolBuilder$Methods on DartProtocolBuilder {
       object$.ref.retainAndReturnPointer(),
       _sel_initWithClassName_,
       name,
+    );
+    return DartProtocolBuilder.fromPointer($ret, retain: false, release: true);
+  }
+
+  /// initWithClassName:superclass:
+  DartProtocolBuilder initWithClassNameSuperclass(
+    ffi.Pointer<ffi.Char> name, {
+    required ffi.Pointer<ffi.Void> superclass,
+  }) {
+    final $ret = _objc_msgSend_f22r3n(
+      object$.ref.retainAndReturnPointer(),
+      _sel_initWithClassName_superclass_,
+      name,
+      superclass,
     );
     return DartProtocolBuilder.fromPointer($ret, retain: false, release: true);
   }
@@ -1476,7 +1500,7 @@ extension type NSArray._(objc.ObjCObject object$)
   }
 
   /// arrayWithObjects:count:
-  static NSArray arrayWithObjects$1(
+  static NSArray arrayWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -1559,7 +1583,7 @@ extension NSArray$Methods on NSArray {
   }
 
   /// initWithArray:copyItems:
-  NSArray initWithArray$1(NSArray array, {required bool copyItems}) {
+  NSArray initWithArrayCopyItems(NSArray array, {required bool copyItems}) {
     final $ret = _objc_msgSend_17amj0z(
       object$.ref.retainAndReturnPointer(),
       _sel_initWithArray_copyItems_,
@@ -1592,7 +1616,7 @@ extension NSArray$Methods on NSArray {
   }
 
   /// initWithObjects:count:
-  NSArray initWithObjects$1(
+  NSArray initWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -1697,7 +1721,7 @@ extension type NSAttributedString._(objc.ObjCObject object$)
   ///
   /// iOS: introduced 17.0.0
   /// macOS: introduced 14.0.0
-  static NSAttributedString localizedAttributedStringWithFormat$1(
+  static NSAttributedString localizedAttributedStringWithFormatContext(
     NSAttributedString format, {
     required NSDictionary context,
   }) {
@@ -1719,7 +1743,7 @@ extension type NSAttributedString._(objc.ObjCObject object$)
   ///
   /// iOS: introduced 15.0.0
   /// macOS: introduced 12.0.0
-  static NSAttributedString localizedAttributedStringWithFormat$2(
+  static NSAttributedString localizedAttributedStringWithFormatOptions(
     NSAttributedString format, {
     required int options,
   }) {
@@ -1741,7 +1765,7 @@ extension type NSAttributedString._(objc.ObjCObject object$)
   ///
   /// iOS: introduced 17.0.0
   /// macOS: introduced 14.0.0
-  static NSAttributedString localizedAttributedStringWithFormat$3(
+  static NSAttributedString localizedAttributedStringWithFormatOptionsContext(
     NSAttributedString format, {
     required int options,
     required NSDictionary context,
@@ -1886,7 +1910,7 @@ extension NSAttributedString$Methods on NSAttributedString {
   ///
   /// iOS: introduced 15.0.0
   /// macOS: introduced 12.0.0
-  NSAttributedString initWithFormat(
+  NSAttributedString initWithFormatOptionsLocale(
     NSAttributedString format, {
     required int options,
     NSLocale? locale,
@@ -1910,7 +1934,7 @@ extension NSAttributedString$Methods on NSAttributedString {
   ///
   /// iOS: introduced 17.0.0
   /// macOS: introduced 14.0.0
-  NSAttributedString initWithFormat$1(
+  NSAttributedString initWithFormatOptionsLocaleContext(
     NSAttributedString format, {
     required int options,
     NSLocale? locale,
@@ -2014,7 +2038,7 @@ extension NSAttributedString$Methods on NSAttributedString {
   }
 
   /// initWithString:attributes:
-  NSAttributedString initWithString$1(
+  NSAttributedString initWithStringAttributes(
     NSString str, {
     NSDictionary? attributes,
   }) {
@@ -2386,7 +2410,7 @@ extension type NSBundle._(objc.ObjCObject object$)
         );
 
   /// URLForResource:withExtension:subdirectory:inBundleWithURL:
-  static NSURL? URLForResource$3(
+  static NSURL? URLForResourceWithExtensionSubdirectoryInBundleWithURL(
     NSString? name, {
     NSString? withExtension,
     NSString? subdirectory,
@@ -2411,7 +2435,7 @@ extension type NSBundle._(objc.ObjCObject object$)
   }
 
   /// URLsForResourcesWithExtension:subdirectory:inBundleWithURL:
-  static NSArray? URLsForResourcesWithExtension$2(
+  static NSArray? URLsForResourcesWithExtensionSubdirectoryInBundleWithURL(
     NSString? ext, {
     NSString? subdirectory,
     required NSURL inBundleWithURL,
@@ -2525,7 +2549,7 @@ extension type NSBundle._(objc.ObjCObject object$)
   }
 
   /// pathForResource:ofType:inDirectory:
-  static NSString? pathForResource$3(
+  static NSString? pathForResourceOfTypeInDirectory(
     NSString? name, {
     NSString? ofType,
     required NSString inDirectory,
@@ -2543,7 +2567,7 @@ extension type NSBundle._(objc.ObjCObject object$)
   }
 
   /// pathsForResourcesOfType:inDirectory:
-  static NSArray pathsForResourcesOfType$2(
+  static NSArray pathsForResourcesOfTypeInDirectory(
     NSString? ext, {
     required NSString inDirectory,
   }) {
@@ -2567,7 +2591,7 @@ extension type NSBundle._(objc.ObjCObject object$)
   }
 
   /// preferredLocalizationsFromArray:forPreferences:
-  static NSArray preferredLocalizationsFromArray$1(
+  static NSArray preferredLocalizationsFromArrayForPreferences(
     NSArray localizationsArray, {
     NSArray? forPreferences,
   }) {
@@ -2603,7 +2627,10 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// URLForResource:withExtension:
-  NSURL? URLForResource(NSString? name, {NSString? withExtension}) {
+  NSURL? URLForResourceWithExtension(
+    NSString? name, {
+    NSString? withExtension,
+  }) {
     objc.checkOsVersionInternal(
       'NSBundle.URLForResource:withExtension:',
       iOS: (false, (4, 0, 0)),
@@ -2621,7 +2648,7 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// URLForResource:withExtension:subdirectory:
-  NSURL? URLForResource$1(
+  NSURL? URLForResourceWithExtensionSubdirectory(
     NSString? name, {
     NSString? withExtension,
     NSString? subdirectory,
@@ -2644,7 +2671,7 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// URLForResource:withExtension:subdirectory:localization:
-  NSURL? URLForResource$2(
+  NSURL? URLForResourceWithExtensionSubdirectoryLocalization(
     NSString? name, {
     NSString? withExtension,
     NSString? subdirectory,
@@ -2669,7 +2696,7 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// URLsForResourcesWithExtension:subdirectory:
-  NSArray? URLsForResourcesWithExtension(
+  NSArray? URLsForResourcesWithExtensionSubdirectory(
     NSString? ext, {
     NSString? subdirectory,
   }) {
@@ -2690,7 +2717,7 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// URLsForResourcesWithExtension:subdirectory:localization:
-  NSArray? URLsForResourcesWithExtension$1(
+  NSArray? URLsForResourcesWithExtension(
     NSString? ext, {
     NSString? subdirectory,
     NSString? localization,
@@ -2906,7 +2933,7 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// load
-  bool load$1() {
+  bool load() {
     return _objc_msgSend_91o635(object$.ref.pointer, _sel_load);
   }
 
@@ -2973,7 +3000,7 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// localizedStringForKey:value:table:
-  NSString localizedStringForKey(
+  NSString localizedStringForKeyValueTable(
     NSString key, {
     NSString? value,
     NSString? table,
@@ -3013,7 +3040,7 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// pathForResource:ofType:
-  NSString? pathForResource(NSString? name, {NSString? ofType}) {
+  NSString? pathForResourceOfType(NSString? name, {NSString? ofType}) {
     final $ret = _objc_msgSend_15qeuct(
       object$.ref.pointer,
       _sel_pathForResource_ofType_,
@@ -3026,7 +3053,7 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// pathForResource:ofType:inDirectory:
-  NSString? pathForResource$1(
+  NSString? pathForResourceOfTypeInDirectory2(
     NSString? name, {
     NSString? ofType,
     NSString? inDirectory,
@@ -3044,7 +3071,7 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// pathForResource:ofType:inDirectory:forLocalization:
-  NSString? pathForResource$2(
+  NSString? pathForResourceOfTypeInDirectoryForLocalization(
     NSString? name, {
     NSString? ofType,
     NSString? inDirectory,
@@ -3064,7 +3091,10 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// pathsForResourcesOfType:inDirectory:
-  NSArray pathsForResourcesOfType(NSString? ext, {NSString? inDirectory}) {
+  NSArray pathsForResourcesOfTypeInDirectory2(
+    NSString? ext, {
+    NSString? inDirectory,
+  }) {
     final $ret = _objc_msgSend_15qeuct(
       object$.ref.pointer,
       _sel_pathsForResourcesOfType_inDirectory_,
@@ -3075,7 +3105,7 @@ extension NSBundle$Methods on NSBundle {
   }
 
   /// pathsForResourcesOfType:inDirectory:forLocalization:
-  NSArray pathsForResourcesOfType$1(
+  NSArray pathsForResourcesOfType(
     NSString? ext, {
     NSString? inDirectory,
     NSString? forLocalization,
@@ -3750,6 +3780,16 @@ extension NSCoding$Methods on NSCoding {
   }
 }
 
+abstract interface class NSCodingSpec {
+  /// encodeWithCoder:
+  void encodeWithCoder(NSCoder coder);
+
+  /// initWithCoder:
+  NSCoding? initWithCoder(NSCoder coder);
+}
+
+abstract interface class NSCodingOptional {}
+
 interface class NSCoding$Builder {
   /// Returns the [objc.Protocol] object for this protocol.
   static objc.Protocol get $protocol =>
@@ -3785,6 +3825,39 @@ interface class NSCoding$Builder {
     NSCoding$Builder.encodeWithCoder_.implement(builder, encodeWithCoder_);
     NSCoding$Builder.initWithCoder_.implement(builder, initWithCoder_);
     builder.addProtocol($protocol);
+  }
+
+  /// Builds an object that implements the NSCoding protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [NSCodingOptional].
+  static NSCoding implementFrom(
+    NSCodingSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implement(
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSCoding protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    NSCodingSpec implementation,
+  ) {
+    addToBuilder(
+      builder,
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+    );
   }
 
   /// Builds an object that implements the NSCoding protocol. To implement
@@ -3867,6 +3940,70 @@ interface class NSCoding$Builder {
     builder.addProtocol($protocol);
   }
 
+  /// Builds an object that implements the NSCoding protocol using members
+  /// from [implementation]. Methods that support listener implementations will
+  /// use them.
+  static NSCoding implementFromAsListener(
+    NSCodingSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implementAsListener(
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSCoding protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support listener implementations will use them.
+  static void addToBuilderFromAsListener(
+    objc.ObjCProtocolBuilder builder,
+    NSCodingSpec implementation,
+  ) {
+    addToBuilderAsListener(
+      builder,
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+    );
+  }
+
+  /// Builds an object that implements the NSCoding protocol using members
+  /// from [implementation]. Methods that support blocking listener
+  /// implementations will use them.
+  static NSCoding implementFromAsBlocking(
+    NSCodingSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implementAsBlocking(
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSCoding protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support blocking listener implementations will use them.
+  static void addToBuilderFromAsBlocking(
+    objc.ObjCProtocolBuilder builder,
+    NSCodingSpec implementation,
+  ) {
+    addToBuilderAsBlocking(
+      builder,
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+    );
+  }
+
   /// encodeWithCoder:
   static final encodeWithCoder_ =
       objc.ObjCProtocolListenableMethod<void Function(NSCoder)>(
@@ -3928,6 +4065,23 @@ interface class NSCoding$Builder {
               (ffi.Pointer<ffi.Void> _, NSCoder arg1) => func(arg1),
             ),
       );
+}
+
+mixin NSCodingAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final NSCoding asNSCoding = NSCoding$Builder.implementFrom(
+    this as NSCodingSpec,
+  );
+
+  /// Lazily creates a listener-backed native adapter for this Dart
+  /// implementation.
+  late final NSCoding asNSCodingListener =
+      NSCoding$Builder.implementFromAsListener(this as NSCodingSpec);
+
+  /// Lazily creates a blocking-listener-backed native adapter for this Dart
+  /// implementation.
+  late final NSCoding asNSCodingBlocking =
+      NSCoding$Builder.implementFromAsBlocking(this as NSCodingSpec);
 }
 
 /// iOS: introduced 13.0.0
@@ -3999,6 +4153,13 @@ extension NSCopying$Methods on NSCopying {
   }
 }
 
+abstract interface class NSCopyingSpec {
+  /// copyWithZone:
+  objc.ObjCObject copyWithZone(ffi.Pointer<NSZone> zone);
+}
+
+abstract interface class NSCopyingOptional {}
+
 interface class NSCopying$Builder {
   /// Returns the [objc.Protocol] object for this protocol.
   static objc.Protocol get $protocol =>
@@ -4032,6 +4193,35 @@ interface class NSCopying$Builder {
     builder.addProtocol($protocol);
   }
 
+  /// Builds an object that implements the NSCopying protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [NSCopyingOptional].
+  static NSCopying implementFrom(
+    NSCopyingSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implement(
+      copyWithZone_: (ffi.Pointer<NSZone> zone) =>
+          implementation.copyWithZone(zone),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSCopying protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    NSCopyingSpec implementation,
+  ) {
+    addToBuilder(
+      builder,
+      copyWithZone_: (ffi.Pointer<NSZone> zone) =>
+          implementation.copyWithZone(zone),
+    );
+  }
+
   /// copyWithZone:
   static final copyWithZone_ =
       objc.ObjCProtocolMethod<objc.ObjCObject Function(ffi.Pointer<NSZone>)>(
@@ -4058,6 +4248,13 @@ interface class NSCopying$Builder {
               (ffi.Pointer<ffi.Void> _, ffi.Pointer<NSZone> arg1) => func(arg1),
             ),
       );
+}
+
+mixin NSCopyingAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final NSCopying asNSCopying = NSCopying$Builder.implementFrom(
+    this as NSCopyingSpec,
+  );
 }
 
 /// NSData
@@ -4128,7 +4325,7 @@ extension type NSData._(objc.ObjCObject object$)
   }
 
   /// dataWithBytesNoCopy:length:
-  static NSData dataWithBytesNoCopy(
+  static NSData dataWithBytesNoCopyLength(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
   }) {
@@ -4142,7 +4339,7 @@ extension type NSData._(objc.ObjCObject object$)
   }
 
   /// dataWithBytesNoCopy:length:freeWhenDone:
-  static NSData dataWithBytesNoCopy$1(
+  static NSData dataWithBytesNoCopyLengthFreeWhenDone(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
     required bool freeWhenDone,
@@ -4170,7 +4367,7 @@ extension type NSData._(objc.ObjCObject object$)
   }
 
   /// dataWithContentsOfFile:options:error:
-  static NSData? dataWithContentsOfFile$1(
+  static NSData? dataWithContentsOfFileOptionsError(
     NSString path, {
     required int options,
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> error,
@@ -4200,7 +4397,7 @@ extension type NSData._(objc.ObjCObject object$)
   }
 
   /// dataWithContentsOfURL:options:error:
-  static NSData? dataWithContentsOfURL$1(
+  static NSData? dataWithContentsOfURLOptionsError(
     NSURL url, {
     required int options,
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> error,
@@ -4376,7 +4573,7 @@ extension NSData$Methods on NSData {
   }
 
   /// initWithBytesNoCopy:length:
-  NSData initWithBytesNoCopy(
+  NSData initWithBytesNoCopyLength(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
   }) {
@@ -4390,7 +4587,7 @@ extension NSData$Methods on NSData {
   }
 
   /// initWithBytesNoCopy:length:deallocator:
-  NSData initWithBytesNoCopy$1(
+  NSData initWithBytesNoCopy(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
     objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.UnsignedLong)>?
@@ -4412,7 +4609,7 @@ extension NSData$Methods on NSData {
   }
 
   /// initWithBytesNoCopy:length:freeWhenDone:
-  NSData initWithBytesNoCopy$2(
+  NSData initWithBytesNoCopyLengthFreeWhenDone(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
     required bool freeWhenDone,
@@ -4452,7 +4649,7 @@ extension NSData$Methods on NSData {
   }
 
   /// initWithContentsOfFile:options:error:
-  NSData? initWithContentsOfFile$1(
+  NSData? initWithContentsOfFileOptionsError(
     NSString path, {
     required int options,
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> error,
@@ -4482,7 +4679,7 @@ extension NSData$Methods on NSData {
   }
 
   /// initWithContentsOfURL:options:error:
-  NSData? initWithContentsOfURL$1(
+  NSData? initWithContentsOfURLOptionsError(
     NSURL url, {
     required int options,
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> error,
@@ -4886,7 +5083,7 @@ extension type NSDictionary._(objc.ObjCObject object$)
   /// dictionaryWithObject:forKey:
   static NSDictionary dictionaryWithObject(
     objc.ObjCObject object, {
-    required NSCopying forKey,
+    required objc.ObjCObject forKey,
   }) {
     final $ret = _objc_msgSend_15qeuct(
       _class_NSDictionary,
@@ -4898,7 +5095,7 @@ extension type NSDictionary._(objc.ObjCObject object$)
   }
 
   /// dictionaryWithObjects:forKeys:
-  static NSDictionary dictionaryWithObjects(
+  static NSDictionary dictionaryWithObjectsForKeys(
     NSArray objects, {
     required NSArray forKeys,
   }) {
@@ -4912,7 +5109,7 @@ extension type NSDictionary._(objc.ObjCObject object$)
   }
 
   /// dictionaryWithObjects:forKeys:count:
-  static NSDictionary dictionaryWithObjects$1(
+  static NSDictionary dictionaryWithObjectsForKeysCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> forKeys,
     required int count,
@@ -5021,7 +5218,7 @@ extension NSDictionary$Methods on NSDictionary {
   }
 
   /// initWithDictionary:copyItems:
-  NSDictionary initWithDictionary$1(
+  NSDictionary initWithDictionaryCopyItems(
     NSDictionary otherDictionary, {
     required bool copyItems,
   }) {
@@ -5035,7 +5232,10 @@ extension NSDictionary$Methods on NSDictionary {
   }
 
   /// initWithObjects:forKeys:
-  NSDictionary initWithObjects(NSArray objects, {required NSArray forKeys}) {
+  NSDictionary initWithObjectsForKeys(
+    NSArray objects, {
+    required NSArray forKeys,
+  }) {
     final $ret = _objc_msgSend_15qeuct(
       object$.ref.retainAndReturnPointer(),
       _sel_initWithObjects_forKeys_,
@@ -5046,7 +5246,7 @@ extension NSDictionary$Methods on NSDictionary {
   }
 
   /// initWithObjects:forKeys:count:
-  NSDictionary initWithObjects$1(
+  NSDictionary initWithObjectsForKeysCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> forKeys,
     required int count,
@@ -5524,7 +5724,7 @@ extension NSExtendedArray on NSArray {
   }
 
   /// description
-  NSString get description$1 {
+  NSString get description {
     final $ret = _objc_msgSend_151sglz(object$.ref.pointer, _sel_description);
     return NSString.fromPointer($ret, retain: true, release: true);
   }
@@ -5540,7 +5740,7 @@ extension NSExtendedArray on NSArray {
   }
 
   /// descriptionWithLocale:indent:
-  NSString descriptionWithLocale$1(
+  NSString descriptionWithLocaleIndent(
     objc.ObjCObject? locale, {
     required int indent,
   }) {
@@ -5676,7 +5876,10 @@ extension NSExtendedArray on NSArray {
   }
 
   /// indexOfObject:inRange:
-  int indexOfObject$1(objc.ObjCObject anObject, {required NSRange inRange}) {
+  int indexOfObjectInRange(
+    objc.ObjCObject anObject, {
+    required NSRange inRange,
+  }) {
     return _objc_msgSend_zug4wi(
       object$.ref.pointer,
       _sel_indexOfObject_inRange_,
@@ -5686,7 +5889,7 @@ extension NSExtendedArray on NSArray {
   }
 
   /// indexOfObject:inSortedRange:options:usingComparator:
-  int indexOfObject$2(
+  int indexOfObjectInSortedRangeOptionsUsingComparator(
     objc.ObjCObject obj, {
     required NSRange inSortedRange,
     required int options,
@@ -5750,7 +5953,7 @@ extension NSExtendedArray on NSArray {
   }
 
   /// indexOfObjectIdenticalTo:inRange:
-  int indexOfObjectIdenticalTo$1(
+  int indexOfObjectIdenticalToInRange(
     objc.ObjCObject anObject, {
     required NSRange inRange,
   }) {
@@ -5915,7 +6118,7 @@ extension NSExtendedArray on NSArray {
   }
 
   /// makeObjectsPerformSelector:withObject:
-  void makeObjectsPerformSelector$1(
+  void makeObjectsPerformSelectorWithObject(
     ffi.Pointer<objc.ObjCSelector> aSelector, {
     objc.ObjCObject? withObject,
   }) {
@@ -6003,7 +6206,7 @@ extension NSExtendedArray on NSArray {
   }
 
   /// sortedArrayUsingFunction:context:
-  NSArray sortedArrayUsingFunction(
+  NSArray sortedArrayUsingFunctionContext(
     ffi.Pointer<
       ffi.NativeFunction<
         ffi.Long Function(
@@ -6026,7 +6229,7 @@ extension NSExtendedArray on NSArray {
   }
 
   /// sortedArrayUsingFunction:context:hint:
-  NSArray sortedArrayUsingFunction$1(
+  NSArray sortedArrayUsingFunctionContextHint(
     ffi.Pointer<
       ffi.NativeFunction<
         ffi.Long Function(
@@ -6121,7 +6324,7 @@ extension NSExtendedArray on NSArray {
 /// NSExtendedData
 extension NSExtendedData on NSData {
   /// description
-  NSString get description$1 {
+  NSString get description {
     final $ret = _objc_msgSend_151sglz(object$.ref.pointer, _sel_description);
     return NSString.fromPointer($ret, retain: true, release: true);
   }
@@ -6146,7 +6349,7 @@ extension NSExtendedData on NSData {
   }
 
   /// getBytes:length:
-  void getBytes(ffi.Pointer<ffi.Void> buffer, {required int length}) {
+  void getBytesLength(ffi.Pointer<ffi.Void> buffer, {required int length}) {
     _objc_msgSend_zuf90e(
       object$.ref.pointer,
       _sel_getBytes_length_,
@@ -6156,7 +6359,7 @@ extension NSExtendedData on NSData {
   }
 
   /// getBytes:range:
-  void getBytes$1(ffi.Pointer<ffi.Void> buffer, {required NSRange range}) {
+  void getBytesRange(ffi.Pointer<ffi.Void> buffer, {required NSRange range}) {
     _objc_msgSend_xpqfd7(
       object$.ref.pointer,
       _sel_getBytes_range_,
@@ -6220,7 +6423,7 @@ extension NSExtendedData on NSData {
   }
 
   /// writeToFile:atomically:
-  bool writeToFile(NSString path, {required bool atomically}) {
+  bool writeToFileAtomically(NSString path, {required bool atomically}) {
     return _objc_msgSend_1iyq28l(
       object$.ref.pointer,
       _sel_writeToFile_atomically_,
@@ -6230,7 +6433,7 @@ extension NSExtendedData on NSData {
   }
 
   /// writeToFile:options:error:
-  bool writeToFile$1(
+  bool writeToFileOptionsError(
     NSString path, {
     required int options,
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> error,
@@ -6245,7 +6448,7 @@ extension NSExtendedData on NSData {
   }
 
   /// writeToURL:atomically:
-  bool writeToURL(NSURL url, {required bool atomically}) {
+  bool writeToURLAtomically(NSURL url, {required bool atomically}) {
     return _objc_msgSend_1iyq28l(
       object$.ref.pointer,
       _sel_writeToURL_atomically_,
@@ -6255,7 +6458,7 @@ extension NSExtendedData on NSData {
   }
 
   /// writeToURL:options:error:
-  bool writeToURL$1(
+  bool writeToURLOptionsError(
     NSURL url, {
     required int options,
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> error,
@@ -6283,7 +6486,7 @@ extension NSExtendedDate on NSDate {
   }
 
   /// description
-  NSString get description$1 {
+  NSString get description {
     final $ret = _objc_msgSend_151sglz(object$.ref.pointer, _sel_description);
     return NSString.fromPointer($ret, retain: true, release: true);
   }
@@ -6404,7 +6607,7 @@ extension NSExtendedDictionary on NSDictionary {
   }
 
   /// description
-  NSString get description$1 {
+  NSString get description {
     final $ret = _objc_msgSend_151sglz(object$.ref.pointer, _sel_description);
     return NSString.fromPointer($ret, retain: true, release: true);
   }
@@ -6429,7 +6632,7 @@ extension NSExtendedDictionary on NSDictionary {
   }
 
   /// descriptionWithLocale:indent:
-  NSString descriptionWithLocale$1(
+  NSString descriptionWithLocaleIndent(
     objc.ObjCObject? locale, {
     required int indent,
   }) {
@@ -6747,7 +6950,10 @@ extension NSExtendedMutableArray on NSMutableArray {
   }
 
   /// removeObject:inRange:
-  void removeObject$1(objc.ObjCObject anObject, {required NSRange inRange}) {
+  void removeObjectInRange(
+    objc.ObjCObject anObject, {
+    required NSRange inRange,
+  }) {
     _objc_msgSend_1oteutl(
       object$.ref.pointer,
       _sel_removeObject_inRange_,
@@ -6766,7 +6972,7 @@ extension NSExtendedMutableArray on NSMutableArray {
   }
 
   /// removeObjectIdenticalTo:inRange:
-  void removeObjectIdenticalTo$1(
+  void removeObjectIdenticalToInRange(
     objc.ObjCObject anObject, {
     required NSRange inRange,
   }) {
@@ -6819,7 +7025,7 @@ extension NSExtendedMutableArray on NSMutableArray {
   }
 
   /// replaceObjectsInRange:withObjectsFromArray:
-  void replaceObjectsInRange(
+  void replaceObjectsInRangeWithObjectsFromArray(
     NSRange range, {
     required NSArray withObjectsFromArray,
   }) {
@@ -6832,7 +7038,7 @@ extension NSExtendedMutableArray on NSMutableArray {
   }
 
   /// replaceObjectsInRange:withObjectsFromArray:range:
-  void replaceObjectsInRange$1(
+  void replaceObjectsInRangeWithObjectsFromArrayRange(
     NSRange range, {
     required NSArray withObjectsFromArray,
     required NSRange range$1,
@@ -6979,7 +7185,7 @@ extension NSExtendedMutableData on NSMutableData {
   }
 
   /// replaceBytesInRange:withBytes:
-  void replaceBytesInRange(
+  void replaceBytesInRangeWithBytes(
     NSRange range, {
     required ffi.Pointer<ffi.Void> withBytes,
   }) {
@@ -6992,7 +7198,7 @@ extension NSExtendedMutableData on NSMutableData {
   }
 
   /// replaceBytesInRange:withBytes:length:
-  void replaceBytesInRange$1(
+  void replaceBytesInRangeWithBytesLength(
     NSRange range, {
     required ffi.Pointer<ffi.Void> withBytes,
     required int length,
@@ -7054,7 +7260,7 @@ extension NSExtendedMutableDictionary on NSMutableDictionary {
   /// setObject:forKeyedSubscript:
   void setObject$1(
     objc.ObjCObject? obj, {
-    required NSCopying forKeyedSubscript,
+    required objc.ObjCObject forKeyedSubscript,
   }) {
     objc.checkOsVersionInternal(
       'NSMutableDictionary.setObject:forKeyedSubscript:',
@@ -7324,7 +7530,7 @@ extension NSExtendedMutableOrderedSet on NSMutableOrderedSet {
   }
 
   /// setObject:atIndex:
-  void setObject(objc.ObjCObject obj, {required int atIndex}) {
+  void setObjectAtIndex(objc.ObjCObject obj, {required int atIndex}) {
     objc.checkOsVersionInternal(
       'NSMutableOrderedSet.setObject:atIndex:',
       iOS: (false, (5, 0, 0)),
@@ -7339,7 +7545,10 @@ extension NSExtendedMutableOrderedSet on NSMutableOrderedSet {
   }
 
   /// setObject:atIndexedSubscript:
-  void setObject$1(objc.ObjCObject obj, {required int atIndexedSubscript}) {
+  void setObjectAtIndexedSubscript(
+    objc.ObjCObject obj, {
+    required int atIndexedSubscript,
+  }) {
     objc.checkOsVersionInternal(
       'NSMutableOrderedSet.setObject:atIndexedSubscript:',
       iOS: (false, (6, 0, 0)),
@@ -7535,7 +7744,7 @@ extension NSExtendedOrderedSet on NSOrderedSet {
   }
 
   /// description
-  NSString get description$1 {
+  NSString get description {
     objc.checkOsVersionInternal(
       'NSOrderedSet.description',
       iOS: (false, (5, 0, 0)),
@@ -7561,7 +7770,7 @@ extension NSExtendedOrderedSet on NSOrderedSet {
   }
 
   /// descriptionWithLocale:indent:
-  NSString descriptionWithLocale$1(
+  NSString descriptionWithLocaleIndent(
     objc.ObjCObject? locale, {
     required int indent,
   }) {
@@ -8102,7 +8311,7 @@ extension NSExtendedSet on NSSet {
   }
 
   /// description
-  NSString get description$1 {
+  NSString get description {
     final $ret = _objc_msgSend_151sglz(object$.ref.pointer, _sel_description);
     return NSString.fromPointer($ret, retain: true, release: true);
   }
@@ -8194,7 +8403,7 @@ extension NSExtendedSet on NSSet {
   }
 
   /// makeObjectsPerformSelector:withObject:
-  void makeObjectsPerformSelector$1(
+  void makeObjectsPerformSelectorWithObject(
     ffi.Pointer<objc.ObjCSelector> aSelector, {
     objc.ObjCObject? withObject,
   }) {
@@ -8334,6 +8543,17 @@ extension NSFastEnumeration$Methods on NSFastEnumeration {
   }
 }
 
+abstract interface class NSFastEnumerationSpec {
+  /// countByEnumeratingWithState:objects:count:
+  int countByEnumeratingWithState(
+    ffi.Pointer<NSFastEnumerationState> state, {
+    required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects,
+    required int count,
+  });
+}
+
+abstract interface class NSFastEnumerationOptional {}
+
 interface class NSFastEnumeration$Builder {
   /// Returns the [objc.Protocol] object for this protocol.
   static objc.Protocol get $protocol =>
@@ -8379,6 +8599,51 @@ interface class NSFastEnumeration$Builder {
     NSFastEnumeration$Builder.countByEnumeratingWithState_objects_count_
         .implement(builder, countByEnumeratingWithState_objects_count_);
     builder.addProtocol($protocol);
+  }
+
+  /// Builds an object that implements the NSFastEnumeration protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [NSFastEnumerationOptional].
+  static NSFastEnumeration implementFrom(
+    NSFastEnumerationSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implement(
+      countByEnumeratingWithState_objects_count_:
+          (
+            ffi.Pointer<NSFastEnumerationState> state,
+            ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects,
+            int count,
+          ) => implementation.countByEnumeratingWithState(
+            state,
+            objects: objects,
+            count: count,
+          ),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSFastEnumeration protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    NSFastEnumerationSpec implementation,
+  ) {
+    addToBuilder(
+      builder,
+      countByEnumeratingWithState_objects_count_:
+          (
+            ffi.Pointer<NSFastEnumerationState> state,
+            ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects,
+            int count,
+          ) => implementation.countByEnumeratingWithState(
+            state,
+            objects: objects,
+            count: count,
+          ),
+    );
   }
 
   /// countByEnumeratingWithState:objects:count:
@@ -8427,6 +8692,12 @@ interface class NSFastEnumeration$Builder {
               ) => func(arg1, arg2, arg3),
             ),
       );
+}
+
+mixin NSFastEnumerationAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final NSFastEnumeration asNSFastEnumeration =
+      NSFastEnumeration$Builder.implementFrom(this as NSFastEnumerationSpec);
 }
 
 final class NSFastEnumerationState extends ffi.Struct {
@@ -9807,6 +10078,10 @@ extension type NSItemProviderReading._(objc.ObjCProtocol object$)
 
 extension NSItemProviderReading$Methods on NSItemProviderReading {}
 
+abstract interface class NSItemProviderReadingSpec {}
+
+abstract interface class NSItemProviderReadingOptional {}
+
 interface class NSItemProviderReading$Builder {
   /// Returns the [objc.Protocol] object for this protocol.
   static objc.Protocol get $protocol =>
@@ -9838,6 +10113,35 @@ interface class NSItemProviderReading$Builder {
   }) {
     builder.addProtocol($protocol);
   }
+
+  /// Builds an object that implements the NSItemProviderReading protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [NSItemProviderReadingOptional].
+  static NSItemProviderReading implementFrom(
+    NSItemProviderReadingSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implement($keepIsolateAlive: $keepIsolateAlive);
+  }
+
+  /// Adds an implementation of the NSItemProviderReading protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    NSItemProviderReadingSpec implementation,
+  ) {
+    addToBuilder(builder);
+  }
+}
+
+mixin NSItemProviderReadingAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final NSItemProviderReading asNSItemProviderReading =
+      NSItemProviderReading$Builder.implementFrom(
+        this as NSItemProviderReadingSpec,
+      );
 }
 
 enum NSItemProviderRepresentationVisibility {
@@ -9887,7 +10191,7 @@ extension type NSItemProviderWriting._(objc.ObjCProtocol object$)
 extension NSItemProviderWriting$Methods on NSItemProviderWriting {
   /// itemProviderVisibilityForRepresentationWithTypeIdentifier:
   NSItemProviderRepresentationVisibility
-  itemProviderVisibilityForRepresentationWithTypeIdentifier(
+  itemProviderVisibilityForRepresentationWithTypeIdentifier2(
     NSString typeIdentifier,
   ) {
     objc.checkOsVersionInternal(
@@ -9956,6 +10260,31 @@ extension NSItemProviderWriting$Methods on NSItemProviderWriting {
     );
     return NSArray.fromPointer($ret, retain: true, release: true);
   }
+}
+
+abstract interface class NSItemProviderWritingSpec {
+  /// loadDataWithTypeIdentifier:forItemProviderCompletionHandler:
+  NSProgress? loadDataWithTypeIdentifier(
+    NSString typeIdentifier, {
+    required objc.ObjCBlock<ffi.Void Function(NSData?, NSError?)>
+    forItemProviderCompletionHandler,
+  });
+}
+
+abstract interface class NSItemProviderWritingOptional {
+  /// itemProviderVisibilityForRepresentationWithTypeIdentifier:
+  NSItemProviderRepresentationVisibility
+  itemProviderVisibilityForRepresentationWithTypeIdentifier2(
+    NSString typeIdentifier,
+  );
+
+  /// writableTypeIdentifiersForItemProvider
+  NSArray get writableTypeIdentifiersForItemProvider;
+}
+
+mixin NSItemProviderWritingDefaults implements NSItemProviderWritingOptional {
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
 
 interface class NSItemProviderWriting$Builder {
@@ -10033,6 +10362,91 @@ interface class NSItemProviderWriting$Builder {
     NSItemProviderWriting$Builder.writableTypeIdentifiersForItemProvider
         .implement(builder, writableTypeIdentifiersForItemProvider);
     builder.addProtocol($protocol);
+  }
+
+  /// Builds an object that implements the NSItemProviderWriting protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [NSItemProviderWritingOptional].
+  static NSItemProviderWriting implementFrom(
+    NSItemProviderWritingSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    final NSItemProviderWritingOptional? optionalImplementation =
+        implementation is NSItemProviderWritingOptional
+        ? implementation as NSItemProviderWritingOptional
+        : null;
+    return implement(
+      itemProviderVisibilityForRepresentationWithTypeIdentifier_:
+          NSItemProviderWriting$Builder
+                  .itemProviderVisibilityForRepresentationWithTypeIdentifier_
+                  .isAvailable &&
+              optionalImplementation != null
+          ? (NSString typeIdentifier) => optionalImplementation
+                .itemProviderVisibilityForRepresentationWithTypeIdentifier2(
+                  typeIdentifier,
+                )
+          : null,
+      loadDataWithTypeIdentifier_forItemProviderCompletionHandler_:
+          (
+            NSString typeIdentifier,
+            objc.ObjCBlock<ffi.Void Function(NSData?, NSError?)>
+            forItemProviderCompletionHandler,
+          ) => implementation.loadDataWithTypeIdentifier(
+            typeIdentifier,
+            forItemProviderCompletionHandler: forItemProviderCompletionHandler,
+          ),
+      writableTypeIdentifiersForItemProvider:
+          NSItemProviderWriting$Builder
+                  .writableTypeIdentifiersForItemProvider
+                  .isAvailable &&
+              optionalImplementation != null
+          ? () => optionalImplementation.writableTypeIdentifiersForItemProvider
+          : null,
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSItemProviderWriting protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    NSItemProviderWritingSpec implementation,
+  ) {
+    final NSItemProviderWritingOptional? optionalImplementation =
+        implementation is NSItemProviderWritingOptional
+        ? implementation as NSItemProviderWritingOptional
+        : null;
+    addToBuilder(
+      builder,
+      itemProviderVisibilityForRepresentationWithTypeIdentifier_:
+          NSItemProviderWriting$Builder
+                  .itemProviderVisibilityForRepresentationWithTypeIdentifier_
+                  .isAvailable &&
+              optionalImplementation != null
+          ? (NSString typeIdentifier) => optionalImplementation
+                .itemProviderVisibilityForRepresentationWithTypeIdentifier2(
+                  typeIdentifier,
+                )
+          : null,
+      loadDataWithTypeIdentifier_forItemProviderCompletionHandler_:
+          (
+            NSString typeIdentifier,
+            objc.ObjCBlock<ffi.Void Function(NSData?, NSError?)>
+            forItemProviderCompletionHandler,
+          ) => implementation.loadDataWithTypeIdentifier(
+            typeIdentifier,
+            forItemProviderCompletionHandler: forItemProviderCompletionHandler,
+          ),
+      writableTypeIdentifiersForItemProvider:
+          NSItemProviderWriting$Builder
+                  .writableTypeIdentifiersForItemProvider
+                  .isAvailable &&
+              optionalImplementation != null
+          ? () => optionalImplementation.writableTypeIdentifiersForItemProvider
+          : null,
+    );
   }
 
   /// itemProviderVisibilityForRepresentationWithTypeIdentifier:
@@ -10130,6 +10544,14 @@ interface class NSItemProviderWriting$Builder {
         (NSArray Function() func) => ObjCBlock_NSArray_ffiVoid.fromFunction(
           (ffi.Pointer<ffi.Void> _) => func(),
         ),
+      );
+}
+
+mixin NSItemProviderWritingAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final NSItemProviderWriting asNSItemProviderWriting =
+      NSItemProviderWriting$Builder.implementFrom(
+        this as NSItemProviderWritingSpec,
       );
 }
 
@@ -10574,7 +10996,7 @@ extension type NSMutableArray._(objc.ObjCObject object$)
   }
 
   /// arrayWithObjects:count:
-  static NSMutableArray arrayWithObjects$1(
+  static NSMutableArray arrayWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -10640,7 +11062,10 @@ extension NSMutableArray$Methods on NSMutableArray {
   }
 
   /// initWithArray:copyItems:
-  NSMutableArray initWithArray$1(NSArray array, {required bool copyItems}) {
+  NSMutableArray initWithArrayCopyItems(
+    NSArray array, {
+    required bool copyItems,
+  }) {
     final $ret = _objc_msgSend_17amj0z(
       object$.ref.retainAndReturnPointer(),
       _sel_initWithArray_copyItems_,
@@ -10683,7 +11108,7 @@ extension NSMutableArray$Methods on NSMutableArray {
   }
 
   /// initWithObjects:count:
-  NSMutableArray initWithObjects$1(
+  NSMutableArray initWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -10766,6 +11191,13 @@ extension NSMutableCopying$Methods on NSMutableCopying {
   }
 }
 
+abstract interface class NSMutableCopyingSpec {
+  /// mutableCopyWithZone:
+  objc.ObjCObject mutableCopyWithZone(ffi.Pointer<NSZone> zone);
+}
+
+abstract interface class NSMutableCopyingOptional {}
+
 interface class NSMutableCopying$Builder {
   /// Returns the [objc.Protocol] object for this protocol.
   static objc.Protocol get $protocol =>
@@ -10807,6 +11239,35 @@ interface class NSMutableCopying$Builder {
     builder.addProtocol($protocol);
   }
 
+  /// Builds an object that implements the NSMutableCopying protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [NSMutableCopyingOptional].
+  static NSMutableCopying implementFrom(
+    NSMutableCopyingSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implement(
+      mutableCopyWithZone_: (ffi.Pointer<NSZone> zone) =>
+          implementation.mutableCopyWithZone(zone),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSMutableCopying protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    NSMutableCopyingSpec implementation,
+  ) {
+    addToBuilder(
+      builder,
+      mutableCopyWithZone_: (ffi.Pointer<NSZone> zone) =>
+          implementation.mutableCopyWithZone(zone),
+    );
+  }
+
   /// mutableCopyWithZone:
   static final mutableCopyWithZone_ =
       objc.ObjCProtocolMethod<objc.ObjCObject Function(ffi.Pointer<NSZone>)>(
@@ -10833,6 +11294,12 @@ interface class NSMutableCopying$Builder {
               (ffi.Pointer<ffi.Void> _, ffi.Pointer<NSZone> arg1) => func(arg1),
             ),
       );
+}
+
+mixin NSMutableCopyingAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final NSMutableCopying asNSMutableCopying =
+      NSMutableCopying$Builder.implementFrom(this as NSMutableCopyingSpec);
 }
 
 /// NSMutableData
@@ -10898,7 +11365,7 @@ extension type NSMutableData._(objc.ObjCObject object$)
   }
 
   /// dataWithBytesNoCopy:length:
-  static NSMutableData dataWithBytesNoCopy(
+  static NSMutableData dataWithBytesNoCopyLength(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
   }) {
@@ -10912,7 +11379,7 @@ extension type NSMutableData._(objc.ObjCObject object$)
   }
 
   /// dataWithBytesNoCopy:length:freeWhenDone:
-  static NSMutableData dataWithBytesNoCopy$1(
+  static NSMutableData dataWithBytesNoCopyLengthFreeWhenDone(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
     required bool freeWhenDone,
@@ -10952,7 +11419,7 @@ extension type NSMutableData._(objc.ObjCObject object$)
   }
 
   /// dataWithContentsOfFile:options:error:
-  static NSMutableData? dataWithContentsOfFile$1(
+  static NSMutableData? dataWithContentsOfFileOptionsError(
     NSString path, {
     required int options,
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> error,
@@ -10982,7 +11449,7 @@ extension type NSMutableData._(objc.ObjCObject object$)
   }
 
   /// dataWithContentsOfURL:options:error:
-  static NSMutableData? dataWithContentsOfURL$1(
+  static NSMutableData? dataWithContentsOfURLOptionsError(
     NSURL url, {
     required int options,
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> error,
@@ -11169,7 +11636,7 @@ extension NSMutableData$Methods on NSMutableData {
   }
 
   /// initWithBytesNoCopy:length:
-  NSMutableData initWithBytesNoCopy(
+  NSMutableData initWithBytesNoCopyLength(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
   }) {
@@ -11183,7 +11650,7 @@ extension NSMutableData$Methods on NSMutableData {
   }
 
   /// initWithBytesNoCopy:length:deallocator:
-  NSMutableData initWithBytesNoCopy$1(
+  NSMutableData initWithBytesNoCopy(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
     objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.UnsignedLong)>?
@@ -11205,7 +11672,7 @@ extension NSMutableData$Methods on NSMutableData {
   }
 
   /// initWithBytesNoCopy:length:freeWhenDone:
-  NSMutableData initWithBytesNoCopy$2(
+  NSMutableData initWithBytesNoCopyLengthFreeWhenDone(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
     required bool freeWhenDone,
@@ -11257,7 +11724,7 @@ extension NSMutableData$Methods on NSMutableData {
   }
 
   /// initWithContentsOfFile:options:error:
-  NSMutableData? initWithContentsOfFile$1(
+  NSMutableData? initWithContentsOfFileOptionsError(
     NSString path, {
     required int options,
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> error,
@@ -11287,7 +11754,7 @@ extension NSMutableData$Methods on NSMutableData {
   }
 
   /// initWithContentsOfURL:options:error:
-  NSMutableData? initWithContentsOfURL$1(
+  NSMutableData? initWithContentsOfURLOptionsError(
     NSURL url, {
     required int options,
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> error,
@@ -11431,7 +11898,7 @@ extension type NSMutableDictionary._(objc.ObjCObject object$)
   /// dictionaryWithObject:forKey:
   static NSMutableDictionary dictionaryWithObject(
     objc.ObjCObject object, {
-    required NSCopying forKey,
+    required objc.ObjCObject forKey,
   }) {
     final $ret = _objc_msgSend_15qeuct(
       _class_NSMutableDictionary,
@@ -11443,7 +11910,7 @@ extension type NSMutableDictionary._(objc.ObjCObject object$)
   }
 
   /// dictionaryWithObjects:forKeys:
-  static NSMutableDictionary dictionaryWithObjects(
+  static NSMutableDictionary dictionaryWithObjectsForKeys(
     NSArray objects, {
     required NSArray forKeys,
   }) {
@@ -11457,7 +11924,7 @@ extension type NSMutableDictionary._(objc.ObjCObject object$)
   }
 
   /// dictionaryWithObjects:forKeys:count:
-  static NSMutableDictionary dictionaryWithObjects$1(
+  static NSMutableDictionary dictionaryWithObjectsForKeysCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> forKeys,
     required int count,
@@ -11550,7 +12017,7 @@ extension NSMutableDictionary$Methods on NSMutableDictionary {
   }
 
   /// initWithDictionary:copyItems:
-  NSMutableDictionary initWithDictionary$1(
+  NSMutableDictionary initWithDictionaryCopyItems(
     NSDictionary otherDictionary, {
     required bool copyItems,
   }) {
@@ -11564,7 +12031,7 @@ extension NSMutableDictionary$Methods on NSMutableDictionary {
   }
 
   /// initWithObjects:forKeys:
-  NSMutableDictionary initWithObjects(
+  NSMutableDictionary initWithObjectsForKeys(
     NSArray objects, {
     required NSArray forKeys,
   }) {
@@ -11578,7 +12045,7 @@ extension NSMutableDictionary$Methods on NSMutableDictionary {
   }
 
   /// initWithObjects:forKeys:count:
-  NSMutableDictionary initWithObjects$1(
+  NSMutableDictionary initWithObjectsForKeysCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> forKeys,
     required int count,
@@ -11613,7 +12080,7 @@ extension NSMutableDictionary$Methods on NSMutableDictionary {
   }
 
   /// setObject:forKey:
-  void setObject(objc.ObjCObject anObject, {required NSCopying forKey}) {
+  void setObject(objc.ObjCObject anObject, {required objc.ObjCObject forKey}) {
     _objc_msgSend_pfv6jd(
       object$.ref.pointer,
       _sel_setObject_forKey_,
@@ -11912,7 +12379,7 @@ extension type NSMutableOrderedSet._(objc.ObjCObject object$)
   }
 
   /// orderedSetWithArray:range:copyItems:
-  static NSMutableOrderedSet orderedSetWithArray$1(
+  static NSMutableOrderedSet orderedSetWithArrayRangeCopyItems(
     NSArray array, {
     required NSRange range,
     required bool copyItems,
@@ -11978,7 +12445,7 @@ extension type NSMutableOrderedSet._(objc.ObjCObject object$)
   }
 
   /// orderedSetWithObjects:count:
-  static NSMutableOrderedSet orderedSetWithObjects$1(
+  static NSMutableOrderedSet orderedSetWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -12012,7 +12479,7 @@ extension type NSMutableOrderedSet._(objc.ObjCObject object$)
   }
 
   /// orderedSetWithOrderedSet:range:copyItems:
-  static NSMutableOrderedSet orderedSetWithOrderedSet$1(
+  static NSMutableOrderedSet orderedSetWithOrderedSetRangeCopyItems(
     NSOrderedSet set, {
     required NSRange range,
     required bool copyItems,
@@ -12048,7 +12515,7 @@ extension type NSMutableOrderedSet._(objc.ObjCObject object$)
   }
 
   /// orderedSetWithSet:copyItems:
-  static NSMutableOrderedSet orderedSetWithSet$1(
+  static NSMutableOrderedSet orderedSetWithSetCopyItems(
     NSSet set, {
     required bool copyItems,
   }) {
@@ -12109,7 +12576,10 @@ extension NSMutableOrderedSet$Methods on NSMutableOrderedSet {
   }
 
   /// initWithArray:copyItems:
-  NSMutableOrderedSet initWithArray$1(NSArray set, {required bool copyItems}) {
+  NSMutableOrderedSet initWithArrayCopyItems(
+    NSArray set, {
+    required bool copyItems,
+  }) {
     objc.checkOsVersionInternal(
       'NSMutableOrderedSet.initWithArray:copyItems:',
       iOS: (false, (5, 0, 0)),
@@ -12125,7 +12595,7 @@ extension NSMutableOrderedSet$Methods on NSMutableOrderedSet {
   }
 
   /// initWithArray:range:copyItems:
-  NSMutableOrderedSet initWithArray$2(
+  NSMutableOrderedSet initWithArrayRangeCopyItems(
     NSArray set, {
     required NSRange range,
     required bool copyItems,
@@ -12203,7 +12673,7 @@ extension NSMutableOrderedSet$Methods on NSMutableOrderedSet {
   }
 
   /// initWithObjects:count:
-  NSMutableOrderedSet initWithObjects$1(
+  NSMutableOrderedSet initWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -12237,7 +12707,7 @@ extension NSMutableOrderedSet$Methods on NSMutableOrderedSet {
   }
 
   /// initWithOrderedSet:copyItems:
-  NSMutableOrderedSet initWithOrderedSet$1(
+  NSMutableOrderedSet initWithOrderedSetCopyItems(
     NSOrderedSet set, {
     required bool copyItems,
   }) {
@@ -12256,7 +12726,7 @@ extension NSMutableOrderedSet$Methods on NSMutableOrderedSet {
   }
 
   /// initWithOrderedSet:range:copyItems:
-  NSMutableOrderedSet initWithOrderedSet$2(
+  NSMutableOrderedSet initWithOrderedSetRangeCopyItems(
     NSOrderedSet set, {
     required NSRange range,
     required bool copyItems,
@@ -12292,7 +12762,10 @@ extension NSMutableOrderedSet$Methods on NSMutableOrderedSet {
   }
 
   /// initWithSet:copyItems:
-  NSMutableOrderedSet initWithSet$1(NSSet set, {required bool copyItems}) {
+  NSMutableOrderedSet initWithSetCopyItems(
+    NSSet set, {
+    required bool copyItems,
+  }) {
     objc.checkOsVersionInternal(
       'NSMutableOrderedSet.initWithSet:copyItems:',
       iOS: (false, (5, 0, 0)),
@@ -12450,7 +12923,7 @@ extension type NSMutableSet._(objc.ObjCObject object$)
   }
 
   /// setWithObjects:count:
-  static NSMutableSet setWithObjects$1(
+  static NSMutableSet setWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -12549,7 +13022,7 @@ extension NSMutableSet$Methods on NSMutableSet {
   }
 
   /// initWithObjects:count:
-  NSMutableSet initWithObjects$1(
+  NSMutableSet initWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -12573,7 +13046,7 @@ extension NSMutableSet$Methods on NSMutableSet {
   }
 
   /// initWithSet:copyItems:
-  NSMutableSet initWithSet$1(NSSet set, {required bool copyItems}) {
+  NSMutableSet initWithSetCopyItems(NSSet set, {required bool copyItems}) {
     final $ret = _objc_msgSend_17amj0z(
       object$.ref.retainAndReturnPointer(),
       _sel_initWithSet_copyItems_,
@@ -12716,7 +13189,7 @@ extension type NSMutableString._(objc.ObjCObject object$)
   }
 
   /// stringWithContentsOfFile:encoding:error:
-  static NSMutableString? stringWithContentsOfFile(
+  static NSMutableString? stringWithContentsOfFileEncodingError(
     NSString path, {
     required int encoding,
   }) {
@@ -12739,7 +13212,7 @@ extension type NSMutableString._(objc.ObjCObject object$)
   }
 
   /// stringWithContentsOfFile:usedEncoding:error:
-  static NSMutableString? stringWithContentsOfFile$1(
+  static NSMutableString? stringWithContentsOfFileUsedEncodingError(
     NSString path, {
     required ffi.Pointer<ffi.UnsignedLong> usedEncoding,
   }) {
@@ -12762,7 +13235,7 @@ extension type NSMutableString._(objc.ObjCObject object$)
   }
 
   /// stringWithContentsOfURL:encoding:error:
-  static NSMutableString? stringWithContentsOfURL(
+  static NSMutableString? stringWithContentsOfURLEncodingError(
     NSURL url, {
     required int encoding,
   }) {
@@ -12785,7 +13258,7 @@ extension type NSMutableString._(objc.ObjCObject object$)
   }
 
   /// stringWithContentsOfURL:usedEncoding:error:
-  static NSMutableString? stringWithContentsOfURL$1(
+  static NSMutableString? stringWithContentsOfURLUsedEncodingError(
     NSURL url, {
     required ffi.Pointer<ffi.UnsignedLong> usedEncoding,
   }) {
@@ -12915,7 +13388,7 @@ extension NSMutableString$Methods on NSMutableString {
   }
 
   /// initWithBytesNoCopy:length:encoding:deallocator:
-  NSMutableString? initWithBytesNoCopy(
+  NSMutableString? initWithBytesNoCopyLengthEncodingDeallocator(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
     required int encoding,
@@ -12936,7 +13409,7 @@ extension NSMutableString$Methods on NSMutableString {
   }
 
   /// initWithBytesNoCopy:length:encoding:freeWhenDone:
-  NSMutableString? initWithBytesNoCopy$1(
+  NSMutableString? initWithBytesNoCopyLengthEncodingFreeWhenDone(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
     required int encoding,
@@ -12986,7 +13459,7 @@ extension NSMutableString$Methods on NSMutableString {
   }
 
   /// initWithCharactersNoCopy:length:deallocator:
-  NSMutableString initWithCharactersNoCopy(
+  NSMutableString initWithCharactersNoCopyLengthDeallocator(
     ffi.Pointer<ffi.UnsignedShort> chars, {
     required int length,
     objc.ObjCBlock<
@@ -13005,7 +13478,7 @@ extension NSMutableString$Methods on NSMutableString {
   }
 
   /// initWithCharactersNoCopy:length:freeWhenDone:
-  NSMutableString initWithCharactersNoCopy$1(
+  NSMutableString initWithCharactersNoCopyLengthFreeWhenDone(
     ffi.Pointer<ffi.UnsignedShort> characters, {
     required int length,
     required bool freeWhenDone,
@@ -13033,7 +13506,7 @@ extension NSMutableString$Methods on NSMutableString {
   }
 
   /// initWithContentsOfFile:encoding:error:
-  NSMutableString? initWithContentsOfFile(
+  NSMutableString? initWithContentsOfFileEncodingError(
     NSString path, {
     required int encoding,
   }) {
@@ -13056,7 +13529,7 @@ extension NSMutableString$Methods on NSMutableString {
   }
 
   /// initWithContentsOfFile:usedEncoding:error:
-  NSMutableString? initWithContentsOfFile$1(
+  NSMutableString? initWithContentsOfFileUsedEncodingError(
     NSString path, {
     required ffi.Pointer<ffi.UnsignedLong> usedEncoding,
   }) {
@@ -13079,7 +13552,10 @@ extension NSMutableString$Methods on NSMutableString {
   }
 
   /// initWithContentsOfURL:encoding:error:
-  NSMutableString? initWithContentsOfURL(NSURL url, {required int encoding}) {
+  NSMutableString? initWithContentsOfURLEncodingError(
+    NSURL url, {
+    required int encoding,
+  }) {
     final $err = pkg_ffi.calloc<ffi.Pointer<objc.ObjCObjectImpl>>();
     try {
       final $ret = _objc_msgSend_1nomli1(
@@ -13099,7 +13575,7 @@ extension NSMutableString$Methods on NSMutableString {
   }
 
   /// initWithContentsOfURL:usedEncoding:error:
-  NSMutableString? initWithContentsOfURL$1(
+  NSMutableString? initWithContentsOfURLUsedEncodingError(
     NSURL url, {
     required ffi.Pointer<ffi.UnsignedLong> usedEncoding,
   }) {
@@ -13145,7 +13621,10 @@ extension NSMutableString$Methods on NSMutableString {
   }
 
   /// initWithFormat:locale:
-  NSMutableString initWithFormat$1(NSString format, {objc.ObjCObject? locale}) {
+  NSMutableString initWithFormatLocale(
+    NSString format, {
+    objc.ObjCObject? locale,
+  }) {
     final $ret = _objc_msgSend_15qeuct(
       object$.ref.retainAndReturnPointer(),
       _sel_initWithFormat_locale_,
@@ -13183,7 +13662,7 @@ extension NSMutableString$Methods on NSMutableString {
   ///
   /// iOS: introduced 16.0.0
   /// macOS: introduced 13.0.0
-  NSMutableString? initWithValidatedFormat(
+  NSMutableString? initWithValidatedFormatValidFormatSpecifiersError(
     NSString format, {
     required NSString validFormatSpecifiers,
   }) {
@@ -13214,7 +13693,7 @@ extension NSMutableString$Methods on NSMutableString {
   ///
   /// iOS: introduced 16.0.0
   /// macOS: introduced 13.0.0
-  NSMutableString? initWithValidatedFormat$1(
+  NSMutableString? initWithValidatedFormatValidFormatSpecifiersLocaleError(
     NSString format, {
     required NSString validFormatSpecifiers,
     objc.ObjCObject? locale,
@@ -13303,7 +13782,7 @@ extension type NSNotification._(objc.ObjCObject object$)
   }
 
   /// notificationWithName:object:
-  static NSNotification notificationWithName(
+  static NSNotification notificationWithNameObject(
     NSString aName, {
     objc.ObjCObject? object,
   }) {
@@ -13317,7 +13796,7 @@ extension type NSNotification._(objc.ObjCObject object$)
   }
 
   /// notificationWithName:object:userInfo:
-  static NSNotification notificationWithName$1(
+  static NSNotification notificationWithNameObjectUserInfo(
     NSString aName, {
     objc.ObjCObject? object,
     NSDictionary? userInfo,
@@ -14481,7 +14960,7 @@ extension NSObject$Methods on NSObject {
   }
 
   /// performSelector:withObject:
-  objc.ObjCObject performSelector$1(
+  objc.ObjCObject performSelectorWithObject(
     ffi.Pointer<objc.ObjCSelector> aSelector, {
     required objc.ObjCObject withObject,
   }) {
@@ -14495,7 +14974,7 @@ extension NSObject$Methods on NSObject {
   }
 
   /// performSelector:withObject:withObject:
-  objc.ObjCObject performSelector$2(
+  objc.ObjCObject performSelectorWithObjectWithObject(
     ffi.Pointer<objc.ObjCSelector> aSelector, {
     required objc.ObjCObject withObject,
     required objc.ObjCObject withObject$1,
@@ -14615,7 +15094,7 @@ extension NSObjectProtocol$Methods on NSObjectProtocol {
   }
 
   /// isProxy
-  bool get isProxy {
+  bool isProxy() {
     return _objc_msgSend_91o635(object$.ref.pointer, _sel_isProxy);
   }
 
@@ -14630,7 +15109,7 @@ extension NSObjectProtocol$Methods on NSObjectProtocol {
   }
 
   /// performSelector:withObject:
-  objc.ObjCObject performSelector$1(
+  objc.ObjCObject performSelectorWithObject(
     ffi.Pointer<objc.ObjCSelector> aSelector, {
     required objc.ObjCObject withObject,
   }) {
@@ -14644,7 +15123,7 @@ extension NSObjectProtocol$Methods on NSObjectProtocol {
   }
 
   /// performSelector:withObject:withObject:
-  objc.ObjCObject performSelector$2(
+  objc.ObjCObject performSelectorWithObjectWithObject(
     ffi.Pointer<objc.ObjCSelector> aSelector, {
     required objc.ObjCObject withObject,
     required objc.ObjCObject withObject$1,
@@ -14700,6 +15179,82 @@ extension NSObjectProtocol$Methods on NSObjectProtocol {
   ffi.Pointer<NSZone> zone() {
     return _objc_msgSend_sz90oi(object$.ref.pointer, _sel_zone);
   }
+}
+
+abstract interface class NSObjectProtocolSpec {
+  /// autorelease
+  NSObjectProtocol autorelease();
+
+  /// class
+  objc.ObjCObject class$();
+
+  /// conformsToProtocol:
+  bool conformsToProtocol(Protocol aProtocol);
+
+  /// description
+  NSString get description;
+
+  /// hash
+  int get hash;
+
+  /// isEqual:
+  bool isEqual(objc.ObjCObject object);
+
+  /// isKindOfClass:
+  bool isKindOfClass(objc.ObjCObject aClass);
+
+  /// isMemberOfClass:
+  bool isMemberOfClass(objc.ObjCObject aClass);
+
+  /// isProxy
+  bool isProxy();
+
+  /// performSelector:
+  objc.ObjCObject performSelector(ffi.Pointer<objc.ObjCSelector> aSelector);
+
+  /// performSelector:withObject:
+  objc.ObjCObject performSelectorWithObject(
+    ffi.Pointer<objc.ObjCSelector> aSelector, {
+    required objc.ObjCObject withObject,
+  });
+
+  /// performSelector:withObject:withObject:
+  objc.ObjCObject performSelectorWithObjectWithObject(
+    ffi.Pointer<objc.ObjCSelector> aSelector, {
+    required objc.ObjCObject withObject,
+    required objc.ObjCObject withObject$1,
+  });
+
+  /// release
+  void release();
+
+  /// respondsToSelector:
+  bool respondsToSelector(ffi.Pointer<objc.ObjCSelector> aSelector);
+
+  /// retain
+  NSObjectProtocol retain();
+
+  /// retainCount
+  int retainCount();
+
+  /// self
+  NSObjectProtocol self();
+
+  /// superclass
+  objc.ObjCObject get superclass;
+
+  /// zone
+  ffi.Pointer<NSZone> zone();
+}
+
+abstract interface class NSObjectProtocolOptional {
+  /// debugDescription
+  NSString get debugDescription;
+}
+
+mixin NSObjectProtocolDefaults implements NSObjectProtocolOptional {
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
 
 interface class NSObjectProtocol$Builder {
@@ -14873,6 +15428,133 @@ interface class NSObjectProtocol$Builder {
     NSObjectProtocol$Builder.superclass.implement(builder, superclass);
     NSObjectProtocol$Builder.zone.implement(builder, zone);
     builder.addProtocol($protocol);
+  }
+
+  /// Builds an object that implements the NSObject protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [NSObjectProtocolOptional].
+  static NSObjectProtocol implementFrom(
+    NSObjectProtocolSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    final NSObjectProtocolOptional? optionalImplementation =
+        implementation is NSObjectProtocolOptional
+        ? implementation as NSObjectProtocolOptional
+        : null;
+    return implement(
+      autorelease: () => implementation.autorelease(),
+      class$: () => implementation.class$(),
+      conformsToProtocol_: (Protocol aProtocol) =>
+          implementation.conformsToProtocol(aProtocol),
+      debugDescription:
+          NSObjectProtocol$Builder.debugDescription.isAvailable &&
+              optionalImplementation != null
+          ? () => optionalImplementation.debugDescription
+          : null,
+      description: () => implementation.description,
+      hash: () => implementation.hash,
+      isEqual_: (objc.ObjCObject object) => implementation.isEqual(object),
+      isKindOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isKindOfClass(aClass),
+      isMemberOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isMemberOfClass(aClass),
+      isProxy: () => implementation.isProxy(),
+      performSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.performSelector(aSelector),
+      performSelector_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+          ) => implementation.performSelectorWithObject(
+            aSelector,
+            withObject: withObject,
+          ),
+      performSelector_withObject_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+            objc.ObjCObject withObject$1,
+          ) => implementation.performSelectorWithObjectWithObject(
+            aSelector,
+            withObject: withObject,
+            withObject$1: withObject$1,
+          ),
+      release: () {
+        implementation.release();
+      },
+      respondsToSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.respondsToSelector(aSelector),
+      retain: () => implementation.retain(),
+      retainCount: () => implementation.retainCount(),
+      self: () => implementation.self(),
+      superclass: () => implementation.superclass,
+      zone: () => implementation.zone(),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSObject protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    NSObjectProtocolSpec implementation,
+  ) {
+    final NSObjectProtocolOptional? optionalImplementation =
+        implementation is NSObjectProtocolOptional
+        ? implementation as NSObjectProtocolOptional
+        : null;
+    addToBuilder(
+      builder,
+      autorelease: () => implementation.autorelease(),
+      class$: () => implementation.class$(),
+      conformsToProtocol_: (Protocol aProtocol) =>
+          implementation.conformsToProtocol(aProtocol),
+      debugDescription:
+          NSObjectProtocol$Builder.debugDescription.isAvailable &&
+              optionalImplementation != null
+          ? () => optionalImplementation.debugDescription
+          : null,
+      description: () => implementation.description,
+      hash: () => implementation.hash,
+      isEqual_: (objc.ObjCObject object) => implementation.isEqual(object),
+      isKindOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isKindOfClass(aClass),
+      isMemberOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isMemberOfClass(aClass),
+      isProxy: () => implementation.isProxy(),
+      performSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.performSelector(aSelector),
+      performSelector_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+          ) => implementation.performSelectorWithObject(
+            aSelector,
+            withObject: withObject,
+          ),
+      performSelector_withObject_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+            objc.ObjCObject withObject$1,
+          ) => implementation.performSelectorWithObjectWithObject(
+            aSelector,
+            withObject: withObject,
+            withObject$1: withObject$1,
+          ),
+      release: () {
+        implementation.release();
+      },
+      respondsToSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.respondsToSelector(aSelector),
+      retain: () => implementation.retain(),
+      retainCount: () => implementation.retainCount(),
+      self: () => implementation.self(),
+      superclass: () => implementation.superclass,
+      zone: () => implementation.zone(),
+    );
   }
 
   /// Builds an object that implements the NSObject protocol. To implement
@@ -15213,6 +15895,258 @@ interface class NSObjectProtocol$Builder {
     NSObjectProtocol$Builder.superclass.implement(builder, superclass);
     NSObjectProtocol$Builder.zone.implement(builder, zone);
     builder.addProtocol($protocol);
+  }
+
+  /// Builds an object that implements the NSObject protocol using members
+  /// from [implementation]. Methods that support listener implementations will
+  /// use them.
+  static NSObjectProtocol implementFromAsListener(
+    NSObjectProtocolSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    final NSObjectProtocolOptional? optionalImplementation =
+        implementation is NSObjectProtocolOptional
+        ? implementation as NSObjectProtocolOptional
+        : null;
+    return implementAsListener(
+      autorelease: () => implementation.autorelease(),
+      class$: () => implementation.class$(),
+      conformsToProtocol_: (Protocol aProtocol) =>
+          implementation.conformsToProtocol(aProtocol),
+      debugDescription:
+          NSObjectProtocol$Builder.debugDescription.isAvailable &&
+              optionalImplementation != null
+          ? () => optionalImplementation.debugDescription
+          : null,
+      description: () => implementation.description,
+      hash: () => implementation.hash,
+      isEqual_: (objc.ObjCObject object) => implementation.isEqual(object),
+      isKindOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isKindOfClass(aClass),
+      isMemberOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isMemberOfClass(aClass),
+      isProxy: () => implementation.isProxy(),
+      performSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.performSelector(aSelector),
+      performSelector_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+          ) => implementation.performSelectorWithObject(
+            aSelector,
+            withObject: withObject,
+          ),
+      performSelector_withObject_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+            objc.ObjCObject withObject$1,
+          ) => implementation.performSelectorWithObjectWithObject(
+            aSelector,
+            withObject: withObject,
+            withObject$1: withObject$1,
+          ),
+      release: () {
+        implementation.release();
+      },
+      respondsToSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.respondsToSelector(aSelector),
+      retain: () => implementation.retain(),
+      retainCount: () => implementation.retainCount(),
+      self: () => implementation.self(),
+      superclass: () => implementation.superclass,
+      zone: () => implementation.zone(),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSObject protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support listener implementations will use them.
+  static void addToBuilderFromAsListener(
+    objc.ObjCProtocolBuilder builder,
+    NSObjectProtocolSpec implementation,
+  ) {
+    final NSObjectProtocolOptional? optionalImplementation =
+        implementation is NSObjectProtocolOptional
+        ? implementation as NSObjectProtocolOptional
+        : null;
+    addToBuilderAsListener(
+      builder,
+      autorelease: () => implementation.autorelease(),
+      class$: () => implementation.class$(),
+      conformsToProtocol_: (Protocol aProtocol) =>
+          implementation.conformsToProtocol(aProtocol),
+      debugDescription:
+          NSObjectProtocol$Builder.debugDescription.isAvailable &&
+              optionalImplementation != null
+          ? () => optionalImplementation.debugDescription
+          : null,
+      description: () => implementation.description,
+      hash: () => implementation.hash,
+      isEqual_: (objc.ObjCObject object) => implementation.isEqual(object),
+      isKindOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isKindOfClass(aClass),
+      isMemberOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isMemberOfClass(aClass),
+      isProxy: () => implementation.isProxy(),
+      performSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.performSelector(aSelector),
+      performSelector_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+          ) => implementation.performSelectorWithObject(
+            aSelector,
+            withObject: withObject,
+          ),
+      performSelector_withObject_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+            objc.ObjCObject withObject$1,
+          ) => implementation.performSelectorWithObjectWithObject(
+            aSelector,
+            withObject: withObject,
+            withObject$1: withObject$1,
+          ),
+      release: () {
+        implementation.release();
+      },
+      respondsToSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.respondsToSelector(aSelector),
+      retain: () => implementation.retain(),
+      retainCount: () => implementation.retainCount(),
+      self: () => implementation.self(),
+      superclass: () => implementation.superclass,
+      zone: () => implementation.zone(),
+    );
+  }
+
+  /// Builds an object that implements the NSObject protocol using members
+  /// from [implementation]. Methods that support blocking listener
+  /// implementations will use them.
+  static NSObjectProtocol implementFromAsBlocking(
+    NSObjectProtocolSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    final NSObjectProtocolOptional? optionalImplementation =
+        implementation is NSObjectProtocolOptional
+        ? implementation as NSObjectProtocolOptional
+        : null;
+    return implementAsBlocking(
+      autorelease: () => implementation.autorelease(),
+      class$: () => implementation.class$(),
+      conformsToProtocol_: (Protocol aProtocol) =>
+          implementation.conformsToProtocol(aProtocol),
+      debugDescription:
+          NSObjectProtocol$Builder.debugDescription.isAvailable &&
+              optionalImplementation != null
+          ? () => optionalImplementation.debugDescription
+          : null,
+      description: () => implementation.description,
+      hash: () => implementation.hash,
+      isEqual_: (objc.ObjCObject object) => implementation.isEqual(object),
+      isKindOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isKindOfClass(aClass),
+      isMemberOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isMemberOfClass(aClass),
+      isProxy: () => implementation.isProxy(),
+      performSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.performSelector(aSelector),
+      performSelector_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+          ) => implementation.performSelectorWithObject(
+            aSelector,
+            withObject: withObject,
+          ),
+      performSelector_withObject_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+            objc.ObjCObject withObject$1,
+          ) => implementation.performSelectorWithObjectWithObject(
+            aSelector,
+            withObject: withObject,
+            withObject$1: withObject$1,
+          ),
+      release: () {
+        implementation.release();
+      },
+      respondsToSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.respondsToSelector(aSelector),
+      retain: () => implementation.retain(),
+      retainCount: () => implementation.retainCount(),
+      self: () => implementation.self(),
+      superclass: () => implementation.superclass,
+      zone: () => implementation.zone(),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSObject protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support blocking listener implementations will use them.
+  static void addToBuilderFromAsBlocking(
+    objc.ObjCProtocolBuilder builder,
+    NSObjectProtocolSpec implementation,
+  ) {
+    final NSObjectProtocolOptional? optionalImplementation =
+        implementation is NSObjectProtocolOptional
+        ? implementation as NSObjectProtocolOptional
+        : null;
+    addToBuilderAsBlocking(
+      builder,
+      autorelease: () => implementation.autorelease(),
+      class$: () => implementation.class$(),
+      conformsToProtocol_: (Protocol aProtocol) =>
+          implementation.conformsToProtocol(aProtocol),
+      debugDescription:
+          NSObjectProtocol$Builder.debugDescription.isAvailable &&
+              optionalImplementation != null
+          ? () => optionalImplementation.debugDescription
+          : null,
+      description: () => implementation.description,
+      hash: () => implementation.hash,
+      isEqual_: (objc.ObjCObject object) => implementation.isEqual(object),
+      isKindOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isKindOfClass(aClass),
+      isMemberOfClass_: (objc.ObjCObject aClass) =>
+          implementation.isMemberOfClass(aClass),
+      isProxy: () => implementation.isProxy(),
+      performSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.performSelector(aSelector),
+      performSelector_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+          ) => implementation.performSelectorWithObject(
+            aSelector,
+            withObject: withObject,
+          ),
+      performSelector_withObject_withObject_:
+          (
+            ffi.Pointer<objc.ObjCSelector> aSelector,
+            objc.ObjCObject withObject,
+            objc.ObjCObject withObject$1,
+          ) => implementation.performSelectorWithObjectWithObject(
+            aSelector,
+            withObject: withObject,
+            withObject$1: withObject$1,
+          ),
+      release: () {
+        implementation.release();
+      },
+      respondsToSelector_: (ffi.Pointer<objc.ObjCSelector> aSelector) =>
+          implementation.respondsToSelector(aSelector),
+      retain: () => implementation.retain(),
+      retainCount: () => implementation.retainCount(),
+      self: () => implementation.self(),
+      superclass: () => implementation.superclass,
+      zone: () => implementation.zone(),
+    );
   }
 
   /// autorelease
@@ -15771,6 +16705,26 @@ interface class NSObjectProtocol$Builder {
   );
 }
 
+mixin NSObjectProtocolAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final NSObjectProtocol asNSObjectProtocol =
+      NSObjectProtocol$Builder.implementFrom(this as NSObjectProtocolSpec);
+
+  /// Lazily creates a listener-backed native adapter for this Dart
+  /// implementation.
+  late final NSObjectProtocol asNSObjectProtocolListener =
+      NSObjectProtocol$Builder.implementFromAsListener(
+        this as NSObjectProtocolSpec,
+      );
+
+  /// Lazily creates a blocking-listener-backed native adapter for this Dart
+  /// implementation.
+  late final NSObjectProtocol asNSObjectProtocolBlocking =
+      NSObjectProtocol$Builder.implementFromAsBlocking(
+        this as NSObjectProtocolSpec,
+      );
+}
+
 /// NSOrderedCollectionChange
 ///
 /// iOS: introduced 13.0.0
@@ -15841,7 +16795,7 @@ extension type NSOrderedCollectionChange._(objc.ObjCObject object$)
   ///
   /// iOS: introduced 13.0.0
   /// macOS: introduced 10.15.0
-  static NSOrderedCollectionChange changeWithObject(
+  static NSOrderedCollectionChange changeWithObjectTypeIndex(
     objc.ObjCObject? anObject, {
     required NSCollectionChangeType type,
     required int index,
@@ -15869,7 +16823,7 @@ extension type NSOrderedCollectionChange._(objc.ObjCObject object$)
   ///
   /// iOS: introduced 13.0.0
   /// macOS: introduced 10.15.0
-  static NSOrderedCollectionChange changeWithObject$1(
+  static NSOrderedCollectionChange changeWithObjectTypeIndexAssociatedIndex(
     objc.ObjCObject? anObject, {
     required NSCollectionChangeType type,
     required int index,
@@ -15969,7 +16923,7 @@ extension NSOrderedCollectionChange$Methods on NSOrderedCollectionChange {
   ///
   /// iOS: introduced 13.0.0
   /// macOS: introduced 10.15.0
-  NSOrderedCollectionChange initWithObject(
+  NSOrderedCollectionChange initWithObjectTypeIndex(
     objc.ObjCObject? anObject, {
     required NSCollectionChangeType type,
     required int index,
@@ -15997,7 +16951,7 @@ extension NSOrderedCollectionChange$Methods on NSOrderedCollectionChange {
   ///
   /// iOS: introduced 13.0.0
   /// macOS: introduced 10.15.0
-  NSOrderedCollectionChange initWithObject$1(
+  NSOrderedCollectionChange initWithObjectTypeIndexAssociatedIndex(
     objc.ObjCObject? anObject, {
     required NSCollectionChangeType type,
     required int index,
@@ -16220,7 +17174,8 @@ extension NSOrderedCollectionDifference$Methods
   ///
   /// iOS: introduced 13.0.0
   /// macOS: introduced 10.15.0
-  NSOrderedCollectionDifference initWithInsertIndexes(
+  NSOrderedCollectionDifference
+  initWithInsertIndexesInsertedObjectsRemoveIndexesRemovedObjects(
     NSIndexSet inserts, {
     NSArray? insertedObjects,
     required NSIndexSet removeIndexes,
@@ -16250,7 +17205,8 @@ extension NSOrderedCollectionDifference$Methods
   ///
   /// iOS: introduced 13.0.0
   /// macOS: introduced 10.15.0
-  NSOrderedCollectionDifference initWithInsertIndexes$1(
+  NSOrderedCollectionDifference
+  initWithInsertIndexesInsertedObjectsRemoveIndexesRemovedObjectsAdditionalChanges(
     NSIndexSet inserts, {
     NSArray? insertedObjects,
     required NSIndexSet removeIndexes,
@@ -16423,7 +17379,7 @@ extension type NSOrderedSet._(objc.ObjCObject object$)
   }
 
   /// orderedSetWithArray:range:copyItems:
-  static NSOrderedSet orderedSetWithArray$1(
+  static NSOrderedSet orderedSetWithArrayRangeCopyItems(
     NSArray array, {
     required NSRange range,
     required bool copyItems,
@@ -16474,7 +17430,7 @@ extension type NSOrderedSet._(objc.ObjCObject object$)
   }
 
   /// orderedSetWithObjects:count:
-  static NSOrderedSet orderedSetWithObjects$1(
+  static NSOrderedSet orderedSetWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -16508,7 +17464,7 @@ extension type NSOrderedSet._(objc.ObjCObject object$)
   }
 
   /// orderedSetWithOrderedSet:range:copyItems:
-  static NSOrderedSet orderedSetWithOrderedSet$1(
+  static NSOrderedSet orderedSetWithOrderedSetRangeCopyItems(
     NSOrderedSet set, {
     required NSRange range,
     required bool copyItems,
@@ -16544,7 +17500,7 @@ extension type NSOrderedSet._(objc.ObjCObject object$)
   }
 
   /// orderedSetWithSet:copyItems:
-  static NSOrderedSet orderedSetWithSet$1(
+  static NSOrderedSet orderedSetWithSetCopyItems(
     NSSet set, {
     required bool copyItems,
   }) {
@@ -16650,7 +17606,7 @@ extension NSOrderedSet$Methods on NSOrderedSet {
   }
 
   /// initWithArray:copyItems:
-  NSOrderedSet initWithArray$1(NSArray set, {required bool copyItems}) {
+  NSOrderedSet initWithArrayCopyItems(NSArray set, {required bool copyItems}) {
     objc.checkOsVersionInternal(
       'NSOrderedSet.initWithArray:copyItems:',
       iOS: (false, (5, 0, 0)),
@@ -16666,7 +17622,7 @@ extension NSOrderedSet$Methods on NSOrderedSet {
   }
 
   /// initWithArray:range:copyItems:
-  NSOrderedSet initWithArray$2(
+  NSOrderedSet initWithArrayRangeCopyItems(
     NSArray set, {
     required NSRange range,
     required bool copyItems,
@@ -16729,7 +17685,7 @@ extension NSOrderedSet$Methods on NSOrderedSet {
   }
 
   /// initWithObjects:count:
-  NSOrderedSet initWithObjects$1(
+  NSOrderedSet initWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -16763,7 +17719,7 @@ extension NSOrderedSet$Methods on NSOrderedSet {
   }
 
   /// initWithOrderedSet:copyItems:
-  NSOrderedSet initWithOrderedSet$1(
+  NSOrderedSet initWithOrderedSetCopyItems(
     NSOrderedSet set, {
     required bool copyItems,
   }) {
@@ -16782,7 +17738,7 @@ extension NSOrderedSet$Methods on NSOrderedSet {
   }
 
   /// initWithOrderedSet:range:copyItems:
-  NSOrderedSet initWithOrderedSet$2(
+  NSOrderedSet initWithOrderedSetRangeCopyItems(
     NSOrderedSet set, {
     required NSRange range,
     required bool copyItems,
@@ -16818,7 +17774,7 @@ extension NSOrderedSet$Methods on NSOrderedSet {
   }
 
   /// initWithSet:copyItems:
-  NSOrderedSet initWithSet$1(NSSet set, {required bool copyItems}) {
+  NSOrderedSet initWithSetCopyItems(NSSet set, {required bool copyItems}) {
     objc.checkOsVersionInternal(
       'NSOrderedSet.initWithSet:copyItems:',
       iOS: (false, (5, 0, 0)),
@@ -17182,7 +18138,7 @@ extension NSPort$Methods on NSPort {
   }
 
   /// sendBeforeDate:components:from:reserved:
-  bool sendBeforeDate(
+  bool sendBeforeDateComponentsFromReserved(
     NSDate limitDate, {
     NSMutableArray? components,
     NSPort? from,
@@ -17199,7 +18155,7 @@ extension NSPort$Methods on NSPort {
   }
 
   /// sendBeforeDate:msgid:components:from:reserved:
-  bool sendBeforeDate$1(
+  bool sendBeforeDateMsgidComponentsFromReserved(
     NSDate limitDate, {
     required int msgid,
     NSMutableArray? components,
@@ -17270,6 +18226,18 @@ extension NSPortDelegate$Methods on NSPortDelegate {
   }
 }
 
+abstract interface class NSPortDelegateSpec {}
+
+abstract interface class NSPortDelegateOptional {
+  /// handlePortMessage:
+  void handlePortMessage(NSPortMessage message);
+}
+
+mixin NSPortDelegateDefaults implements NSPortDelegateOptional {
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+}
+
 interface class NSPortDelegate$Builder {
   /// Returns the [objc.Protocol] object for this protocol.
   static objc.Protocol get $protocol =>
@@ -17309,6 +18277,53 @@ interface class NSPortDelegate$Builder {
       handlePortMessage_,
     );
     builder.addProtocol($protocol);
+  }
+
+  /// Builds an object that implements the NSPortDelegate protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [NSPortDelegateOptional].
+  static NSPortDelegate implementFrom(
+    NSPortDelegateSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    final NSPortDelegateOptional? optionalImplementation =
+        implementation is NSPortDelegateOptional
+        ? implementation as NSPortDelegateOptional
+        : null;
+    return implement(
+      handlePortMessage_:
+          NSPortDelegate$Builder.handlePortMessage_.isAvailable &&
+              optionalImplementation != null
+          ? (NSPortMessage message) {
+              optionalImplementation.handlePortMessage(message);
+            }
+          : null,
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSPortDelegate protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    NSPortDelegateSpec implementation,
+  ) {
+    final NSPortDelegateOptional? optionalImplementation =
+        implementation is NSPortDelegateOptional
+        ? implementation as NSPortDelegateOptional
+        : null;
+    addToBuilder(
+      builder,
+      handlePortMessage_:
+          NSPortDelegate$Builder.handlePortMessage_.isAvailable &&
+              optionalImplementation != null
+          ? (NSPortMessage message) {
+              optionalImplementation.handlePortMessage(message);
+            }
+          : null,
+    );
   }
 
   /// Builds an object that implements the NSPortDelegate protocol. To implement
@@ -17387,6 +18402,98 @@ interface class NSPortDelegate$Builder {
     builder.addProtocol($protocol);
   }
 
+  /// Builds an object that implements the NSPortDelegate protocol using members
+  /// from [implementation]. Methods that support listener implementations will
+  /// use them.
+  static NSPortDelegate implementFromAsListener(
+    NSPortDelegateSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    final NSPortDelegateOptional? optionalImplementation =
+        implementation is NSPortDelegateOptional
+        ? implementation as NSPortDelegateOptional
+        : null;
+    return implementAsListener(
+      handlePortMessage_:
+          NSPortDelegate$Builder.handlePortMessage_.isAvailable &&
+              optionalImplementation != null
+          ? (NSPortMessage message) {
+              optionalImplementation.handlePortMessage(message);
+            }
+          : null,
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSPortDelegate protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support listener implementations will use them.
+  static void addToBuilderFromAsListener(
+    objc.ObjCProtocolBuilder builder,
+    NSPortDelegateSpec implementation,
+  ) {
+    final NSPortDelegateOptional? optionalImplementation =
+        implementation is NSPortDelegateOptional
+        ? implementation as NSPortDelegateOptional
+        : null;
+    addToBuilderAsListener(
+      builder,
+      handlePortMessage_:
+          NSPortDelegate$Builder.handlePortMessage_.isAvailable &&
+              optionalImplementation != null
+          ? (NSPortMessage message) {
+              optionalImplementation.handlePortMessage(message);
+            }
+          : null,
+    );
+  }
+
+  /// Builds an object that implements the NSPortDelegate protocol using members
+  /// from [implementation]. Methods that support blocking listener
+  /// implementations will use them.
+  static NSPortDelegate implementFromAsBlocking(
+    NSPortDelegateSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    final NSPortDelegateOptional? optionalImplementation =
+        implementation is NSPortDelegateOptional
+        ? implementation as NSPortDelegateOptional
+        : null;
+    return implementAsBlocking(
+      handlePortMessage_:
+          NSPortDelegate$Builder.handlePortMessage_.isAvailable &&
+              optionalImplementation != null
+          ? (NSPortMessage message) {
+              optionalImplementation.handlePortMessage(message);
+            }
+          : null,
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSPortDelegate protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support blocking listener implementations will use them.
+  static void addToBuilderFromAsBlocking(
+    objc.ObjCProtocolBuilder builder,
+    NSPortDelegateSpec implementation,
+  ) {
+    final NSPortDelegateOptional? optionalImplementation =
+        implementation is NSPortDelegateOptional
+        ? implementation as NSPortDelegateOptional
+        : null;
+    addToBuilderAsBlocking(
+      builder,
+      handlePortMessage_:
+          NSPortDelegate$Builder.handlePortMessage_.isAvailable &&
+              optionalImplementation != null
+          ? (NSPortMessage message) {
+              optionalImplementation.handlePortMessage(message);
+            }
+          : null,
+    );
+  }
+
   /// handlePortMessage:
   static final handlePortMessage_ =
       objc.ObjCProtocolListenableMethod<void Function(NSPortMessage)>(
@@ -17420,6 +18527,26 @@ interface class NSPortDelegate$Builder {
             ObjCBlock_ffiVoid_ffiVoid_NSPortMessage.blocking(
               (ffi.Pointer<ffi.Void> _, NSPortMessage arg1) => func(arg1),
             ),
+      );
+}
+
+mixin NSPortDelegateAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final NSPortDelegate asNSPortDelegate =
+      NSPortDelegate$Builder.implementFrom(this as NSPortDelegateSpec);
+
+  /// Lazily creates a listener-backed native adapter for this Dart
+  /// implementation.
+  late final NSPortDelegate asNSPortDelegateListener =
+      NSPortDelegate$Builder.implementFromAsListener(
+        this as NSPortDelegateSpec,
+      );
+
+  /// Lazily creates a blocking-listener-backed native adapter for this Dart
+  /// implementation.
+  late final NSPortDelegate asNSPortDelegateBlocking =
+      NSPortDelegate$Builder.implementFromAsBlocking(
+        this as NSPortDelegateSpec,
       );
 }
 
@@ -17667,7 +18794,7 @@ extension type NSProgress._(objc.ObjCObject object$)
   }
 
   /// progressWithTotalUnitCount:parent:pendingUnitCount:
-  static NSProgress progressWithTotalUnitCount$1(
+  static NSProgress progressWithTotalUnitCountParentPendingUnitCount(
     int unitCount, {
     required NSProgress parent,
     required int pendingUnitCount,
@@ -18627,6 +19754,16 @@ extension NSSecureCoding$Methods on NSSecureCoding {
   }
 }
 
+abstract interface class NSSecureCodingSpec {
+  /// encodeWithCoder:
+  void encodeWithCoder(NSCoder coder);
+
+  /// initWithCoder:
+  NSSecureCoding? initWithCoder(NSCoder coder);
+}
+
+abstract interface class NSSecureCodingOptional {}
+
 interface class NSSecureCoding$Builder {
   /// Returns the [objc.Protocol] object for this protocol.
   static objc.Protocol get $protocol =>
@@ -18670,6 +19807,39 @@ interface class NSSecureCoding$Builder {
     );
     NSSecureCoding$Builder.initWithCoder_.implement(builder, initWithCoder_);
     builder.addProtocol($protocol);
+  }
+
+  /// Builds an object that implements the NSSecureCoding protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [NSSecureCodingOptional].
+  static NSSecureCoding implementFrom(
+    NSSecureCodingSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implement(
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSSecureCoding protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    NSSecureCodingSpec implementation,
+  ) {
+    addToBuilder(
+      builder,
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+    );
   }
 
   /// Builds an object that implements the NSSecureCoding protocol. To implement
@@ -18756,6 +19926,70 @@ interface class NSSecureCoding$Builder {
     builder.addProtocol($protocol);
   }
 
+  /// Builds an object that implements the NSSecureCoding protocol using members
+  /// from [implementation]. Methods that support listener implementations will
+  /// use them.
+  static NSSecureCoding implementFromAsListener(
+    NSSecureCodingSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implementAsListener(
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSSecureCoding protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support listener implementations will use them.
+  static void addToBuilderFromAsListener(
+    objc.ObjCProtocolBuilder builder,
+    NSSecureCodingSpec implementation,
+  ) {
+    addToBuilderAsListener(
+      builder,
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+    );
+  }
+
+  /// Builds an object that implements the NSSecureCoding protocol using members
+  /// from [implementation]. Methods that support blocking listener
+  /// implementations will use them.
+  static NSSecureCoding implementFromAsBlocking(
+    NSSecureCodingSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implementAsBlocking(
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSSecureCoding protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support blocking listener implementations will use them.
+  static void addToBuilderFromAsBlocking(
+    objc.ObjCProtocolBuilder builder,
+    NSSecureCodingSpec implementation,
+  ) {
+    addToBuilderAsBlocking(
+      builder,
+      encodeWithCoder_: (NSCoder coder) {
+        implementation.encodeWithCoder(coder);
+      },
+      initWithCoder_: (NSCoder coder) => implementation.initWithCoder(coder),
+    );
+  }
+
   /// encodeWithCoder:
   static final encodeWithCoder_ =
       objc.ObjCProtocolListenableMethod<void Function(NSCoder)>(
@@ -18816,6 +20050,26 @@ interface class NSSecureCoding$Builder {
             ObjCBlock_instancetype_ffiVoid_NSCoder.fromFunction(
               (ffi.Pointer<ffi.Void> _, NSCoder arg1) => func(arg1),
             ),
+      );
+}
+
+mixin NSSecureCodingAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final NSSecureCoding asNSSecureCoding =
+      NSSecureCoding$Builder.implementFrom(this as NSSecureCodingSpec);
+
+  /// Lazily creates a listener-backed native adapter for this Dart
+  /// implementation.
+  late final NSSecureCoding asNSSecureCodingListener =
+      NSSecureCoding$Builder.implementFromAsListener(
+        this as NSSecureCodingSpec,
+      );
+
+  /// Lazily creates a blocking-listener-backed native adapter for this Dart
+  /// implementation.
+  late final NSSecureCoding asNSSecureCodingBlocking =
+      NSSecureCoding$Builder.implementFromAsBlocking(
+        this as NSSecureCodingSpec,
       );
 }
 
@@ -18910,7 +20164,7 @@ extension type NSSet._(objc.ObjCObject object$)
   }
 
   /// setWithObjects:count:
-  static NSSet setWithObjects$1(
+  static NSSet setWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -19019,7 +20273,7 @@ extension NSSet$Methods on NSSet {
   }
 
   /// initWithObjects:count:
-  NSSet initWithObjects$1(
+  NSSet initWithObjectsCount(
     ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>> objects, {
     required int count,
   }) {
@@ -19043,7 +20297,7 @@ extension NSSet$Methods on NSSet {
   }
 
   /// initWithSet:copyItems:
-  NSSet initWithSet$1(NSSet set, {required bool copyItems}) {
+  NSSet initWithSetCopyItems(NSSet set, {required bool copyItems}) {
     final $ret = _objc_msgSend_17amj0z(
       object$.ref.retainAndReturnPointer(),
       _sel_initWithSet_copyItems_,
@@ -19275,6 +20529,18 @@ extension NSStreamDelegate$Methods on NSStreamDelegate {
   }
 }
 
+abstract interface class NSStreamDelegateSpec {}
+
+abstract interface class NSStreamDelegateOptional {
+  /// stream:handleEvent:
+  void stream(NSStream aStream, {required int handleEvent});
+}
+
+mixin NSStreamDelegateDefaults implements NSStreamDelegateOptional {
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+}
+
 interface class NSStreamDelegate$Builder {
   /// Returns the [objc.Protocol] object for this protocol.
   static objc.Protocol get $protocol =>
@@ -19314,6 +20580,53 @@ interface class NSStreamDelegate$Builder {
       stream_handleEvent_,
     );
     builder.addProtocol($protocol);
+  }
+
+  /// Builds an object that implements the NSStreamDelegate protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [NSStreamDelegateOptional].
+  static NSStreamDelegate implementFrom(
+    NSStreamDelegateSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    final NSStreamDelegateOptional? optionalImplementation =
+        implementation is NSStreamDelegateOptional
+        ? implementation as NSStreamDelegateOptional
+        : null;
+    return implement(
+      stream_handleEvent_:
+          NSStreamDelegate$Builder.stream_handleEvent_.isAvailable &&
+              optionalImplementation != null
+          ? (NSStream aStream, int handleEvent) {
+              optionalImplementation.stream(aStream, handleEvent: handleEvent);
+            }
+          : null,
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSStreamDelegate protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    NSStreamDelegateSpec implementation,
+  ) {
+    final NSStreamDelegateOptional? optionalImplementation =
+        implementation is NSStreamDelegateOptional
+        ? implementation as NSStreamDelegateOptional
+        : null;
+    addToBuilder(
+      builder,
+      stream_handleEvent_:
+          NSStreamDelegate$Builder.stream_handleEvent_.isAvailable &&
+              optionalImplementation != null
+          ? (NSStream aStream, int handleEvent) {
+              optionalImplementation.stream(aStream, handleEvent: handleEvent);
+            }
+          : null,
+    );
   }
 
   /// Builds an object that implements the NSStreamDelegate protocol. To implement
@@ -19392,6 +20705,98 @@ interface class NSStreamDelegate$Builder {
     builder.addProtocol($protocol);
   }
 
+  /// Builds an object that implements the NSStreamDelegate protocol using members
+  /// from [implementation]. Methods that support listener implementations will
+  /// use them.
+  static NSStreamDelegate implementFromAsListener(
+    NSStreamDelegateSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    final NSStreamDelegateOptional? optionalImplementation =
+        implementation is NSStreamDelegateOptional
+        ? implementation as NSStreamDelegateOptional
+        : null;
+    return implementAsListener(
+      stream_handleEvent_:
+          NSStreamDelegate$Builder.stream_handleEvent_.isAvailable &&
+              optionalImplementation != null
+          ? (NSStream aStream, int handleEvent) {
+              optionalImplementation.stream(aStream, handleEvent: handleEvent);
+            }
+          : null,
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSStreamDelegate protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support listener implementations will use them.
+  static void addToBuilderFromAsListener(
+    objc.ObjCProtocolBuilder builder,
+    NSStreamDelegateSpec implementation,
+  ) {
+    final NSStreamDelegateOptional? optionalImplementation =
+        implementation is NSStreamDelegateOptional
+        ? implementation as NSStreamDelegateOptional
+        : null;
+    addToBuilderAsListener(
+      builder,
+      stream_handleEvent_:
+          NSStreamDelegate$Builder.stream_handleEvent_.isAvailable &&
+              optionalImplementation != null
+          ? (NSStream aStream, int handleEvent) {
+              optionalImplementation.stream(aStream, handleEvent: handleEvent);
+            }
+          : null,
+    );
+  }
+
+  /// Builds an object that implements the NSStreamDelegate protocol using members
+  /// from [implementation]. Methods that support blocking listener
+  /// implementations will use them.
+  static NSStreamDelegate implementFromAsBlocking(
+    NSStreamDelegateSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    final NSStreamDelegateOptional? optionalImplementation =
+        implementation is NSStreamDelegateOptional
+        ? implementation as NSStreamDelegateOptional
+        : null;
+    return implementAsBlocking(
+      stream_handleEvent_:
+          NSStreamDelegate$Builder.stream_handleEvent_.isAvailable &&
+              optionalImplementation != null
+          ? (NSStream aStream, int handleEvent) {
+              optionalImplementation.stream(aStream, handleEvent: handleEvent);
+            }
+          : null,
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the NSStreamDelegate protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support blocking listener implementations will use them.
+  static void addToBuilderFromAsBlocking(
+    objc.ObjCProtocolBuilder builder,
+    NSStreamDelegateSpec implementation,
+  ) {
+    final NSStreamDelegateOptional? optionalImplementation =
+        implementation is NSStreamDelegateOptional
+        ? implementation as NSStreamDelegateOptional
+        : null;
+    addToBuilderAsBlocking(
+      builder,
+      stream_handleEvent_:
+          NSStreamDelegate$Builder.stream_handleEvent_.isAvailable &&
+              optionalImplementation != null
+          ? (NSStream aStream, int handleEvent) {
+              optionalImplementation.stream(aStream, handleEvent: handleEvent);
+            }
+          : null,
+    );
+  }
+
   /// stream:handleEvent:
   static final stream_handleEvent_ =
       objc.ObjCProtocolListenableMethod<void Function(NSStream, int)>(
@@ -19429,6 +20834,26 @@ interface class NSStreamDelegate$Builder {
               (ffi.Pointer<ffi.Void> _, NSStream arg1, int arg2) =>
                   func(arg1, arg2),
             ),
+      );
+}
+
+mixin NSStreamDelegateAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final NSStreamDelegate asNSStreamDelegate =
+      NSStreamDelegate$Builder.implementFrom(this as NSStreamDelegateSpec);
+
+  /// Lazily creates a listener-backed native adapter for this Dart
+  /// implementation.
+  late final NSStreamDelegate asNSStreamDelegateListener =
+      NSStreamDelegate$Builder.implementFromAsListener(
+        this as NSStreamDelegateSpec,
+      );
+
+  /// Lazily creates a blocking-listener-backed native adapter for this Dart
+  /// implementation.
+  late final NSStreamDelegate asNSStreamDelegateBlocking =
+      NSStreamDelegate$Builder.implementFromAsBlocking(
+        this as NSStreamDelegateSpec,
       );
 }
 
@@ -19604,7 +21029,7 @@ extension type NSString._(objc.ObjCObject object$)
   }
 
   /// stringWithContentsOfFile:encoding:error:
-  static NSString? stringWithContentsOfFile(
+  static NSString? stringWithContentsOfFileEncodingError(
     NSString path, {
     required int encoding,
   }) {
@@ -19627,7 +21052,7 @@ extension type NSString._(objc.ObjCObject object$)
   }
 
   /// stringWithContentsOfFile:usedEncoding:error:
-  static NSString? stringWithContentsOfFile$1(
+  static NSString? stringWithContentsOfFileUsedEncodingError(
     NSString path, {
     required ffi.Pointer<ffi.UnsignedLong> usedEncoding,
   }) {
@@ -19650,7 +21075,10 @@ extension type NSString._(objc.ObjCObject object$)
   }
 
   /// stringWithContentsOfURL:encoding:error:
-  static NSString? stringWithContentsOfURL(NSURL url, {required int encoding}) {
+  static NSString? stringWithContentsOfURLEncodingError(
+    NSURL url, {
+    required int encoding,
+  }) {
     final $err = pkg_ffi.calloc<ffi.Pointer<objc.ObjCObjectImpl>>();
     try {
       final $ret = _objc_msgSend_1nomli1(
@@ -19670,7 +21098,7 @@ extension type NSString._(objc.ObjCObject object$)
   }
 
   /// stringWithContentsOfURL:usedEncoding:error:
-  static NSString? stringWithContentsOfURL$1(
+  static NSString? stringWithContentsOfURLUsedEncodingError(
     NSURL url, {
     required ffi.Pointer<ffi.UnsignedLong> usedEncoding,
   }) {
@@ -19812,7 +21240,7 @@ extension NSString$Methods on NSString {
   }
 
   /// initWithBytesNoCopy:length:encoding:deallocator:
-  NSString? initWithBytesNoCopy(
+  NSString? initWithBytesNoCopyLengthEncodingDeallocator(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
     required int encoding,
@@ -19833,7 +21261,7 @@ extension NSString$Methods on NSString {
   }
 
   /// initWithBytesNoCopy:length:encoding:freeWhenDone:
-  NSString? initWithBytesNoCopy$1(
+  NSString? initWithBytesNoCopyLengthEncodingFreeWhenDone(
     ffi.Pointer<ffi.Void> bytes, {
     required int length,
     required int encoding,
@@ -19883,7 +21311,7 @@ extension NSString$Methods on NSString {
   }
 
   /// initWithCharactersNoCopy:length:deallocator:
-  NSString initWithCharactersNoCopy(
+  NSString initWithCharactersNoCopyLengthDeallocator(
     ffi.Pointer<ffi.UnsignedShort> chars, {
     required int length,
     objc.ObjCBlock<
@@ -19902,7 +21330,7 @@ extension NSString$Methods on NSString {
   }
 
   /// initWithCharactersNoCopy:length:freeWhenDone:
-  NSString initWithCharactersNoCopy$1(
+  NSString initWithCharactersNoCopyLengthFreeWhenDone(
     ffi.Pointer<ffi.UnsignedShort> characters, {
     required int length,
     required bool freeWhenDone,
@@ -19930,7 +21358,10 @@ extension NSString$Methods on NSString {
   }
 
   /// initWithContentsOfFile:encoding:error:
-  NSString? initWithContentsOfFile(NSString path, {required int encoding}) {
+  NSString? initWithContentsOfFileEncodingError(
+    NSString path, {
+    required int encoding,
+  }) {
     final $err = pkg_ffi.calloc<ffi.Pointer<objc.ObjCObjectImpl>>();
     try {
       final $ret = _objc_msgSend_1nomli1(
@@ -19950,7 +21381,7 @@ extension NSString$Methods on NSString {
   }
 
   /// initWithContentsOfFile:usedEncoding:error:
-  NSString? initWithContentsOfFile$1(
+  NSString? initWithContentsOfFileUsedEncodingError(
     NSString path, {
     required ffi.Pointer<ffi.UnsignedLong> usedEncoding,
   }) {
@@ -19973,7 +21404,10 @@ extension NSString$Methods on NSString {
   }
 
   /// initWithContentsOfURL:encoding:error:
-  NSString? initWithContentsOfURL(NSURL url, {required int encoding}) {
+  NSString? initWithContentsOfURLEncodingError(
+    NSURL url, {
+    required int encoding,
+  }) {
     final $err = pkg_ffi.calloc<ffi.Pointer<objc.ObjCObjectImpl>>();
     try {
       final $ret = _objc_msgSend_1nomli1(
@@ -19993,7 +21427,7 @@ extension NSString$Methods on NSString {
   }
 
   /// initWithContentsOfURL:usedEncoding:error:
-  NSString? initWithContentsOfURL$1(
+  NSString? initWithContentsOfURLUsedEncodingError(
     NSURL url, {
     required ffi.Pointer<ffi.UnsignedLong> usedEncoding,
   }) {
@@ -20039,7 +21473,7 @@ extension NSString$Methods on NSString {
   }
 
   /// initWithFormat:locale:
-  NSString initWithFormat$1(NSString format, {objc.ObjCObject? locale}) {
+  NSString initWithFormatLocale(NSString format, {objc.ObjCObject? locale}) {
     final $ret = _objc_msgSend_15qeuct(
       object$.ref.retainAndReturnPointer(),
       _sel_initWithFormat_locale_,
@@ -20075,7 +21509,7 @@ extension NSString$Methods on NSString {
   ///
   /// iOS: introduced 16.0.0
   /// macOS: introduced 13.0.0
-  NSString? initWithValidatedFormat(
+  NSString? initWithValidatedFormatValidFormatSpecifiersError(
     NSString format, {
     required NSString validFormatSpecifiers,
   }) {
@@ -20106,7 +21540,7 @@ extension NSString$Methods on NSString {
   ///
   /// iOS: introduced 16.0.0
   /// macOS: introduced 13.0.0
-  NSString? initWithValidatedFormat$1(
+  NSString? initWithValidatedFormatValidFormatSpecifiersLocaleError(
     NSString format, {
     required NSString validFormatSpecifiers,
     objc.ObjCObject? locale,
@@ -20262,7 +21696,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// compare:options:
-  NSComparisonResult compare$1(NSString string, {required int options}) {
+  NSComparisonResult compareOptions(NSString string, {required int options}) {
     final $ret = _objc_msgSend_pg1fnv(
       object$.ref.pointer,
       _sel_compare_options_,
@@ -20273,7 +21707,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// compare:options:range:
-  NSComparisonResult compare$2(
+  NSComparisonResult compareOptionsRange(
     NSString string, {
     required int options,
     required NSRange range,
@@ -20289,7 +21723,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// compare:options:range:locale:
-  NSComparisonResult compare$3(
+  NSComparisonResult compareOptionsRangeLocale(
     NSString string, {
     required int options,
     required NSRange range,
@@ -20358,7 +21792,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// dataUsingEncoding:allowLossyConversion:
-  NSData? dataUsingEncoding$1(
+  NSData? dataUsingEncodingAllowLossyConversion(
     int encoding, {
     required bool allowLossyConversion,
   }) {
@@ -20392,7 +21826,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// description
-  NSString get description$1 {
+  NSString get description {
     final $ret = _objc_msgSend_151sglz(object$.ref.pointer, _sel_description);
     return NSString.fromPointer($ret, retain: true, release: true);
   }
@@ -20559,7 +21993,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// hash
-  int get hash$1 {
+  int get hash {
     return _objc_msgSend_xw2lbc(object$.ref.pointer, _sel_hash);
   }
 
@@ -20856,7 +22290,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// rangeOfCharacterFromSet:options:
-  NSRange rangeOfCharacterFromSet$1(
+  NSRange rangeOfCharacterFromSetOptions(
     NSCharacterSet searchSet, {
     required int options,
   }) {
@@ -20883,7 +22317,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// rangeOfCharacterFromSet:options:range:
-  NSRange rangeOfCharacterFromSet$2(
+  NSRange rangeOfCharacterFromSetOptionsRange(
     NSCharacterSet searchSet, {
     required int options,
     required NSRange range,
@@ -20984,7 +22418,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// rangeOfString:options:
-  NSRange rangeOfString$1(NSString searchString, {required int options}) {
+  NSRange rangeOfStringOptions(NSString searchString, {required int options}) {
     final $ptr = pkg_ffi.calloc<NSRange>();
     objc.useMsgSendVariants
         ? _objc_msgSend_102xxo4Stret(
@@ -21008,7 +22442,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// rangeOfString:options:range:
-  NSRange rangeOfString$2(
+  NSRange rangeOfStringOptionsRange(
     NSString searchString, {
     required int options,
     required NSRange range,
@@ -21038,7 +22472,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// rangeOfString:options:range:locale:
-  NSRange rangeOfString$3(
+  NSRange rangeOfStringOptionsRangeLocale(
     NSString searchString, {
     required int options,
     required NSRange range,
@@ -21173,7 +22607,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// stringByReplacingOccurrencesOfString:withString:
-  NSString stringByReplacingOccurrencesOfString(
+  NSString stringByReplacingOccurrencesOfStringWithString(
     NSString target, {
     required NSString withString,
   }) {
@@ -21192,7 +22626,7 @@ extension NSStringExtensionMethods on NSString {
   }
 
   /// stringByReplacingOccurrencesOfString:withString:options:range:
-  NSString stringByReplacingOccurrencesOfString$1(
+  NSString stringByReplacingOccurrencesOfStringWithStringOptionsRange(
     NSString target, {
     required NSString withString,
     required int options,
@@ -21397,7 +22831,7 @@ extension type NSTimer._(objc.ObjCObject object$)
   }
 
   /// scheduledTimerWithTimeInterval:invocation:repeats:
-  static NSTimer scheduledTimerWithTimeInterval(
+  static NSTimer scheduledTimerWithTimeIntervalInvocationRepeats(
     double ti, {
     required NSInvocation invocation,
     required bool repeats,
@@ -21413,7 +22847,7 @@ extension type NSTimer._(objc.ObjCObject object$)
   }
 
   /// scheduledTimerWithTimeInterval:repeats:block:
-  static NSTimer scheduledTimerWithTimeInterval$1(
+  static NSTimer scheduledTimerWithTimeInterval(
     double interval, {
     required bool repeats,
     required objc.ObjCBlock<ffi.Void Function(NSTimer)> block,
@@ -21434,7 +22868,7 @@ extension type NSTimer._(objc.ObjCObject object$)
   }
 
   /// scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:
-  static NSTimer scheduledTimerWithTimeInterval$2(
+  static NSTimer scheduledTimerWithTimeIntervalTargetSelectorUserInfoRepeats(
     double ti, {
     required objc.ObjCObject target,
     required ffi.Pointer<objc.ObjCSelector> selector,
@@ -21454,7 +22888,7 @@ extension type NSTimer._(objc.ObjCObject object$)
   }
 
   /// timerWithTimeInterval:invocation:repeats:
-  static NSTimer timerWithTimeInterval(
+  static NSTimer timerWithTimeIntervalInvocationRepeats(
     double ti, {
     required NSInvocation invocation,
     required bool repeats,
@@ -21470,7 +22904,7 @@ extension type NSTimer._(objc.ObjCObject object$)
   }
 
   /// timerWithTimeInterval:repeats:block:
-  static NSTimer timerWithTimeInterval$1(
+  static NSTimer timerWithTimeInterval(
     double interval, {
     required bool repeats,
     required objc.ObjCBlock<ffi.Void Function(NSTimer)> block,
@@ -21491,7 +22925,7 @@ extension type NSTimer._(objc.ObjCObject object$)
   }
 
   /// timerWithTimeInterval:target:selector:userInfo:repeats:
-  static NSTimer timerWithTimeInterval$2(
+  static NSTimer timerWithTimeIntervalTargetSelectorUserInfoRepeats(
     double ti, {
     required objc.ObjCObject target,
     required ffi.Pointer<objc.ObjCSelector> selector,
@@ -21541,7 +22975,7 @@ extension NSTimer$Methods on NSTimer {
   }
 
   /// initWithFireDate:interval:repeats:block:
-  NSTimer initWithFireDate(
+  NSTimer initWithFireDateIntervalRepeatsBlock(
     NSDate date, {
     required double interval,
     required bool repeats,
@@ -21564,7 +22998,7 @@ extension NSTimer$Methods on NSTimer {
   }
 
   /// initWithFireDate:interval:target:selector:userInfo:repeats:
-  NSTimer initWithFireDate$1(
+  NSTimer initWithFireDateIntervalTargetSelectorUserInfoRepeats(
     NSDate date, {
     required double interval,
     required objc.ObjCObject target,
@@ -21760,7 +23194,7 @@ extension type NSURL._(objc.ObjCObject object$)
   ///
   /// iOS: introduced 17.0.0
   /// macOS: introduced 14.0.0
-  static NSURL? URLWithString$1(
+  static NSURL? URLWithStringEncodingInvalidCharacters(
     NSString URLString, {
     required bool encodingInvalidCharacters,
   }) {
@@ -21781,7 +23215,10 @@ extension type NSURL._(objc.ObjCObject object$)
   }
 
   /// URLWithString:relativeToURL:
-  static NSURL? URLWithString$2(NSString URLString, {NSURL? relativeToURL}) {
+  static NSURL? URLWithStringRelativeToURL(
+    NSString URLString, {
+    NSURL? relativeToURL,
+  }) {
     final $ret = _objc_msgSend_15qeuct(
       _class_NSURL,
       _sel_URLWithString_relativeToURL_,
@@ -21880,7 +23317,10 @@ extension type NSURL._(objc.ObjCObject object$)
   }
 
   /// fileURLWithPath:isDirectory:
-  static NSURL fileURLWithPath$1(NSString path, {required bool isDirectory}) {
+  static NSURL fileURLWithPathIsDirectory(
+    NSString path, {
+    required bool isDirectory,
+  }) {
     objc.checkOsVersionInternal(
       'NSURL.fileURLWithPath:isDirectory:',
       iOS: (false, (2, 0, 0)),
@@ -21896,7 +23336,7 @@ extension type NSURL._(objc.ObjCObject object$)
   }
 
   /// fileURLWithPath:isDirectory:relativeToURL:
-  static NSURL fileURLWithPath$2(
+  static NSURL fileURLWithPathIsDirectoryRelativeToURL(
     NSString path, {
     required bool isDirectory,
     NSURL? relativeToURL,
@@ -21917,7 +23357,10 @@ extension type NSURL._(objc.ObjCObject object$)
   }
 
   /// fileURLWithPath:relativeToURL:
-  static NSURL fileURLWithPath$3(NSString path, {NSURL? relativeToURL}) {
+  static NSURL fileURLWithPathRelativeToURL(
+    NSString path, {
+    NSURL? relativeToURL,
+  }) {
     objc.checkOsVersionInternal(
       'NSURL.fileURLWithPath:relativeToURL:',
       iOS: (false, (9, 0, 0)),
@@ -21939,7 +23382,7 @@ extension type NSURL._(objc.ObjCObject object$)
   }
 
   /// resourceValuesForKeys:fromBookmarkData:
-  static NSDictionary? resourceValuesForKeys$1(
+  static NSDictionary? resourceValuesForKeysFromBookmarkData(
     NSArray keys, {
     required NSData fromBookmarkData,
   }) {
@@ -22286,7 +23729,10 @@ extension NSURL$Methods on NSURL {
   }
 
   /// initFileURLWithPath:isDirectory:
-  NSURL initFileURLWithPath$1(NSString path, {required bool isDirectory}) {
+  NSURL initFileURLWithPathIsDirectory(
+    NSString path, {
+    required bool isDirectory,
+  }) {
     objc.checkOsVersionInternal(
       'NSURL.initFileURLWithPath:isDirectory:',
       iOS: (false, (2, 0, 0)),
@@ -22302,7 +23748,7 @@ extension NSURL$Methods on NSURL {
   }
 
   /// initFileURLWithPath:isDirectory:relativeToURL:
-  NSURL initFileURLWithPath$2(
+  NSURL initFileURLWithPathIsDirectoryRelativeToURL(
     NSString path, {
     required bool isDirectory,
     NSURL? relativeToURL,
@@ -22323,7 +23769,10 @@ extension NSURL$Methods on NSURL {
   }
 
   /// initFileURLWithPath:relativeToURL:
-  NSURL initFileURLWithPath$3(NSString path, {NSURL? relativeToURL}) {
+  NSURL initFileURLWithPathRelativeToURL(
+    NSString path, {
+    NSURL? relativeToURL,
+  }) {
     objc.checkOsVersionInternal(
       'NSURL.initFileURLWithPath:relativeToURL:',
       iOS: (false, (9, 0, 0)),
@@ -22382,7 +23831,7 @@ extension NSURL$Methods on NSURL {
   ///
   /// iOS: introduced 17.0.0
   /// macOS: introduced 14.0.0
-  NSURL? initWithString$1(
+  NSURL? initWithStringEncodingInvalidCharacters(
     NSString URLString, {
     required bool encodingInvalidCharacters,
   }) {
@@ -22403,7 +23852,10 @@ extension NSURL$Methods on NSURL {
   }
 
   /// initWithString:relativeToURL:
-  NSURL? initWithString$2(NSString URLString, {NSURL? relativeToURL}) {
+  NSURL? initWithStringRelativeToURL(
+    NSString URLString, {
+    NSURL? relativeToURL,
+  }) {
     final $ret = _objc_msgSend_15qeuct(
       object$.ref.retainAndReturnPointer(),
       _sel_initWithString_relativeToURL_,
@@ -22535,7 +23987,7 @@ extension NSURL$Methods on NSURL {
   }
 
   /// resourceValuesForKeys:error:
-  NSDictionary? resourceValuesForKeys(NSArray keys) {
+  NSDictionary? resourceValuesForKeysError(NSArray keys) {
     objc.checkOsVersionInternal(
       'NSURL.resourceValuesForKeys:error:',
       iOS: (false, (4, 0, 0)),
@@ -22955,6 +24407,18 @@ abstract final class ObjCBlock_NSArray_ffiVoid {
     release: true,
   );
 
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Pointer<objc.ObjCObjectImpl> Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_1mbt9g9)
+          .cast();
+
   static ffi.Pointer<objc.ObjCObjectImpl> _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
     ffi.Pointer<ffi.Void> arg0,
@@ -23254,6 +24718,19 @@ abstract final class ObjCBlock_NSItemProviderRepresentationVisibility_ffiVoid_NS
     retain: false,
     release: true,
   );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Long Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_1ldqghh)
+          .cast();
 
   static int _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
@@ -24099,6 +25576,20 @@ abstract final class ObjCBlock_NSProgress_ffiVoid_NSString_ffiVoidNSDataNSError 
         release: true,
       );
 
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Pointer<objc.ObjCObjectImpl> Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<objc.ObjCBlockImpl>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_1q0i84)
+          .cast();
+
   static ffi.Pointer<objc.ObjCObjectImpl> _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
     ffi.Pointer<ffi.Void> arg0,
@@ -24472,6 +25963,18 @@ abstract final class ObjCBlock_NSString_ffiVoid {
     release: true,
   );
 
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Pointer<objc.ObjCObjectImpl> Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_1mbt9g9)
+          .cast();
+
   static ffi.Pointer<objc.ObjCObjectImpl> _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
     ffi.Pointer<ffi.Void> arg0,
@@ -24586,6 +26089,18 @@ abstract final class ObjCBlock_NSUInteger_ffiVoid {
     retain: false,
     release: true,
   );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.UnsignedLong Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_1ckyi24)
+          .cast();
 
   static int _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
@@ -24750,6 +26265,21 @@ abstract final class ObjCBlock_NSUInteger_ffiVoid_NSFastEnumerationState_objcObj
         release: true,
       );
 
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.UnsignedLong Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<NSFastEnumerationState>,
+                ffi.Pointer<ffi.Pointer<objc.ObjCObjectImpl>>,
+                ffi.UnsignedLong,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_17ap02x)
+          .cast();
+
   static int _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
     ffi.Pointer<ffi.Void> arg0,
@@ -24907,6 +26437,18 @@ abstract final class ObjCBlock_NSZone_ffiVoid {
     release: true,
   );
 
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Pointer<NSZone> Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_1a8cl66)
+          .cast();
+
   static ffi.Pointer<NSZone> _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
     ffi.Pointer<ffi.Void> arg0,
@@ -24959,199 +26501,6 @@ extension ObjCBlock_NSZone_ffiVoid$CallExtension
           ffi.Pointer<ffi.Void>,
         )
       >()(ref.pointer, arg0);
-}
-
-/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
-abstract final class ObjCBlock_bool_KeyType_ObjectType_bool {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<
-    ffi.Bool Function(
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  fromPointer(
-    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
-    bool retain = false,
-    bool release = false,
-  }) =>
-      objc.ObjCBlock<
-        ffi.Bool Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >(pointer, retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<
-    ffi.Bool Function(
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  fromFunctionPointer(
-    ffi.Pointer<
-      ffi.NativeFunction<
-        ffi.Bool Function(
-          ffi.Pointer<objc.ObjCObjectImpl> arg0,
-          ffi.Pointer<objc.ObjCObjectImpl> arg1,
-          ffi.Pointer<ffi.Bool> arg2,
-        )
-      >
-    >
-    ptr,
-  ) =>
-      objc.ObjCBlock<
-        ffi.Bool Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >(
-        objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
-        retain: false,
-        release: true,
-      );
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC.
-  static objc.ObjCBlock<
-    ffi.Bool Function(
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  fromFunction(
-    bool Function(objc.ObjCObject, objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
-    bool keepIsolateAlive = true,
-  }) =>
-      objc.ObjCBlock<
-        ffi.Bool Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >(
-        objc.newClosureBlock(
-          _closureCallable,
-          (
-            ffi.Pointer<objc.ObjCObjectImpl> arg0,
-            ffi.Pointer<objc.ObjCObjectImpl> arg1,
-            ffi.Pointer<ffi.Bool> arg2,
-          ) => fn(
-            objc.ObjCObject(arg0, retain: true, release: true),
-            objc.ObjCObject(arg1, retain: true, release: true),
-            arg2,
-          ),
-          keepIsolateAlive,
-        ),
-        retain: false,
-        release: true,
-      );
-
-  static bool _fnPtrTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<objc.ObjCObjectImpl> arg0,
-    ffi.Pointer<objc.ObjCObjectImpl> arg1,
-    ffi.Pointer<ffi.Bool> arg2,
-  ) => block.ref.target
-      .cast<
-        ffi.NativeFunction<
-          ffi.Bool Function(
-            ffi.Pointer<objc.ObjCObjectImpl> arg0,
-            ffi.Pointer<objc.ObjCObjectImpl> arg1,
-            ffi.Pointer<ffi.Bool> arg2,
-          )
-        >
-      >()
-      .asFunction<
-        bool Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >()(arg0, arg1, arg2);
-  static ffi.Pointer<ffi.Void> _fnPtrCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Bool Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-              ffi.Pointer<ffi.Bool>,
-            )
-          >(_fnPtrTrampoline, false)
-          .cast();
-  static bool _closureTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<objc.ObjCObjectImpl> arg0,
-    ffi.Pointer<objc.ObjCObjectImpl> arg1,
-    ffi.Pointer<ffi.Bool> arg2,
-  ) =>
-      (objc.getBlockClosure(block)
-          as bool Function(
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          ))(arg0, arg1, arg2);
-  static ffi.Pointer<ffi.Void> _closureCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Bool Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-              ffi.Pointer<ffi.Bool>,
-            )
-          >(_closureTrampoline, false)
-          .cast();
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
-extension ObjCBlock_bool_KeyType_ObjectType_bool$CallExtension
-    on
-        objc.ObjCBlock<
-          ffi.Bool Function(
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          )
-        > {
-  bool call(
-    objc.ObjCObject arg0,
-    objc.ObjCObject arg1,
-    ffi.Pointer<ffi.Bool> arg2,
-  ) => ref.pointer.ref.invoke
-      .cast<
-        ffi.NativeFunction<
-          ffi.Bool Function(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<objc.ObjCObjectImpl> arg0,
-            ffi.Pointer<objc.ObjCObjectImpl> arg1,
-            ffi.Pointer<ffi.Bool> arg2,
-          )
-        >
-      >()
-      .asFunction<
-        bool Function(
-          ffi.Pointer<objc.ObjCBlockImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >()(ref.pointer, arg0.ref.pointer, arg1.ref.pointer, arg2);
 }
 
 /// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.UnsignedLong, ffi.Pointer<ffi.Bool>)>`.
@@ -25283,8 +26632,585 @@ extension ObjCBlock_bool_NSUInteger_bool$CallExtension
       >()(ref.pointer, arg0, arg1);
 }
 
+/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>`.
+abstract final class ObjCBlock_bool_ffiVoid {
+  /// Returns a block that wraps the given raw block pointer.
+  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)> fromPointer(
+    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
+    bool retain = false,
+    bool release = false,
+  }) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>(
+    pointer,
+    retain: retain,
+    release: release,
+  );
+
+  /// Creates a block from a C function pointer.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>
+  fromFunctionPointer(
+    ffi.Pointer<
+      ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void> arg0)>
+    >
+    ptr,
+  ) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>(
+    objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
+    retain: false,
+    release: true,
+  );
+
+  /// Creates a block from a Dart function.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)> fromFunction(
+    bool Function(ffi.Pointer<ffi.Void>) fn, {
+    bool keepIsolateAlive = true,
+  }) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>(
+    objc.newClosureBlock(
+      _closureCallable,
+      (ffi.Pointer<ffi.Void> arg0) => fn(arg0),
+      keepIsolateAlive,
+    ),
+    retain: false,
+    release: true,
+  );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Bool Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_e3qsqz)
+          .cast();
+
+  static bool _fnPtrTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<ffi.Void> arg0,
+  ) => block.ref.target
+      .cast<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void> arg0)>>()
+      .asFunction<bool Function(ffi.Pointer<ffi.Void>)>()(arg0);
+  static ffi.Pointer<ffi.Void> _fnPtrCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Bool Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<ffi.Void>,
+            )
+          >(_fnPtrTrampoline, false)
+          .cast();
+  static bool _closureTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<ffi.Void> arg0,
+  ) => (objc.getBlockClosure(block) as bool Function(ffi.Pointer<ffi.Void>))(
+    arg0,
+  );
+  static ffi.Pointer<ffi.Void> _closureCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Bool Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<ffi.Void>,
+            )
+          >(_closureTrampoline, false)
+          .cast();
+}
+
+/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>`.
+extension ObjCBlock_bool_ffiVoid$CallExtension
+    on objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)> {
+  bool call(ffi.Pointer<ffi.Void> arg0) => ref.pointer.ref.invoke
+      .cast<
+        ffi.NativeFunction<
+          ffi.Bool Function(
+            ffi.Pointer<objc.ObjCBlockImpl> block,
+            ffi.Pointer<ffi.Void> arg0,
+          )
+        >
+      >()
+      .asFunction<
+        bool Function(ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)
+      >()(ref.pointer, arg0);
+}
+
+/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>`.
+abstract final class ObjCBlock_bool_ffiVoid_Protocol {
+  /// Returns a block that wraps the given raw block pointer.
+  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>
+  fromPointer(
+    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
+    bool retain = false,
+    bool release = false,
+  }) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>(
+    pointer,
+    retain: retain,
+    release: release,
+  );
+
+  /// Creates a block from a C function pointer.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>
+  fromFunctionPointer(
+    ffi.Pointer<
+      ffi.NativeFunction<
+        ffi.Bool Function(
+          ffi.Pointer<ffi.Void> arg0,
+          ffi.Pointer<objc.ObjCObjectImpl> arg1,
+        )
+      >
+    >
+    ptr,
+  ) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>(
+    objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
+    retain: false,
+    release: true,
+  );
+
+  /// Creates a block from a Dart function.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>
+  fromFunction(
+    bool Function(ffi.Pointer<ffi.Void>, Protocol) fn, {
+    bool keepIsolateAlive = true,
+  }) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>(
+    objc.newClosureBlock(
+      _closureCallable,
+      (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObjectImpl> arg1) =>
+          fn(arg0, Protocol.fromPointer(arg1, retain: true, release: true)),
+      keepIsolateAlive,
+    ),
+    retain: false,
+    release: true,
+  );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Bool Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_3su7tt)
+          .cast();
+
+  static bool _fnPtrTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<objc.ObjCObjectImpl> arg1,
+  ) => block.ref.target
+      .cast<
+        ffi.NativeFunction<
+          ffi.Bool Function(
+            ffi.Pointer<ffi.Void> arg0,
+            ffi.Pointer<objc.ObjCObjectImpl> arg1,
+          )
+        >
+      >()
+      .asFunction<
+        bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)
+      >()(arg0, arg1);
+  static ffi.Pointer<ffi.Void> _fnPtrCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Bool Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+            )
+          >(_fnPtrTrampoline, false)
+          .cast();
+  static bool _closureTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<objc.ObjCObjectImpl> arg1,
+  ) =>
+      (objc.getBlockClosure(block)
+          as bool Function(
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+          ))(arg0, arg1);
+  static ffi.Pointer<ffi.Void> _closureCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Bool Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+            )
+          >(_closureTrampoline, false)
+          .cast();
+}
+
+/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>`.
+extension ObjCBlock_bool_ffiVoid_Protocol$CallExtension
+    on objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)> {
+  bool call(ffi.Pointer<ffi.Void> arg0, Protocol arg1) => ref.pointer.ref.invoke
+      .cast<
+        ffi.NativeFunction<
+          ffi.Bool Function(
+            ffi.Pointer<objc.ObjCBlockImpl> block,
+            ffi.Pointer<ffi.Void> arg0,
+            ffi.Pointer<objc.ObjCObjectImpl> arg1,
+          )
+        >
+      >()
+      .asFunction<
+        bool Function(
+          ffi.Pointer<objc.ObjCBlockImpl>,
+          ffi.Pointer<ffi.Void>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+        )
+      >()(ref.pointer, arg0, arg1.ref.pointer);
+}
+
+/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)>`.
+abstract final class ObjCBlock_bool_ffiVoid_objcObjCObjectImpl {
+  /// Returns a block that wraps the given raw block pointer.
+  static objc.ObjCBlock<
+    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)
+  >
+  fromPointer(
+    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
+    bool retain = false,
+    bool release = false,
+  }) =>
+      objc.ObjCBlock<
+        ffi.Bool Function(
+          ffi.Pointer<ffi.Void>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+        )
+      >(pointer, retain: retain, release: release);
+
+  /// Creates a block from a C function pointer.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  static objc.ObjCBlock<
+    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)
+  >
+  fromFunctionPointer(
+    ffi.Pointer<
+      ffi.NativeFunction<
+        ffi.Bool Function(
+          ffi.Pointer<ffi.Void> arg0,
+          ffi.Pointer<objc.ObjCObjectImpl> arg1,
+        )
+      >
+    >
+    ptr,
+  ) =>
+      objc.ObjCBlock<
+        ffi.Bool Function(
+          ffi.Pointer<ffi.Void>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+        )
+      >(
+        objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
+        retain: false,
+        release: true,
+      );
+
+  /// Creates a block from a Dart function.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc.ObjCBlock<
+    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)
+  >
+  fromFunction(
+    bool Function(ffi.Pointer<ffi.Void>, objc.ObjCObject) fn, {
+    bool keepIsolateAlive = true,
+  }) =>
+      objc.ObjCBlock<
+        ffi.Bool Function(
+          ffi.Pointer<ffi.Void>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+        )
+      >(
+        objc.newClosureBlock(
+          _closureCallable,
+          (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObjectImpl> arg1) =>
+              fn(arg0, objc.ObjCObject(arg1, retain: true, release: true)),
+          keepIsolateAlive,
+        ),
+        retain: false,
+        release: true,
+      );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Bool Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_3su7tt)
+          .cast();
+
+  static bool _fnPtrTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<objc.ObjCObjectImpl> arg1,
+  ) => block.ref.target
+      .cast<
+        ffi.NativeFunction<
+          ffi.Bool Function(
+            ffi.Pointer<ffi.Void> arg0,
+            ffi.Pointer<objc.ObjCObjectImpl> arg1,
+          )
+        >
+      >()
+      .asFunction<
+        bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)
+      >()(arg0, arg1);
+  static ffi.Pointer<ffi.Void> _fnPtrCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Bool Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+            )
+          >(_fnPtrTrampoline, false)
+          .cast();
+  static bool _closureTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<objc.ObjCObjectImpl> arg1,
+  ) =>
+      (objc.getBlockClosure(block)
+          as bool Function(
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+          ))(arg0, arg1);
+  static ffi.Pointer<ffi.Void> _closureCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Bool Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+            )
+          >(_closureTrampoline, false)
+          .cast();
+}
+
+/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)>`.
+extension ObjCBlock_bool_ffiVoid_objcObjCObjectImpl$CallExtension
+    on
+        objc.ObjCBlock<
+          ffi.Bool Function(
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+          )
+        > {
+  bool call(ffi.Pointer<ffi.Void> arg0, objc.ObjCObject arg1) => ref
+      .pointer
+      .ref
+      .invoke
+      .cast<
+        ffi.NativeFunction<
+          ffi.Bool Function(
+            ffi.Pointer<objc.ObjCBlockImpl> block,
+            ffi.Pointer<ffi.Void> arg0,
+            ffi.Pointer<objc.ObjCObjectImpl> arg1,
+          )
+        >
+      >()
+      .asFunction<
+        bool Function(
+          ffi.Pointer<objc.ObjCBlockImpl>,
+          ffi.Pointer<ffi.Void>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+        )
+      >()(ref.pointer, arg0, arg1.ref.pointer);
+}
+
+/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)>`.
+abstract final class ObjCBlock_bool_ffiVoid_objcObjCSelector {
+  /// Returns a block that wraps the given raw block pointer.
+  static objc.ObjCBlock<
+    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
+  >
+  fromPointer(
+    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
+    bool retain = false,
+    bool release = false,
+  }) =>
+      objc.ObjCBlock<
+        ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
+      >(pointer, retain: retain, release: release);
+
+  /// Creates a block from a C function pointer.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  static objc.ObjCBlock<
+    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
+  >
+  fromFunctionPointer(
+    ffi.Pointer<
+      ffi.NativeFunction<
+        ffi.Bool Function(
+          ffi.Pointer<ffi.Void> arg0,
+          ffi.Pointer<objc.ObjCSelector> arg1,
+        )
+      >
+    >
+    ptr,
+  ) =>
+      objc.ObjCBlock<
+        ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
+      >(
+        objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
+        retain: false,
+        release: true,
+      );
+
+  /// Creates a block from a Dart function.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc.ObjCBlock<
+    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
+  >
+  fromFunction(
+    bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>) fn, {
+    bool keepIsolateAlive = true,
+  }) =>
+      objc.ObjCBlock<
+        ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
+      >(
+        objc.newClosureBlock(
+          _closureCallable,
+          (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCSelector> arg1) =>
+              fn(arg0, arg1),
+          keepIsolateAlive,
+        ),
+        retain: false,
+        release: true,
+      );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Bool Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCSelector>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_w1e3k0)
+          .cast();
+
+  static bool _fnPtrTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<objc.ObjCSelector> arg1,
+  ) => block.ref.target
+      .cast<
+        ffi.NativeFunction<
+          ffi.Bool Function(
+            ffi.Pointer<ffi.Void> arg0,
+            ffi.Pointer<objc.ObjCSelector> arg1,
+          )
+        >
+      >()
+      .asFunction<
+        bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
+      >()(arg0, arg1);
+  static ffi.Pointer<ffi.Void> _fnPtrCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Bool Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<objc.ObjCSelector>,
+            )
+          >(_fnPtrTrampoline, false)
+          .cast();
+  static bool _closureTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<objc.ObjCSelector> arg1,
+  ) =>
+      (objc.getBlockClosure(block)
+          as bool Function(
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<objc.ObjCSelector>,
+          ))(arg0, arg1);
+  static ffi.Pointer<ffi.Void> _closureCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Bool Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<objc.ObjCSelector>,
+            )
+          >(_closureTrampoline, false)
+          .cast();
+}
+
+/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)>`.
+extension ObjCBlock_bool_ffiVoid_objcObjCSelector$CallExtension
+    on
+        objc.ObjCBlock<
+          ffi.Bool Function(
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<objc.ObjCSelector>,
+          )
+        > {
+  bool call(ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCSelector> arg1) =>
+      ref.pointer.ref.invoke
+          .cast<
+            ffi.NativeFunction<
+              ffi.Bool Function(
+                ffi.Pointer<objc.ObjCBlockImpl> block,
+                ffi.Pointer<ffi.Void> arg0,
+                ffi.Pointer<objc.ObjCSelector> arg1,
+              )
+            >
+          >()
+          .asFunction<
+            bool Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<objc.ObjCSelector>,
+            )
+          >()(ref.pointer, arg0, arg1);
+}
+
 /// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.UnsignedLong, ffi.Pointer<ffi.Bool>)>`.
-abstract final class ObjCBlock_bool_ObjectType_NSUInteger_bool {
+abstract final class ObjCBlock_bool_objcObjCObjectImpl_NSUInteger_bool {
   /// Returns a block that wraps the given raw block pointer.
   static objc.ObjCBlock<
     ffi.Bool Function(
@@ -25442,7 +27368,7 @@ abstract final class ObjCBlock_bool_ObjectType_NSUInteger_bool {
 }
 
 /// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.UnsignedLong, ffi.Pointer<ffi.Bool>)>`.
-extension ObjCBlock_bool_ObjectType_NSUInteger_bool$CallExtension
+extension ObjCBlock_bool_objcObjCObjectImpl_NSUInteger_bool$CallExtension
     on
         objc.ObjCBlock<
           ffi.Bool Function(
@@ -25476,7 +27402,7 @@ extension ObjCBlock_bool_ObjectType_NSUInteger_bool$CallExtension
 }
 
 /// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
-abstract final class ObjCBlock_bool_ObjectType_bool {
+abstract final class ObjCBlock_bool_objcObjCObjectImpl_bool {
   /// Returns a block that wraps the given raw block pointer.
   static objc.ObjCBlock<
     ffi.Bool Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
@@ -25601,7 +27527,7 @@ abstract final class ObjCBlock_bool_ObjectType_bool {
 }
 
 /// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
-extension ObjCBlock_bool_ObjectType_bool$CallExtension
+extension ObjCBlock_bool_objcObjCObjectImpl_bool$CallExtension
     on
         objc.ObjCBlock<
           ffi.Bool Function(
@@ -25631,236 +27557,15 @@ extension ObjCBlock_bool_ObjectType_bool$CallExtension
       >()(ref.pointer, arg0.ref.pointer, arg1);
 }
 
-/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_bool_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)> fromPointer(
-    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
-    bool retain = false,
-    bool release = false,
-  }) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>(
-    pointer,
-    retain: retain,
-    release: release,
-  );
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>
-  fromFunctionPointer(
-    ffi.Pointer<
-      ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void> arg0)>
-    >
-    ptr,
-  ) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>(
-    objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
-    retain: false,
-    release: true,
-  );
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)> fromFunction(
-    bool Function(ffi.Pointer<ffi.Void>) fn, {
-    bool keepIsolateAlive = true,
-  }) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>(
-    objc.newClosureBlock(
-      _closureCallable,
-      (ffi.Pointer<ffi.Void> arg0) => fn(arg0),
-      keepIsolateAlive,
-    ),
-    retain: false,
-    release: true,
-  );
-
-  static bool _fnPtrTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> arg0,
-  ) => block.ref.target
-      .cast<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void> arg0)>>()
-      .asFunction<bool Function(ffi.Pointer<ffi.Void>)>()(arg0);
-  static ffi.Pointer<ffi.Void> _fnPtrCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Bool Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>,
-            )
-          >(_fnPtrTrampoline, false)
-          .cast();
-  static bool _closureTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> arg0,
-  ) => (objc.getBlockClosure(block) as bool Function(ffi.Pointer<ffi.Void>))(
-    arg0,
-  );
-  static ffi.Pointer<ffi.Void> _closureCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Bool Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>,
-            )
-          >(_closureTrampoline, false)
-          .cast();
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_bool_ffiVoid$CallExtension
-    on objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>)> {
-  bool call(ffi.Pointer<ffi.Void> arg0) => ref.pointer.ref.invoke
-      .cast<
-        ffi.NativeFunction<
-          ffi.Bool Function(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0,
-          )
-        >
-      >()
-      .asFunction<
-        bool Function(ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)
-      >()(ref.pointer, arg0);
-}
-
-/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>`.
-abstract final class ObjCBlock_bool_ffiVoid_Protocol {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>
-  fromPointer(
-    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
-    bool retain = false,
-    bool release = false,
-  }) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>(
-    pointer,
-    retain: retain,
-    release: release,
-  );
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>
-  fromFunctionPointer(
-    ffi.Pointer<
-      ffi.NativeFunction<
-        ffi.Bool Function(
-          ffi.Pointer<ffi.Void> arg0,
-          ffi.Pointer<objc.ObjCObjectImpl> arg1,
-        )
-      >
-    >
-    ptr,
-  ) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>(
-    objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
-    retain: false,
-    release: true,
-  );
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC.
-  static objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>
-  fromFunction(
-    bool Function(ffi.Pointer<ffi.Void>, Protocol) fn, {
-    bool keepIsolateAlive = true,
-  }) => objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>(
-    objc.newClosureBlock(
-      _closureCallable,
-      (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObjectImpl> arg1) =>
-          fn(arg0, Protocol.fromPointer(arg1, retain: true, release: true)),
-      keepIsolateAlive,
-    ),
-    retain: false,
-    release: true,
-  );
-
-  static bool _fnPtrTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> arg0,
-    ffi.Pointer<objc.ObjCObjectImpl> arg1,
-  ) => block.ref.target
-      .cast<
-        ffi.NativeFunction<
-          ffi.Bool Function(
-            ffi.Pointer<ffi.Void> arg0,
-            ffi.Pointer<objc.ObjCObjectImpl> arg1,
-          )
-        >
-      >()
-      .asFunction<
-        bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)
-      >()(arg0, arg1);
-  static ffi.Pointer<ffi.Void> _fnPtrCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Bool Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-            )
-          >(_fnPtrTrampoline, false)
-          .cast();
-  static bool _closureTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> arg0,
-    ffi.Pointer<objc.ObjCObjectImpl> arg1,
-  ) =>
-      (objc.getBlockClosure(block)
-          as bool Function(
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-          ))(arg0, arg1);
-  static ffi.Pointer<ffi.Void> _closureCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Bool Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-            )
-          >(_closureTrampoline, false)
-          .cast();
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)>`.
-extension ObjCBlock_bool_ffiVoid_Protocol$CallExtension
-    on objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, Protocol)> {
-  bool call(ffi.Pointer<ffi.Void> arg0, Protocol arg1) => ref.pointer.ref.invoke
-      .cast<
-        ffi.NativeFunction<
-          ffi.Bool Function(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0,
-            ffi.Pointer<objc.ObjCObjectImpl> arg1,
-          )
-        >
-      >()
-      .asFunction<
-        bool Function(
-          ffi.Pointer<objc.ObjCBlockImpl>,
-          ffi.Pointer<ffi.Void>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-        )
-      >()(ref.pointer, arg0, arg1.ref.pointer);
-}
-
-/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)>`.
-abstract final class ObjCBlock_bool_ffiVoid_objcObjCObjectImpl {
+/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
+abstract final class ObjCBlock_bool_objcObjCObjectImpl_objcObjCObjectImpl_bool {
   /// Returns a block that wraps the given raw block pointer.
   static objc.ObjCBlock<
-    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)
+    ffi.Bool Function(
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
   >
   fromPointer(
     ffi.Pointer<objc.ObjCBlockImpl> pointer, {
@@ -25869,8 +27574,9 @@ abstract final class ObjCBlock_bool_ffiVoid_objcObjCObjectImpl {
   }) =>
       objc.ObjCBlock<
         ffi.Bool Function(
-          ffi.Pointer<ffi.Void>,
           ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
         )
       >(pointer, retain: retain, release: release);
 
@@ -25880,14 +27586,19 @@ abstract final class ObjCBlock_bool_ffiVoid_objcObjCObjectImpl {
   /// the isolate that registered it. Invoking the block on the wrong thread
   /// will result in a crash.
   static objc.ObjCBlock<
-    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)
+    ffi.Bool Function(
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
   >
   fromFunctionPointer(
     ffi.Pointer<
       ffi.NativeFunction<
         ffi.Bool Function(
-          ffi.Pointer<ffi.Void> arg0,
+          ffi.Pointer<objc.ObjCObjectImpl> arg0,
           ffi.Pointer<objc.ObjCObjectImpl> arg1,
+          ffi.Pointer<ffi.Bool> arg2,
         )
       >
     >
@@ -25895,8 +27606,9 @@ abstract final class ObjCBlock_bool_ffiVoid_objcObjCObjectImpl {
   ) =>
       objc.ObjCBlock<
         ffi.Bool Function(
-          ffi.Pointer<ffi.Void>,
           ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
         )
       >(
         objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
@@ -25913,22 +27625,34 @@ abstract final class ObjCBlock_bool_ffiVoid_objcObjCObjectImpl {
   /// If `keepIsolateAlive` is true, this block will keep this isolate alive
   /// until it is garbage collected by both Dart and ObjC.
   static objc.ObjCBlock<
-    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)
+    ffi.Bool Function(
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
   >
   fromFunction(
-    bool Function(ffi.Pointer<ffi.Void>, objc.ObjCObject) fn, {
+    bool Function(objc.ObjCObject, objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
     bool keepIsolateAlive = true,
   }) =>
       objc.ObjCBlock<
         ffi.Bool Function(
-          ffi.Pointer<ffi.Void>,
           ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
         )
       >(
         objc.newClosureBlock(
           _closureCallable,
-          (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCObjectImpl> arg1) =>
-              fn(arg0, objc.ObjCObject(arg1, retain: true, release: true)),
+          (
+            ffi.Pointer<objc.ObjCObjectImpl> arg0,
+            ffi.Pointer<objc.ObjCObjectImpl> arg1,
+            ffi.Pointer<ffi.Bool> arg2,
+          ) => fn(
+            objc.ObjCObject(arg0, retain: true, release: true),
+            objc.ObjCObject(arg1, retain: true, release: true),
+            arg2,
+          ),
           keepIsolateAlive,
         ),
         retain: false,
@@ -25937,224 +27661,93 @@ abstract final class ObjCBlock_bool_ffiVoid_objcObjCObjectImpl {
 
   static bool _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<objc.ObjCObjectImpl> arg0,
     ffi.Pointer<objc.ObjCObjectImpl> arg1,
+    ffi.Pointer<ffi.Bool> arg2,
   ) => block.ref.target
       .cast<
         ffi.NativeFunction<
           ffi.Bool Function(
-            ffi.Pointer<ffi.Void> arg0,
+            ffi.Pointer<objc.ObjCObjectImpl> arg0,
             ffi.Pointer<objc.ObjCObjectImpl> arg1,
+            ffi.Pointer<ffi.Bool> arg2,
           )
         >
       >()
       .asFunction<
-        bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)
-      >()(arg0, arg1);
+        bool Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        )
+      >()(arg0, arg1, arg2);
   static ffi.Pointer<ffi.Void> _fnPtrCallable =
       ffi.Pointer.fromFunction<
             ffi.Bool Function(
               ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>,
               ffi.Pointer<objc.ObjCObjectImpl>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+              ffi.Pointer<ffi.Bool>,
             )
           >(_fnPtrTrampoline, false)
           .cast();
   static bool _closureTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> arg0,
+    ffi.Pointer<objc.ObjCObjectImpl> arg0,
     ffi.Pointer<objc.ObjCObjectImpl> arg1,
+    ffi.Pointer<ffi.Bool> arg2,
   ) =>
       (objc.getBlockClosure(block)
           as bool Function(
-            ffi.Pointer<ffi.Void>,
             ffi.Pointer<objc.ObjCObjectImpl>,
-          ))(arg0, arg1);
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          ))(arg0, arg1, arg2);
   static ffi.Pointer<ffi.Void> _closureCallable =
       ffi.Pointer.fromFunction<
             ffi.Bool Function(
               ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>,
               ffi.Pointer<objc.ObjCObjectImpl>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+              ffi.Pointer<ffi.Bool>,
             )
           >(_closureTrampoline, false)
           .cast();
 }
 
-/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCObjectImpl>)>`.
-extension ObjCBlock_bool_ffiVoid_objcObjCObjectImpl$CallExtension
+/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
+extension ObjCBlock_bool_objcObjCObjectImpl_objcObjCObjectImpl_bool$CallExtension
     on
         objc.ObjCBlock<
           ffi.Bool Function(
-            ffi.Pointer<ffi.Void>,
             ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
           )
         > {
-  bool call(ffi.Pointer<ffi.Void> arg0, objc.ObjCObject arg1) => ref
-      .pointer
-      .ref
-      .invoke
+  bool call(
+    objc.ObjCObject arg0,
+    objc.ObjCObject arg1,
+    ffi.Pointer<ffi.Bool> arg2,
+  ) => ref.pointer.ref.invoke
       .cast<
         ffi.NativeFunction<
           ffi.Bool Function(
             ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0,
+            ffi.Pointer<objc.ObjCObjectImpl> arg0,
             ffi.Pointer<objc.ObjCObjectImpl> arg1,
+            ffi.Pointer<ffi.Bool> arg2,
           )
         >
       >()
       .asFunction<
         bool Function(
           ffi.Pointer<objc.ObjCBlockImpl>,
-          ffi.Pointer<ffi.Void>,
           ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
         )
-      >()(ref.pointer, arg0, arg1.ref.pointer);
-}
-
-/// Construction methods for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)>`.
-abstract final class ObjCBlock_bool_ffiVoid_objcObjCSelector {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<
-    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
-  >
-  fromPointer(
-    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
-    bool retain = false,
-    bool release = false,
-  }) =>
-      objc.ObjCBlock<
-        ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
-      >(pointer, retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<
-    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
-  >
-  fromFunctionPointer(
-    ffi.Pointer<
-      ffi.NativeFunction<
-        ffi.Bool Function(
-          ffi.Pointer<ffi.Void> arg0,
-          ffi.Pointer<objc.ObjCSelector> arg1,
-        )
-      >
-    >
-    ptr,
-  ) =>
-      objc.ObjCBlock<
-        ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
-      >(
-        objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
-        retain: false,
-        release: true,
-      );
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC.
-  static objc.ObjCBlock<
-    ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
-  >
-  fromFunction(
-    bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>) fn, {
-    bool keepIsolateAlive = true,
-  }) =>
-      objc.ObjCBlock<
-        ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
-      >(
-        objc.newClosureBlock(
-          _closureCallable,
-          (ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCSelector> arg1) =>
-              fn(arg0, arg1),
-          keepIsolateAlive,
-        ),
-        retain: false,
-        release: true,
-      );
-
-  static bool _fnPtrTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> arg0,
-    ffi.Pointer<objc.ObjCSelector> arg1,
-  ) => block.ref.target
-      .cast<
-        ffi.NativeFunction<
-          ffi.Bool Function(
-            ffi.Pointer<ffi.Void> arg0,
-            ffi.Pointer<objc.ObjCSelector> arg1,
-          )
-        >
-      >()
-      .asFunction<
-        bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)
-      >()(arg0, arg1);
-  static ffi.Pointer<ffi.Void> _fnPtrCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Bool Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>,
-              ffi.Pointer<objc.ObjCSelector>,
-            )
-          >(_fnPtrTrampoline, false)
-          .cast();
-  static bool _closureTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> arg0,
-    ffi.Pointer<objc.ObjCSelector> arg1,
-  ) =>
-      (objc.getBlockClosure(block)
-          as bool Function(
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCSelector>,
-          ))(arg0, arg1);
-  static ffi.Pointer<ffi.Void> _closureCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Bool Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>,
-              ffi.Pointer<objc.ObjCSelector>,
-            )
-          >(_closureTrampoline, false)
-          .cast();
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Bool Function(ffi.Pointer<ffi.Void>, ffi.Pointer<objc.ObjCSelector>)>`.
-extension ObjCBlock_bool_ffiVoid_objcObjCSelector$CallExtension
-    on
-        objc.ObjCBlock<
-          ffi.Bool Function(
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCSelector>,
-          )
-        > {
-  bool call(ffi.Pointer<ffi.Void> arg0, ffi.Pointer<objc.ObjCSelector> arg1) =>
-      ref.pointer.ref.invoke
-          .cast<
-            ffi.NativeFunction<
-              ffi.Bool Function(
-                ffi.Pointer<objc.ObjCBlockImpl> block,
-                ffi.Pointer<ffi.Void> arg0,
-                ffi.Pointer<objc.ObjCSelector> arg1,
-              )
-            >
-          >()
-          .asFunction<
-            bool Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<ffi.Void>,
-              ffi.Pointer<objc.ObjCSelector>,
-            )
-          >()(ref.pointer, arg0, arg1);
+      >()(ref.pointer, arg0.ref.pointer, arg1.ref.pointer, arg2);
 }
 
 /// Construction methods for `objc.ObjCBlock<ffi.Void Function()>`.
@@ -26343,400 +27936,6 @@ extension ObjCBlock_ffiVoid$CallExtension
           .asFunction<void Function(ffi.Pointer<objc.ObjCBlockImpl>)>()(
         ref.pointer,
       );
-}
-
-/// Construction methods for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
-abstract final class ObjCBlock_ffiVoid_KeyType_ObjectType_bool {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  fromPointer(
-    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
-    bool retain = false,
-    bool release = false,
-  }) =>
-      objc.ObjCBlock<
-        ffi.Void Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >(pointer, retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  fromFunctionPointer(
-    ffi.Pointer<
-      ffi.NativeFunction<
-        ffi.Void Function(
-          ffi.Pointer<objc.ObjCObjectImpl> arg0,
-          ffi.Pointer<objc.ObjCObjectImpl> arg1,
-          ffi.Pointer<ffi.Bool> arg2,
-        )
-      >
-    >
-    ptr,
-  ) =>
-      objc.ObjCBlock<
-        ffi.Void Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >(
-        objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
-        retain: false,
-        release: true,
-      );
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC.
-  static objc.ObjCBlock<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  fromFunction(
-    void Function(objc.ObjCObject, objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
-    bool keepIsolateAlive = true,
-  }) =>
-      objc.ObjCBlock<
-        ffi.Void Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >(
-        objc.newClosureBlock(
-          _closureCallable,
-          (
-            ffi.Pointer<objc.ObjCObjectImpl> arg0,
-            ffi.Pointer<objc.ObjCObjectImpl> arg1,
-            ffi.Pointer<ffi.Bool> arg2,
-          ) => fn(
-            objc.ObjCObject(arg0, retain: true, release: true),
-            objc.ObjCObject(arg1, retain: true, release: true),
-            arg2,
-          ),
-          keepIsolateAlive,
-        ),
-        retain: false,
-        release: true,
-      );
-
-  /// Creates a listener block from a Dart function.
-  ///
-  /// This is based on FFI's NativeCallable.listener, and has the same
-  /// capabilities and limitations. This block can be invoked from any thread,
-  /// but only supports void functions, and is not run synchronously. See
-  /// NativeCallable.listener for more details.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC.
-  static objc.ObjCBlock<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  listener(
-    void Function(objc.ObjCObject, objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
-    bool keepIsolateAlive = true,
-  }) {
-    final raw = objc.newClosureBlock(
-      _listenerCallable.nativeFunction.cast(),
-      (
-        ffi.Pointer<objc.ObjCObjectImpl> arg0,
-        ffi.Pointer<objc.ObjCObjectImpl> arg1,
-        ffi.Pointer<ffi.Bool> arg2,
-      ) => fn(
-        objc.ObjCObject(arg0, retain: false, release: true),
-        objc.ObjCObject(arg1, retain: false, release: true),
-        arg2,
-      ),
-      keepIsolateAlive,
-    );
-    final wrapper = _1wx624s_wrapListenerBlock_1o83rbn(raw);
-    objc.objectRelease(raw.cast());
-    return objc.ObjCBlock<
-      ffi.Void Function(
-        ffi.Pointer<objc.ObjCObjectImpl>,
-        ffi.Pointer<objc.ObjCObjectImpl>,
-        ffi.Pointer<ffi.Bool>,
-      )
-    >(wrapper, retain: false, release: true);
-  }
-
-  /// Creates a blocking block from a Dart function.
-  ///
-  /// This callback can be invoked from any native thread, and will block the
-  /// caller until the callback is handled by the Dart isolate that created
-  /// the block. Async functions are not supported.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC. If the owner isolate
-  /// has shut down, and the block is invoked by native code, it may block
-  /// indefinitely, or have other undefined behavior.
-  static objc.ObjCBlock<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  blocking(
-    void Function(objc.ObjCObject, objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
-    bool keepIsolateAlive = true,
-  }) {
-    final raw = objc.newClosureBlock(
-      _blockingCallable.nativeFunction.cast(),
-      (
-        ffi.Pointer<objc.ObjCObjectImpl> arg0,
-        ffi.Pointer<objc.ObjCObjectImpl> arg1,
-        ffi.Pointer<ffi.Bool> arg2,
-      ) => fn(
-        objc.ObjCObject(arg0, retain: false, release: true),
-        objc.ObjCObject(arg1, retain: false, release: true),
-        arg2,
-      ),
-      keepIsolateAlive,
-    );
-    final rawListener = objc.newClosureBlock(
-      _blockingListenerCallable.nativeFunction.cast(),
-      (
-        ffi.Pointer<objc.ObjCObjectImpl> arg0,
-        ffi.Pointer<objc.ObjCObjectImpl> arg1,
-        ffi.Pointer<ffi.Bool> arg2,
-      ) => fn(
-        objc.ObjCObject(arg0, retain: false, release: true),
-        objc.ObjCObject(arg1, retain: false, release: true),
-        arg2,
-      ),
-      keepIsolateAlive,
-    );
-    final wrapper = _1wx624s_wrapBlockingBlock_1o83rbn(
-      raw,
-      rawListener,
-      objc.objCContext,
-    );
-    objc.objectRelease(raw.cast());
-    objc.objectRelease(rawListener.cast());
-    return objc.ObjCBlock<
-      ffi.Void Function(
-        ffi.Pointer<objc.ObjCObjectImpl>,
-        ffi.Pointer<objc.ObjCObjectImpl>,
-        ffi.Pointer<ffi.Bool>,
-      )
-    >(wrapper, retain: false, release: true);
-  }
-
-  static void _listenerTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<objc.ObjCObjectImpl> arg0,
-    ffi.Pointer<objc.ObjCObjectImpl> arg1,
-    ffi.Pointer<ffi.Bool> arg2,
-  ) {
-    (objc.getBlockClosure(block)
-        as void Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        ))(arg0, arg1, arg2);
-    objc.objectRelease(block.cast());
-  }
-
-  static ffi.NativeCallable<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCBlockImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  _listenerCallable =
-      ffi.NativeCallable<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          )
-        >.listener(_listenerTrampoline)
-        ..keepIsolateAlive = false;
-  static void _blockingTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> waiter,
-    ffi.Pointer<objc.ObjCObjectImpl> arg0,
-    ffi.Pointer<objc.ObjCObjectImpl> arg1,
-    ffi.Pointer<ffi.Bool> arg2,
-  ) {
-    try {
-      (objc.getBlockClosure(block)
-          as void Function(
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          ))(arg0, arg1, arg2);
-    } catch (e) {
-    } finally {
-      objc.signalWaiter(waiter);
-      objc.objectRelease(block.cast());
-    }
-  }
-
-  static ffi.NativeCallable<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCBlockImpl>,
-      ffi.Pointer<ffi.Void>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  _blockingCallable =
-      ffi.NativeCallable<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          )
-        >.isolateLocal(_blockingTrampoline)
-        ..keepIsolateAlive = false;
-  static ffi.NativeCallable<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCBlockImpl>,
-      ffi.Pointer<ffi.Void>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  _blockingListenerCallable =
-      ffi.NativeCallable<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          )
-        >.listener(_blockingTrampoline)
-        ..keepIsolateAlive = false;
-  static void _fnPtrTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<objc.ObjCObjectImpl> arg0,
-    ffi.Pointer<objc.ObjCObjectImpl> arg1,
-    ffi.Pointer<ffi.Bool> arg2,
-  ) => block.ref.target
-      .cast<
-        ffi.NativeFunction<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCObjectImpl> arg0,
-            ffi.Pointer<objc.ObjCObjectImpl> arg1,
-            ffi.Pointer<ffi.Bool> arg2,
-          )
-        >
-      >()
-      .asFunction<
-        void Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >()(arg0, arg1, arg2);
-  static ffi.Pointer<ffi.Void> _fnPtrCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Void Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-              ffi.Pointer<ffi.Bool>,
-            )
-          >(_fnPtrTrampoline)
-          .cast();
-  static void _closureTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<objc.ObjCObjectImpl> arg0,
-    ffi.Pointer<objc.ObjCObjectImpl> arg1,
-    ffi.Pointer<ffi.Bool> arg2,
-  ) =>
-      (objc.getBlockClosure(block)
-          as void Function(
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          ))(arg0, arg1, arg2);
-  static ffi.Pointer<ffi.Void> _closureCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Void Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-              ffi.Pointer<ffi.Bool>,
-            )
-          >(_closureTrampoline)
-          .cast();
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
-extension ObjCBlock_ffiVoid_KeyType_ObjectType_bool$CallExtension
-    on
-        objc.ObjCBlock<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          )
-        > {
-  void call(
-    objc.ObjCObject arg0,
-    objc.ObjCObject arg1,
-    ffi.Pointer<ffi.Bool> arg2,
-  ) => ref.pointer.ref.invoke
-      .cast<
-        ffi.NativeFunction<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<objc.ObjCObjectImpl> arg0,
-            ffi.Pointer<objc.ObjCObjectImpl> arg1,
-            ffi.Pointer<ffi.Bool> arg2,
-          )
-        >
-      >()
-      .asFunction<
-        void Function(
-          ffi.Pointer<objc.ObjCBlockImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >()(ref.pointer, arg0.ref.pointer, arg1.ref.pointer, arg2);
 }
 
 /// Construction methods for `objc.ObjCBlock<ffi.Void Function(NSData?, NSError?)>`.
@@ -29638,316 +30837,6 @@ extension ObjCBlock_ffiVoid_NSURL_bool_NSError$CallExtension
       );
 }
 
-/// Construction methods for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
-abstract final class ObjCBlock_ffiVoid_ObjectType_bool {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc.ObjCBlock<
-    ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
-  >
-  fromPointer(
-    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
-    bool retain = false,
-    bool release = false,
-  }) =>
-      objc.ObjCBlock<
-        ffi.Void Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >(pointer, retain: retain, release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<
-    ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
-  >
-  fromFunctionPointer(
-    ffi.Pointer<
-      ffi.NativeFunction<
-        ffi.Void Function(
-          ffi.Pointer<objc.ObjCObjectImpl> arg0,
-          ffi.Pointer<ffi.Bool> arg1,
-        )
-      >
-    >
-    ptr,
-  ) =>
-      objc.ObjCBlock<
-        ffi.Void Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >(
-        objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
-        retain: false,
-        release: true,
-      );
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC.
-  static objc.ObjCBlock<
-    ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
-  >
-  fromFunction(
-    void Function(objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
-    bool keepIsolateAlive = true,
-  }) =>
-      objc.ObjCBlock<
-        ffi.Void Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >(
-        objc.newClosureBlock(
-          _closureCallable,
-          (ffi.Pointer<objc.ObjCObjectImpl> arg0, ffi.Pointer<ffi.Bool> arg1) =>
-              fn(objc.ObjCObject(arg0, retain: true, release: true), arg1),
-          keepIsolateAlive,
-        ),
-        retain: false,
-        release: true,
-      );
-
-  /// Creates a listener block from a Dart function.
-  ///
-  /// This is based on FFI's NativeCallable.listener, and has the same
-  /// capabilities and limitations. This block can be invoked from any thread,
-  /// but only supports void functions, and is not run synchronously. See
-  /// NativeCallable.listener for more details.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC.
-  static objc.ObjCBlock<
-    ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
-  >
-  listener(
-    void Function(objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
-    bool keepIsolateAlive = true,
-  }) {
-    final raw = objc.newClosureBlock(
-      _listenerCallable.nativeFunction.cast(),
-      (ffi.Pointer<objc.ObjCObjectImpl> arg0, ffi.Pointer<ffi.Bool> arg1) =>
-          fn(objc.ObjCObject(arg0, retain: false, release: true), arg1),
-      keepIsolateAlive,
-    );
-    final wrapper = _1wx624s_wrapListenerBlock_t8l8el(raw);
-    objc.objectRelease(raw.cast());
-    return objc.ObjCBlock<
-      ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
-    >(wrapper, retain: false, release: true);
-  }
-
-  /// Creates a blocking block from a Dart function.
-  ///
-  /// This callback can be invoked from any native thread, and will block the
-  /// caller until the callback is handled by the Dart isolate that created
-  /// the block. Async functions are not supported.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC. If the owner isolate
-  /// has shut down, and the block is invoked by native code, it may block
-  /// indefinitely, or have other undefined behavior.
-  static objc.ObjCBlock<
-    ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
-  >
-  blocking(
-    void Function(objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
-    bool keepIsolateAlive = true,
-  }) {
-    final raw = objc.newClosureBlock(
-      _blockingCallable.nativeFunction.cast(),
-      (ffi.Pointer<objc.ObjCObjectImpl> arg0, ffi.Pointer<ffi.Bool> arg1) =>
-          fn(objc.ObjCObject(arg0, retain: false, release: true), arg1),
-      keepIsolateAlive,
-    );
-    final rawListener = objc.newClosureBlock(
-      _blockingListenerCallable.nativeFunction.cast(),
-      (ffi.Pointer<objc.ObjCObjectImpl> arg0, ffi.Pointer<ffi.Bool> arg1) =>
-          fn(objc.ObjCObject(arg0, retain: false, release: true), arg1),
-      keepIsolateAlive,
-    );
-    final wrapper = _1wx624s_wrapBlockingBlock_t8l8el(
-      raw,
-      rawListener,
-      objc.objCContext,
-    );
-    objc.objectRelease(raw.cast());
-    objc.objectRelease(rawListener.cast());
-    return objc.ObjCBlock<
-      ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
-    >(wrapper, retain: false, release: true);
-  }
-
-  static void _listenerTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<objc.ObjCObjectImpl> arg0,
-    ffi.Pointer<ffi.Bool> arg1,
-  ) {
-    (objc.getBlockClosure(block)
-        as void Function(
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        ))(arg0, arg1);
-    objc.objectRelease(block.cast());
-  }
-
-  static ffi.NativeCallable<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCBlockImpl>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  _listenerCallable =
-      ffi.NativeCallable<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          )
-        >.listener(_listenerTrampoline)
-        ..keepIsolateAlive = false;
-  static void _blockingTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<ffi.Void> waiter,
-    ffi.Pointer<objc.ObjCObjectImpl> arg0,
-    ffi.Pointer<ffi.Bool> arg1,
-  ) {
-    try {
-      (objc.getBlockClosure(block)
-          as void Function(
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          ))(arg0, arg1);
-    } catch (e) {
-    } finally {
-      objc.signalWaiter(waiter);
-      objc.objectRelease(block.cast());
-    }
-  }
-
-  static ffi.NativeCallable<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCBlockImpl>,
-      ffi.Pointer<ffi.Void>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  _blockingCallable =
-      ffi.NativeCallable<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          )
-        >.isolateLocal(_blockingTrampoline)
-        ..keepIsolateAlive = false;
-  static ffi.NativeCallable<
-    ffi.Void Function(
-      ffi.Pointer<objc.ObjCBlockImpl>,
-      ffi.Pointer<ffi.Void>,
-      ffi.Pointer<objc.ObjCObjectImpl>,
-      ffi.Pointer<ffi.Bool>,
-    )
-  >
-  _blockingListenerCallable =
-      ffi.NativeCallable<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl>,
-            ffi.Pointer<ffi.Void>,
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          )
-        >.listener(_blockingTrampoline)
-        ..keepIsolateAlive = false;
-  static void _fnPtrTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<objc.ObjCObjectImpl> arg0,
-    ffi.Pointer<ffi.Bool> arg1,
-  ) => block.ref.target
-      .cast<
-        ffi.NativeFunction<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCObjectImpl> arg0,
-            ffi.Pointer<ffi.Bool> arg1,
-          )
-        >
-      >()
-      .asFunction<
-        void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
-      >()(arg0, arg1);
-  static ffi.Pointer<ffi.Void> _fnPtrCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Void Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-              ffi.Pointer<ffi.Bool>,
-            )
-          >(_fnPtrTrampoline)
-          .cast();
-  static void _closureTrampoline(
-    ffi.Pointer<objc.ObjCBlockImpl> block,
-    ffi.Pointer<objc.ObjCObjectImpl> arg0,
-    ffi.Pointer<ffi.Bool> arg1,
-  ) =>
-      (objc.getBlockClosure(block)
-          as void Function(
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          ))(arg0, arg1);
-  static ffi.Pointer<ffi.Void> _closureCallable =
-      ffi.Pointer.fromFunction<
-            ffi.Void Function(
-              ffi.Pointer<objc.ObjCBlockImpl>,
-              ffi.Pointer<objc.ObjCObjectImpl>,
-              ffi.Pointer<ffi.Bool>,
-            )
-          >(_closureTrampoline)
-          .cast();
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
-extension ObjCBlock_ffiVoid_ObjectType_bool$CallExtension
-    on
-        objc.ObjCBlock<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCObjectImpl>,
-            ffi.Pointer<ffi.Bool>,
-          )
-        > {
-  void call(objc.ObjCObject arg0, ffi.Pointer<ffi.Bool> arg1) => ref
-      .pointer
-      .ref
-      .invoke
-      .cast<
-        ffi.NativeFunction<
-          ffi.Void Function(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<objc.ObjCObjectImpl> arg0,
-            ffi.Pointer<ffi.Bool> arg1,
-          )
-        >
-      >()
-      .asFunction<
-        void Function(
-          ffi.Pointer<objc.ObjCBlockImpl>,
-          ffi.Pointer<objc.ObjCObjectImpl>,
-          ffi.Pointer<ffi.Bool>,
-        )
-      >()(ref.pointer, arg0.ref.pointer, arg1);
-}
-
 /// Construction methods for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.Void>)>`.
 abstract final class ObjCBlock_ffiVoid_ffiVoid {
   /// Returns a block that wraps the given raw block pointer.
@@ -29998,6 +30887,18 @@ abstract final class ObjCBlock_ffiVoid_ffiVoid {
     retain: false,
     release: true,
   );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Void Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_ovsamd)
+          .cast();
 
   /// Creates a listener block from a Dart function.
   ///
@@ -30236,6 +31137,19 @@ abstract final class ObjCBlock_ffiVoid_ffiVoid_NSCoder {
     retain: false,
     release: true,
   );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Void Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_18v1jvf)
+          .cast();
 
   /// Creates a listener block from a Dart function.
   ///
@@ -30519,6 +31433,19 @@ abstract final class ObjCBlock_ffiVoid_ffiVoid_NSPortMessage {
     retain: false,
     release: true,
   );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Void Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_18v1jvf)
+          .cast();
 
   /// Creates a listener block from a Dart function.
   ///
@@ -31150,6 +32077,20 @@ abstract final class ObjCBlock_ffiVoid_ffiVoid_NSStream_NSStreamEvent {
         release: true,
       );
 
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Void Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.UnsignedLong,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_hoampi)
+          .cast();
+
   /// Creates a listener block from a Dart function.
   ///
   /// This is based on FFI's NativeCallable.listener, and has the same
@@ -31547,6 +32488,22 @@ abstract final class ObjCBlock_ffiVoid_ffiVoid_NSString_objcObjCObjectImpl_NSDic
         retain: false,
         release: true,
       );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Void Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_1sr3ozv)
+          .cast();
 
   /// Creates a listener block from a Dart function.
   ///
@@ -33237,7 +34194,7 @@ extension ObjCBlock_ffiVoid_idNSSecureCoding_NSError$CallExtension
 }
 
 /// Construction methods for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.UnsignedLong, ffi.Pointer<ffi.Bool>)>`.
-abstract final class ObjCBlock_ffiVoid_objcObjCObjectImpl_ffiUnsignedLong_bool {
+abstract final class ObjCBlock_ffiVoid_objcObjCObjectImpl_NSUInteger_bool {
   /// Returns a block that wraps the given raw block pointer.
   static objc.ObjCBlock<
     ffi.Void Function(
@@ -33584,7 +34541,7 @@ abstract final class ObjCBlock_ffiVoid_objcObjCObjectImpl_ffiUnsignedLong_bool {
 }
 
 /// Call operator for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.UnsignedLong, ffi.Pointer<ffi.Bool>)>`.
-extension ObjCBlock_ffiVoid_objcObjCObjectImpl_ffiUnsignedLong_bool$CallExtension
+extension ObjCBlock_ffiVoid_objcObjCObjectImpl_NSUInteger_bool$CallExtension
     on
         objc.ObjCBlock<
           ffi.Void Function(
@@ -33615,6 +34572,710 @@ extension ObjCBlock_ffiVoid_objcObjCObjectImpl_ffiUnsignedLong_bool$CallExtensio
           ffi.Pointer<ffi.Bool>,
         )
       >()(ref.pointer, arg0.ref.pointer, arg1, arg2);
+}
+
+/// Construction methods for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
+abstract final class ObjCBlock_ffiVoid_objcObjCObjectImpl_bool {
+  /// Returns a block that wraps the given raw block pointer.
+  static objc.ObjCBlock<
+    ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
+  >
+  fromPointer(
+    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
+    bool retain = false,
+    bool release = false,
+  }) =>
+      objc.ObjCBlock<
+        ffi.Void Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        )
+      >(pointer, retain: retain, release: release);
+
+  /// Creates a block from a C function pointer.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  static objc.ObjCBlock<
+    ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
+  >
+  fromFunctionPointer(
+    ffi.Pointer<
+      ffi.NativeFunction<
+        ffi.Void Function(
+          ffi.Pointer<objc.ObjCObjectImpl> arg0,
+          ffi.Pointer<ffi.Bool> arg1,
+        )
+      >
+    >
+    ptr,
+  ) =>
+      objc.ObjCBlock<
+        ffi.Void Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        )
+      >(
+        objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
+        retain: false,
+        release: true,
+      );
+
+  /// Creates a block from a Dart function.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc.ObjCBlock<
+    ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
+  >
+  fromFunction(
+    void Function(objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
+    bool keepIsolateAlive = true,
+  }) =>
+      objc.ObjCBlock<
+        ffi.Void Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        )
+      >(
+        objc.newClosureBlock(
+          _closureCallable,
+          (ffi.Pointer<objc.ObjCObjectImpl> arg0, ffi.Pointer<ffi.Bool> arg1) =>
+              fn(objc.ObjCObject(arg0, retain: true, release: true), arg1),
+          keepIsolateAlive,
+        ),
+        retain: false,
+        release: true,
+      );
+
+  /// Creates a listener block from a Dart function.
+  ///
+  /// This is based on FFI's NativeCallable.listener, and has the same
+  /// capabilities and limitations. This block can be invoked from any thread,
+  /// but only supports void functions, and is not run synchronously. See
+  /// NativeCallable.listener for more details.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc.ObjCBlock<
+    ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
+  >
+  listener(
+    void Function(objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
+    bool keepIsolateAlive = true,
+  }) {
+    final raw = objc.newClosureBlock(
+      _listenerCallable.nativeFunction.cast(),
+      (ffi.Pointer<objc.ObjCObjectImpl> arg0, ffi.Pointer<ffi.Bool> arg1) =>
+          fn(objc.ObjCObject(arg0, retain: false, release: true), arg1),
+      keepIsolateAlive,
+    );
+    final wrapper = _1wx624s_wrapListenerBlock_t8l8el(raw);
+    objc.objectRelease(raw.cast());
+    return objc.ObjCBlock<
+      ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
+    >(wrapper, retain: false, release: true);
+  }
+
+  /// Creates a blocking block from a Dart function.
+  ///
+  /// This callback can be invoked from any native thread, and will block the
+  /// caller until the callback is handled by the Dart isolate that created
+  /// the block. Async functions are not supported.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC. If the owner isolate
+  /// has shut down, and the block is invoked by native code, it may block
+  /// indefinitely, or have other undefined behavior.
+  static objc.ObjCBlock<
+    ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
+  >
+  blocking(
+    void Function(objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
+    bool keepIsolateAlive = true,
+  }) {
+    final raw = objc.newClosureBlock(
+      _blockingCallable.nativeFunction.cast(),
+      (ffi.Pointer<objc.ObjCObjectImpl> arg0, ffi.Pointer<ffi.Bool> arg1) =>
+          fn(objc.ObjCObject(arg0, retain: false, release: true), arg1),
+      keepIsolateAlive,
+    );
+    final rawListener = objc.newClosureBlock(
+      _blockingListenerCallable.nativeFunction.cast(),
+      (ffi.Pointer<objc.ObjCObjectImpl> arg0, ffi.Pointer<ffi.Bool> arg1) =>
+          fn(objc.ObjCObject(arg0, retain: false, release: true), arg1),
+      keepIsolateAlive,
+    );
+    final wrapper = _1wx624s_wrapBlockingBlock_t8l8el(
+      raw,
+      rawListener,
+      objc.objCContext,
+    );
+    objc.objectRelease(raw.cast());
+    objc.objectRelease(rawListener.cast());
+    return objc.ObjCBlock<
+      ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
+    >(wrapper, retain: false, release: true);
+  }
+
+  static void _listenerTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<objc.ObjCObjectImpl> arg0,
+    ffi.Pointer<ffi.Bool> arg1,
+  ) {
+    (objc.getBlockClosure(block)
+        as void Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        ))(arg0, arg1);
+    objc.objectRelease(block.cast());
+  }
+
+  static ffi.NativeCallable<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCBlockImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  _listenerCallable =
+      ffi.NativeCallable<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCBlockImpl>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          )
+        >.listener(_listenerTrampoline)
+        ..keepIsolateAlive = false;
+  static void _blockingTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<ffi.Void> waiter,
+    ffi.Pointer<objc.ObjCObjectImpl> arg0,
+    ffi.Pointer<ffi.Bool> arg1,
+  ) {
+    try {
+      (objc.getBlockClosure(block)
+          as void Function(
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          ))(arg0, arg1);
+    } catch (e) {
+    } finally {
+      objc.signalWaiter(waiter);
+      objc.objectRelease(block.cast());
+    }
+  }
+
+  static ffi.NativeCallable<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCBlockImpl>,
+      ffi.Pointer<ffi.Void>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  _blockingCallable =
+      ffi.NativeCallable<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCBlockImpl>,
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          )
+        >.isolateLocal(_blockingTrampoline)
+        ..keepIsolateAlive = false;
+  static ffi.NativeCallable<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCBlockImpl>,
+      ffi.Pointer<ffi.Void>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  _blockingListenerCallable =
+      ffi.NativeCallable<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCBlockImpl>,
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          )
+        >.listener(_blockingTrampoline)
+        ..keepIsolateAlive = false;
+  static void _fnPtrTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<objc.ObjCObjectImpl> arg0,
+    ffi.Pointer<ffi.Bool> arg1,
+  ) => block.ref.target
+      .cast<
+        ffi.NativeFunction<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCObjectImpl> arg0,
+            ffi.Pointer<ffi.Bool> arg1,
+          )
+        >
+      >()
+      .asFunction<
+        void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)
+      >()(arg0, arg1);
+  static ffi.Pointer<ffi.Void> _fnPtrCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Void Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+              ffi.Pointer<ffi.Bool>,
+            )
+          >(_fnPtrTrampoline)
+          .cast();
+  static void _closureTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<objc.ObjCObjectImpl> arg0,
+    ffi.Pointer<ffi.Bool> arg1,
+  ) =>
+      (objc.getBlockClosure(block)
+          as void Function(
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          ))(arg0, arg1);
+  static ffi.Pointer<ffi.Void> _closureCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Void Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+              ffi.Pointer<ffi.Bool>,
+            )
+          >(_closureTrampoline)
+          .cast();
+}
+
+/// Call operator for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
+extension ObjCBlock_ffiVoid_objcObjCObjectImpl_bool$CallExtension
+    on
+        objc.ObjCBlock<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          )
+        > {
+  void call(objc.ObjCObject arg0, ffi.Pointer<ffi.Bool> arg1) => ref
+      .pointer
+      .ref
+      .invoke
+      .cast<
+        ffi.NativeFunction<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCBlockImpl> block,
+            ffi.Pointer<objc.ObjCObjectImpl> arg0,
+            ffi.Pointer<ffi.Bool> arg1,
+          )
+        >
+      >()
+      .asFunction<
+        void Function(
+          ffi.Pointer<objc.ObjCBlockImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        )
+      >()(ref.pointer, arg0.ref.pointer, arg1);
+}
+
+/// Construction methods for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
+abstract final class ObjCBlock_ffiVoid_objcObjCObjectImpl_objcObjCObjectImpl_bool {
+  /// Returns a block that wraps the given raw block pointer.
+  static objc.ObjCBlock<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  fromPointer(
+    ffi.Pointer<objc.ObjCBlockImpl> pointer, {
+    bool retain = false,
+    bool release = false,
+  }) =>
+      objc.ObjCBlock<
+        ffi.Void Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        )
+      >(pointer, retain: retain, release: release);
+
+  /// Creates a block from a C function pointer.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  static objc.ObjCBlock<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  fromFunctionPointer(
+    ffi.Pointer<
+      ffi.NativeFunction<
+        ffi.Void Function(
+          ffi.Pointer<objc.ObjCObjectImpl> arg0,
+          ffi.Pointer<objc.ObjCObjectImpl> arg1,
+          ffi.Pointer<ffi.Bool> arg2,
+        )
+      >
+    >
+    ptr,
+  ) =>
+      objc.ObjCBlock<
+        ffi.Void Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        )
+      >(
+        objc.newPointerBlock(_fnPtrCallable, ptr.cast()),
+        retain: false,
+        release: true,
+      );
+
+  /// Creates a block from a Dart function.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc.ObjCBlock<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  fromFunction(
+    void Function(objc.ObjCObject, objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
+    bool keepIsolateAlive = true,
+  }) =>
+      objc.ObjCBlock<
+        ffi.Void Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        )
+      >(
+        objc.newClosureBlock(
+          _closureCallable,
+          (
+            ffi.Pointer<objc.ObjCObjectImpl> arg0,
+            ffi.Pointer<objc.ObjCObjectImpl> arg1,
+            ffi.Pointer<ffi.Bool> arg2,
+          ) => fn(
+            objc.ObjCObject(arg0, retain: true, release: true),
+            objc.ObjCObject(arg1, retain: true, release: true),
+            arg2,
+          ),
+          keepIsolateAlive,
+        ),
+        retain: false,
+        release: true,
+      );
+
+  /// Creates a listener block from a Dart function.
+  ///
+  /// This is based on FFI's NativeCallable.listener, and has the same
+  /// capabilities and limitations. This block can be invoked from any thread,
+  /// but only supports void functions, and is not run synchronously. See
+  /// NativeCallable.listener for more details.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc.ObjCBlock<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  listener(
+    void Function(objc.ObjCObject, objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
+    bool keepIsolateAlive = true,
+  }) {
+    final raw = objc.newClosureBlock(
+      _listenerCallable.nativeFunction.cast(),
+      (
+        ffi.Pointer<objc.ObjCObjectImpl> arg0,
+        ffi.Pointer<objc.ObjCObjectImpl> arg1,
+        ffi.Pointer<ffi.Bool> arg2,
+      ) => fn(
+        objc.ObjCObject(arg0, retain: false, release: true),
+        objc.ObjCObject(arg1, retain: false, release: true),
+        arg2,
+      ),
+      keepIsolateAlive,
+    );
+    final wrapper = _1wx624s_wrapListenerBlock_1o83rbn(raw);
+    objc.objectRelease(raw.cast());
+    return objc.ObjCBlock<
+      ffi.Void Function(
+        ffi.Pointer<objc.ObjCObjectImpl>,
+        ffi.Pointer<objc.ObjCObjectImpl>,
+        ffi.Pointer<ffi.Bool>,
+      )
+    >(wrapper, retain: false, release: true);
+  }
+
+  /// Creates a blocking block from a Dart function.
+  ///
+  /// This callback can be invoked from any native thread, and will block the
+  /// caller until the callback is handled by the Dart isolate that created
+  /// the block. Async functions are not supported.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC. If the owner isolate
+  /// has shut down, and the block is invoked by native code, it may block
+  /// indefinitely, or have other undefined behavior.
+  static objc.ObjCBlock<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  blocking(
+    void Function(objc.ObjCObject, objc.ObjCObject, ffi.Pointer<ffi.Bool>) fn, {
+    bool keepIsolateAlive = true,
+  }) {
+    final raw = objc.newClosureBlock(
+      _blockingCallable.nativeFunction.cast(),
+      (
+        ffi.Pointer<objc.ObjCObjectImpl> arg0,
+        ffi.Pointer<objc.ObjCObjectImpl> arg1,
+        ffi.Pointer<ffi.Bool> arg2,
+      ) => fn(
+        objc.ObjCObject(arg0, retain: false, release: true),
+        objc.ObjCObject(arg1, retain: false, release: true),
+        arg2,
+      ),
+      keepIsolateAlive,
+    );
+    final rawListener = objc.newClosureBlock(
+      _blockingListenerCallable.nativeFunction.cast(),
+      (
+        ffi.Pointer<objc.ObjCObjectImpl> arg0,
+        ffi.Pointer<objc.ObjCObjectImpl> arg1,
+        ffi.Pointer<ffi.Bool> arg2,
+      ) => fn(
+        objc.ObjCObject(arg0, retain: false, release: true),
+        objc.ObjCObject(arg1, retain: false, release: true),
+        arg2,
+      ),
+      keepIsolateAlive,
+    );
+    final wrapper = _1wx624s_wrapBlockingBlock_1o83rbn(
+      raw,
+      rawListener,
+      objc.objCContext,
+    );
+    objc.objectRelease(raw.cast());
+    objc.objectRelease(rawListener.cast());
+    return objc.ObjCBlock<
+      ffi.Void Function(
+        ffi.Pointer<objc.ObjCObjectImpl>,
+        ffi.Pointer<objc.ObjCObjectImpl>,
+        ffi.Pointer<ffi.Bool>,
+      )
+    >(wrapper, retain: false, release: true);
+  }
+
+  static void _listenerTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<objc.ObjCObjectImpl> arg0,
+    ffi.Pointer<objc.ObjCObjectImpl> arg1,
+    ffi.Pointer<ffi.Bool> arg2,
+  ) {
+    (objc.getBlockClosure(block)
+        as void Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        ))(arg0, arg1, arg2);
+    objc.objectRelease(block.cast());
+  }
+
+  static ffi.NativeCallable<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCBlockImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  _listenerCallable =
+      ffi.NativeCallable<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCBlockImpl>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          )
+        >.listener(_listenerTrampoline)
+        ..keepIsolateAlive = false;
+  static void _blockingTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<ffi.Void> waiter,
+    ffi.Pointer<objc.ObjCObjectImpl> arg0,
+    ffi.Pointer<objc.ObjCObjectImpl> arg1,
+    ffi.Pointer<ffi.Bool> arg2,
+  ) {
+    try {
+      (objc.getBlockClosure(block)
+          as void Function(
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          ))(arg0, arg1, arg2);
+    } catch (e) {
+    } finally {
+      objc.signalWaiter(waiter);
+      objc.objectRelease(block.cast());
+    }
+  }
+
+  static ffi.NativeCallable<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCBlockImpl>,
+      ffi.Pointer<ffi.Void>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  _blockingCallable =
+      ffi.NativeCallable<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCBlockImpl>,
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          )
+        >.isolateLocal(_blockingTrampoline)
+        ..keepIsolateAlive = false;
+  static ffi.NativeCallable<
+    ffi.Void Function(
+      ffi.Pointer<objc.ObjCBlockImpl>,
+      ffi.Pointer<ffi.Void>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<objc.ObjCObjectImpl>,
+      ffi.Pointer<ffi.Bool>,
+    )
+  >
+  _blockingListenerCallable =
+      ffi.NativeCallable<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCBlockImpl>,
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          )
+        >.listener(_blockingTrampoline)
+        ..keepIsolateAlive = false;
+  static void _fnPtrTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<objc.ObjCObjectImpl> arg0,
+    ffi.Pointer<objc.ObjCObjectImpl> arg1,
+    ffi.Pointer<ffi.Bool> arg2,
+  ) => block.ref.target
+      .cast<
+        ffi.NativeFunction<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCObjectImpl> arg0,
+            ffi.Pointer<objc.ObjCObjectImpl> arg1,
+            ffi.Pointer<ffi.Bool> arg2,
+          )
+        >
+      >()
+      .asFunction<
+        void Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        )
+      >()(arg0, arg1, arg2);
+  static ffi.Pointer<ffi.Void> _fnPtrCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Void Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+              ffi.Pointer<ffi.Bool>,
+            )
+          >(_fnPtrTrampoline)
+          .cast();
+  static void _closureTrampoline(
+    ffi.Pointer<objc.ObjCBlockImpl> block,
+    ffi.Pointer<objc.ObjCObjectImpl> arg0,
+    ffi.Pointer<objc.ObjCObjectImpl> arg1,
+    ffi.Pointer<ffi.Bool> arg2,
+  ) =>
+      (objc.getBlockClosure(block)
+          as void Function(
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          ))(arg0, arg1, arg2);
+  static ffi.Pointer<ffi.Void> _closureCallable =
+      ffi.Pointer.fromFunction<
+            ffi.Void Function(
+              ffi.Pointer<objc.ObjCBlockImpl>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+              ffi.Pointer<objc.ObjCObjectImpl>,
+              ffi.Pointer<ffi.Bool>,
+            )
+          >(_closureTrampoline)
+          .cast();
+}
+
+/// Call operator for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<objc.ObjCObjectImpl>, ffi.Pointer<ffi.Bool>)>`.
+extension ObjCBlock_ffiVoid_objcObjCObjectImpl_objcObjCObjectImpl_bool$CallExtension
+    on
+        objc.ObjCBlock<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<objc.ObjCObjectImpl>,
+            ffi.Pointer<ffi.Bool>,
+          )
+        > {
+  void call(
+    objc.ObjCObject arg0,
+    objc.ObjCObject arg1,
+    ffi.Pointer<ffi.Bool> arg2,
+  ) => ref.pointer.ref.invoke
+      .cast<
+        ffi.NativeFunction<
+          ffi.Void Function(
+            ffi.Pointer<objc.ObjCBlockImpl> block,
+            ffi.Pointer<objc.ObjCObjectImpl> arg0,
+            ffi.Pointer<objc.ObjCObjectImpl> arg1,
+            ffi.Pointer<ffi.Bool> arg2,
+          )
+        >
+      >()
+      .asFunction<
+        void Function(
+          ffi.Pointer<objc.ObjCBlockImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<ffi.Bool>,
+        )
+      >()(ref.pointer, arg0.ref.pointer, arg1.ref.pointer, arg2);
 }
 
 /// Construction methods for `objc.ObjCBlock<ffi.Void Function(ffi.Pointer<ffi.UnsignedShort>, ffi.UnsignedLong)>`.
@@ -33996,6 +35657,19 @@ abstract final class ObjCBlock_instancetype_ffiVoid_NSCoder {
         release: true,
       );
 
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              instancetype Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_xr62hr)
+          .cast();
+
   static instancetype _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
     ffi.Pointer<ffi.Void> arg0,
@@ -34340,6 +36014,18 @@ abstract final class ObjCBlock_objcObjCObjectImpl_ffiVoid {
         release: true,
       );
 
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Pointer<objc.ObjCObjectImpl> Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_1mbt9g9)
+          .cast();
+
   static ffi.Pointer<objc.ObjCObjectImpl> _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
     ffi.Pointer<ffi.Void> arg0,
@@ -34492,6 +36178,19 @@ abstract final class ObjCBlock_objcObjCObjectImpl_ffiVoid_NSZone {
         retain: false,
         release: true,
       );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Pointer<objc.ObjCObjectImpl> Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<NSZone>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_18nsem0)
+          .cast();
 
   static ffi.Pointer<objc.ObjCObjectImpl> _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
@@ -34666,6 +36365,19 @@ abstract final class ObjCBlock_objcObjCObjectImpl_ffiVoid_objcObjCSelector {
         retain: false,
         release: true,
       );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Pointer<objc.ObjCObjectImpl> Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCSelector>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_50as9u)
+          .cast();
 
   static ffi.Pointer<objc.ObjCObjectImpl> _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
@@ -34857,6 +36569,20 @@ abstract final class ObjCBlock_objcObjCObjectImpl_ffiVoid_objcObjCSelector_objcO
         retain: false,
         release: true,
       );
+
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Pointer<objc.ObjCObjectImpl> Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_1mllhpc)
+          .cast();
 
   static ffi.Pointer<objc.ObjCObjectImpl> _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
@@ -35070,6 +36796,21 @@ abstract final class ObjCBlock_objcObjCObjectImpl_ffiVoid_objcObjCSelector_objcO
         release: true,
       );
 
+  /// Native method trampoline for this block signature.
+  static ffi.Pointer<ffi.Void> get protocolTrampoline =>
+      ffi.Native.addressOf<
+            ffi.NativeFunction<
+              ffi.Pointer<objc.ObjCObjectImpl> Function(
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<ffi.Void>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+                ffi.Pointer<objc.ObjCObjectImpl>,
+              )
+            >
+          >(_1wx624s_protocolTrampoline_c7gk2u)
+          .cast();
+
   static ffi.Pointer<objc.ObjCObjectImpl> _fnPtrTrampoline(
     ffi.Pointer<objc.ObjCBlockImpl> block,
     ffi.Pointer<ffi.Void> arg0,
@@ -35218,6 +36959,18 @@ extension Observer$Methods on Observer {
   }
 }
 
+abstract interface class ObserverSpec {
+  /// observeValueForKeyPath:ofObject:change:context:
+  void observeValueForKeyPath(
+    NSString keyPath, {
+    required objc.ObjCObject ofObject,
+    required NSDictionary change,
+    required ffi.Pointer<ffi.Void> context,
+  });
+}
+
+abstract interface class ObserverOptional {}
+
 interface class Observer$Builder {
   /// Returns the [objc.Protocol] object for this protocol.
   static objc.Protocol get $protocol =>
@@ -35267,6 +37020,59 @@ interface class Observer$Builder {
       observeValueForKeyPath_ofObject_change_context_,
     );
     builder.addProtocol($protocol);
+  }
+
+  /// Builds an object that implements the Observer protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [ObserverOptional].
+  static Observer implementFrom(
+    ObserverSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implement(
+      observeValueForKeyPath_ofObject_change_context_:
+          (
+            NSString keyPath,
+            objc.ObjCObject ofObject,
+            NSDictionary change,
+            ffi.Pointer<ffi.Void> context,
+          ) {
+            implementation.observeValueForKeyPath(
+              keyPath,
+              ofObject: ofObject,
+              change: change,
+              context: context,
+            );
+          },
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the Observer protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    objc.ObjCProtocolBuilder builder,
+    ObserverSpec implementation,
+  ) {
+    addToBuilder(
+      builder,
+      observeValueForKeyPath_ofObject_change_context_:
+          (
+            NSString keyPath,
+            objc.ObjCObject ofObject,
+            NSDictionary change,
+            ffi.Pointer<ffi.Void> context,
+          ) {
+            implementation.observeValueForKeyPath(
+              keyPath,
+              ofObject: ofObject,
+              change: change,
+              context: context,
+            );
+          },
+    );
   }
 
   /// Builds an object that implements the Observer protocol. To implement
@@ -35369,6 +37175,110 @@ interface class Observer$Builder {
     builder.addProtocol($protocol);
   }
 
+  /// Builds an object that implements the Observer protocol using members
+  /// from [implementation]. Methods that support listener implementations will
+  /// use them.
+  static Observer implementFromAsListener(
+    ObserverSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implementAsListener(
+      observeValueForKeyPath_ofObject_change_context_:
+          (
+            NSString keyPath,
+            objc.ObjCObject ofObject,
+            NSDictionary change,
+            ffi.Pointer<ffi.Void> context,
+          ) {
+            implementation.observeValueForKeyPath(
+              keyPath,
+              ofObject: ofObject,
+              change: change,
+              context: context,
+            );
+          },
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the Observer protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support listener implementations will use them.
+  static void addToBuilderFromAsListener(
+    objc.ObjCProtocolBuilder builder,
+    ObserverSpec implementation,
+  ) {
+    addToBuilderAsListener(
+      builder,
+      observeValueForKeyPath_ofObject_change_context_:
+          (
+            NSString keyPath,
+            objc.ObjCObject ofObject,
+            NSDictionary change,
+            ffi.Pointer<ffi.Void> context,
+          ) {
+            implementation.observeValueForKeyPath(
+              keyPath,
+              ofObject: ofObject,
+              change: change,
+              context: context,
+            );
+          },
+    );
+  }
+
+  /// Builds an object that implements the Observer protocol using members
+  /// from [implementation]. Methods that support blocking listener
+  /// implementations will use them.
+  static Observer implementFromAsBlocking(
+    ObserverSpec implementation, {
+    bool $keepIsolateAlive = true,
+  }) {
+    return implementAsBlocking(
+      observeValueForKeyPath_ofObject_change_context_:
+          (
+            NSString keyPath,
+            objc.ObjCObject ofObject,
+            NSDictionary change,
+            ffi.Pointer<ffi.Void> context,
+          ) {
+            implementation.observeValueForKeyPath(
+              keyPath,
+              ofObject: ofObject,
+              change: change,
+              context: context,
+            );
+          },
+      $keepIsolateAlive: $keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the Observer protocol to an existing
+  /// [objc.ObjCProtocolBuilder] using members from [implementation]. Methods that
+  /// support blocking listener implementations will use them.
+  static void addToBuilderFromAsBlocking(
+    objc.ObjCProtocolBuilder builder,
+    ObserverSpec implementation,
+  ) {
+    addToBuilderAsBlocking(
+      builder,
+      observeValueForKeyPath_ofObject_change_context_:
+          (
+            NSString keyPath,
+            objc.ObjCObject ofObject,
+            NSDictionary change,
+            ffi.Pointer<ffi.Void> context,
+          ) {
+            implementation.observeValueForKeyPath(
+              keyPath,
+              ofObject: ofObject,
+              change: change,
+              context: context,
+            );
+          },
+    );
+  }
+
   /// observeValueForKeyPath:ofObject:change:context:
   static final observeValueForKeyPath_ofObject_change_context_ =
       objc.ObjCProtocolListenableMethod<
@@ -35455,6 +37365,23 @@ interface class Observer$Builder {
               ) => func(arg1, arg2, arg3, arg4),
             ),
       );
+}
+
+mixin ObserverAdapter {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final Observer asObserver = Observer$Builder.implementFrom(
+    this as ObserverSpec,
+  );
+
+  /// Lazily creates a listener-backed native adapter for this Dart
+  /// implementation.
+  late final Observer asObserverListener =
+      Observer$Builder.implementFromAsListener(this as ObserverSpec);
+
+  /// Lazily creates a blocking-listener-backed native adapter for this Dart
+  /// implementation.
+  late final Observer asObserverBlocking =
+      Observer$Builder.implementFromAsBlocking(this as ObserverSpec);
 }
 
 final class OpaqueAEDataStorageType extends ffi.Opaque {}
@@ -38765,6 +40692,25 @@ final _objc_msgSend_f167m6 = objc.msgSendPointer
         ffi.Pointer<objc.ObjCBlockImpl>,
       )
     >();
+final _objc_msgSend_f22r3n = objc.msgSendPointer
+    .cast<
+      ffi.NativeFunction<
+        ffi.Pointer<objc.ObjCObjectImpl> Function(
+          ffi.Pointer<objc.ObjCObjectImpl>,
+          ffi.Pointer<objc.ObjCSelector>,
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Void>,
+        )
+      >
+    >()
+    .asFunction<
+      ffi.Pointer<objc.ObjCObjectImpl> Function(
+        ffi.Pointer<objc.ObjCObjectImpl>,
+        ffi.Pointer<objc.ObjCSelector>,
+        ffi.Pointer<ffi.Char>,
+        ffi.Pointer<ffi.Void>,
+      )
+    >();
 final _objc_msgSend_gcjqkl = objc.msgSendPointer
     .cast<
       ffi.NativeFunction<
@@ -40113,6 +42059,7 @@ late final _sel_bookmarkDataWithOptions_includingResourceValuesForKeys_relativeT
     );
 late final _sel_boolValue = objc.registerName("boolValue");
 late final _sel_buildInstance_ = objc.registerName("buildInstance:");
+late final _sel_buildObject_ = objc.registerName("buildObject:");
 late final _sel_builtInPlugInsPath = objc.registerName("builtInPlugInsPath");
 late final _sel_builtInPlugInsURL = objc.registerName("builtInPlugInsURL");
 late final _sel_bundleForClass_ = objc.registerName("bundleForClass:");
@@ -40649,6 +42596,9 @@ late final _sel_initWithCharacters_length_ = objc.registerName(
   "initWithCharacters:length:",
 );
 late final _sel_initWithClassName_ = objc.registerName("initWithClassName:");
+late final _sel_initWithClassName_superclass_ = objc.registerName(
+  "initWithClassName:superclass:",
+);
 late final _sel_initWithCoder_ = objc.registerName("initWithCoder:");
 late final _sel_initWithContentsOfFile_ = objc.registerName(
   "initWithContentsOfFile:",

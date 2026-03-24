@@ -52,6 +52,7 @@ Type? parseObjCInterfaceDeclaration(
     ),
     apiAvailability: apiAvailability,
   );
+  itf.generateSubclassHelpers = objcInterfaces.includeSubclassHelpers(decl);
   context.bindingsIndex.addObjCInterfaceToSeen(usr, itf);
   return itf;
 }

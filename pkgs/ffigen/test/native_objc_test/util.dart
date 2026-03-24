@@ -110,3 +110,24 @@ int objectRetainCount(Pointer<ObjCObjectImpl> object) {
 
 bool isValidClass(Pointer<Void> clazz) =>
     internal_for_testing.isValidClass(clazz.cast(), forceReloadClasses: true);
+
+const _rtldNow = 0x2;
+const _rtldGlobal = 0x8;
+
+@Native<Pointer<Void> Function(Pointer<Char>, Int32)>(symbol: 'dlopen')
+external Pointer<Void> _dlopen(Pointer<Char> path, int mode);
+
+/// Loads [dylibPath] into the process namespace so generated `@Native`
+/// protocol/subclass trampoline lookups can resolve against process symbols.
+DynamicLibrary loadDylibGlobally(String dylibPath) {
+  final nativePath = dylibPath.toNativeUtf8();
+  try {
+    final handle = _dlopen(nativePath.cast(), _rtldNow | _rtldGlobal);
+    if (handle == nullptr) {
+      throw ArgumentError.value(dylibPath, 'dylibPath', 'Failed to dlopen');
+    }
+    return DynamicLibrary.open(dylibPath);
+  } finally {
+    calloc.free(nativePath);
+  }
+}

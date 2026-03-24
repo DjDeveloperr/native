@@ -55,12 +55,12 @@ class CopyMethodsFromSuperTypesVisitation extends Visitation {
     if (superType != null) {
       for (final m in superType.methods) {
         if (isNSObject) {
-          node.addMethod(m);
+          node.addMethod(m.copyForInheritance());
         } else if (m.isClassMethod &&
             !_excludedNSObjectMethods.contains(m.originalName)) {
-          node.addMethod(m);
+          node.addMethod(m.copyForInheritance());
         } else if (ObjCBuiltInFunctions.isInstanceType(m.returnType)) {
-          node.addMethod(m);
+          node.addMethod(m.copyForInheritance());
         }
       }
     }
@@ -80,7 +80,7 @@ class CopyMethodsFromSuperTypesVisitation extends Visitation {
     for (final category in node.categories) {
       for (final m in category.methods) {
         if (category.shouldCopyMethodToInterface(m)) {
-          node.addMethod(m);
+          node.addMethod(m.copyForInheritance());
         }
       }
     }
@@ -95,7 +95,7 @@ class CopyMethodsFromSuperTypesVisitation extends Visitation {
     for (final proto in protocols) {
       for (final m in proto.methods) {
         if (!_excludedNSObjectMethods.contains(m.originalName)) {
-          addMethod(m);
+          addMethod(m.copyForInheritance());
         }
       }
     }
@@ -127,7 +127,7 @@ class CopyMethodsFromSuperTypesVisitation extends Visitation {
       // So copy across all the methods explicitly, rather than trying to use
       // Dart inheritance to get them implicitly.
       for (final method in superProtocol.methods) {
-        node.addMethod(method);
+        node.addMethod(method.copyForInheritance());
       }
     }
   }

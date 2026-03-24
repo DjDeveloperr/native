@@ -101,6 +101,12 @@ final class YamlConfig {
   YamlDeclarationFilters get objcInterfaces => _objcInterfaces;
   late YamlDeclarationFilters _objcInterfaces;
 
+  /// Subclass helper config for Objective C interfaces.
+  YamlIncluder get objcInterfaceSubclassHelpers =>
+      _objcInterfaceSubclassHelpers;
+  late YamlIncluder _objcInterfaceSubclassHelpers =
+      YamlIncluder.excludeByDefault();
+
   /// Declaration config for Objective C protocols.
   YamlDeclarationFilters get objcProtocols => _objcProtocols;
   late YamlDeclarationFilters _objcProtocols;
@@ -663,6 +669,11 @@ final class YamlConfig {
               ..._memberRenameProperties(),
               _memberFilterProperty(),
               HeterogeneousMapEntry(
+                key: strings.objcSubclass,
+                valueConfigSpec: _includeExcludeObject(),
+                defaultValue: (node) => YamlIncluder.excludeByDefault(),
+              ),
+              HeterogeneousMapEntry(
                 key: strings.objcModule,
                 valueConfigSpec: _objcModuleObject(),
                 defaultValue: (node) => ObjCModules({}),
@@ -673,6 +684,8 @@ final class YamlConfig {
                 node.value as Map<dynamic, dynamic>,
                 _excludeAllByDefault,
               );
+              _objcInterfaceSubclassHelpers =
+                  (node.value as Map)[strings.objcSubclass] as YamlIncluder;
               _objcInterfaceModules =
                   (node.value as Map)[strings.objcModule] as ObjCModules;
             },
@@ -1313,6 +1326,10 @@ final class YamlConfig {
               rename: objcInterfaces.rename,
               renameMember: objcInterfaces.renameMember,
               includeTransitive: includeTransitiveObjCInterfaces,
+              includeSubclassHelpers: (declaration) =>
+                  objcInterfaceSubclassHelpers.shouldInclude(
+                    declaration.originalName,
+                  ),
               module: interfaceModule,
             ),
             protocols: Protocols(

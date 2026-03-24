@@ -14,6 +14,7 @@
 typedef struct _ObjCSelector ObjCSelector;
 typedef struct _ObjCObjectImpl ObjCObjectImpl;
 typedef struct _ObjCProtocolImpl ObjCProtocolImpl;
+typedef struct _ObjCMethodImpl ObjCMethodImpl;
 
 ObjCSelector *sel_registerName(const char *name);
 const char * sel_getName(ObjCSelector* sel);
@@ -51,6 +52,8 @@ ObjCMethodDesc protocol_getMethodDescription(
     ObjCProtocolImpl* protocol, ObjCSelector* sel, bool isRequiredMethod,
     bool isInstanceMethod);
 const char *protocol_getName(ObjCProtocolImpl *proto);
+ObjCMethodImpl* class_getInstanceMethod(ObjCObjectImpl* cls, ObjCSelector* name);
+const char* method_getTypeEncoding(ObjCMethodImpl* method);
 
 extern const ObjCObjectImpl *NSKeyValueChangeIndexesKey;
 extern const ObjCObjectImpl *NSKeyValueChangeKindKey;

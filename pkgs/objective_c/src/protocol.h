@@ -17,10 +17,14 @@
  */
 @interface DOBJCDartProtocolBuilder : NSObject
 - (instancetype)initWithClassName: (const char*)name;
-- (void)implementMethod:(SEL)sel withBlock:(void*)block
-    withTrampoline:(void*)trampoline withSignature:(char*)signature;
+- (instancetype)initWithClassName: (const char*)name superclass: (void*)superclass;
+- (void)implementMethod:(SEL)sel
+              withBlock:(void*)block
+         withTrampoline:(void*)trampoline
+          withSignature:(char*)signature;
 - (void)addProtocol:(Protocol*) protocol;
 - (void)registerClass;
+- (NSObject*)buildObject: (Dart_Port)port;
 - (DOBJCDartProtocol*)buildInstance: (Dart_Port)port;
 @end
 

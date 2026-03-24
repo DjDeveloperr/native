@@ -13,6 +13,8 @@ functions:
   include:
     - 'objc_.*'
     - 'object_getClass'
+    - 'class_getInstanceMethod'
+    - 'method_getTypeEncoding'
     - 'sel_registerName'
     - 'sel_getName'
     - 'protocol_getMethodDescription'
@@ -34,6 +36,8 @@ functions:
     'objc_msgSend_fpret': 'msgSendFpret'
     'objc_msgSend_stret': 'msgSendStret'
     'object_getClass': 'getObjectClass'
+    'class_getInstanceMethod': 'getInstanceMethod'
+    'method_getTypeEncoding': 'getTypeEncoding'
     'objc_copyClassList': 'copyClassList'
     'objc_getProtocol': 'getProtocol'
     'objc_autoreleasePoolPush': 'autoreleasePoolPush'

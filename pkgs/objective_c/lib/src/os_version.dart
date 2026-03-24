@@ -2,7 +2,7 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'dart:io';
+import 'dart:ffi' show Abi;
 import 'package:pub_semver/pub_semver.dart';
 
 import 'c_bindings_generated.dart' as c;
@@ -23,9 +23,12 @@ Version _osVersion = () {
 /// The each platform's version is optional, and the function returns false if
 /// no version is provided for the current platform.
 bool checkOSVersion({Version? iOS, Version? macOS}) {
-  if (Platform.isIOS) return _checkOSVersionImpl(iOS);
-  if (Platform.isMacOS) return _checkOSVersionImpl(macOS);
-  throw UnsupportedError('Only supported on iOS and macOS');
+  switch (_currentApplePlatform) {
+    case _ApplePlatform.iOS:
+      return _checkOSVersionImpl(iOS);
+    case _ApplePlatform.macOS:
+      return _checkOSVersionImpl(macOS);
+  }
 }
 
 bool _checkOSVersionImpl(Version? version) {
@@ -50,8 +53,14 @@ void checkOsVersionInternal(
   PlatformAvailability? iOS,
   PlatformAvailability? macOS,
 }) {
-  if (Platform.isIOS) _checkOsVersionInternalImpl(apiName, 'iOS', iOS);
-  if (Platform.isMacOS) _checkOsVersionInternalImpl(apiName, 'macOS', macOS);
+  switch (_currentApplePlatform) {
+    case _ApplePlatform.iOS:
+      _checkOsVersionInternalImpl(apiName, 'iOS', iOS);
+      break;
+    case _ApplePlatform.macOS:
+      _checkOsVersionInternalImpl(apiName, 'macOS', macOS);
+      break;
+  }
 }
 
 void _checkOsVersionInternalImpl(
@@ -76,4 +85,16 @@ void _checkOsVersionInternalImpl(
 Version _toVersion((int, int, int) record) {
   final (int major, int minor, int patch) = record;
   return Version(major, minor, patch);
+}
+
+enum _ApplePlatform {
+  iOS,
+  macOS,
+}
+
+_ApplePlatform get _currentApplePlatform {
+  final abiName = Abi.current().toString().toLowerCase();
+  if (abiName.contains('ios')) return _ApplePlatform.iOS;
+  if (abiName.contains('macos')) return _ApplePlatform.macOS;
+  throw UnsupportedError('Only supported on iOS and macOS');
 }

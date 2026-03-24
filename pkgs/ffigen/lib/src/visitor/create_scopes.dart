@@ -89,10 +89,16 @@ class CreateScopesVisitation extends Visitation {
   ) {
     node.methodNameScope ??= (superType?.methodNameScope ?? classScope)
         .addChild('\$methods', preUsedNames: objCReservedMethods);
+    node.classMethodNameScope ??= node.methodNameScope!.addChild(
+      '\$class_methods',
+      preUsedNames: objCReservedMethods,
+    );
     for (final m in node.methods) {
-      final parentScope =
-          _findRootWithMethod(superType, m)?.localScope ?? classScope;
-      createScope(m, parentScope, m.originalName);
+      // Method names are added explicitly to methodNameScope/classMethodNameScope
+      // in FindSymbolsVisitation. The method's local scope is only for params
+      // and method-local generated helpers, so it should not inherit class
+      // member names like `length` or `bytes`.
+      createScope(m, context.rootScope, m.originalName);
     }
   }
 

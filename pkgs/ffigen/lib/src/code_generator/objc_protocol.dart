@@ -65,6 +65,123 @@ class ObjCProtocol extends BindingType with ObjCMethods, HasLocalScope {
 
   bool get unavailable => apiAvailability.availability == Availability.none;
 
+  bool _isAvailableInProtocolAdapter(ObjCMethod method) =>
+      method.apiAvailability.availability != Availability.none;
+
+  String _convertedReturnType(ObjCMethod method, String targetType) {
+    if (method.returnType is ObjCInstanceType) return targetType;
+    final baseType = method.returnType.typealiasType;
+    if (baseType is ObjCNullable && baseType.child is ObjCInstanceType) {
+      return '$targetType?';
+    }
+    return method.returnType.getDartType(context);
+  }
+
+  String _protocolPropertyName(ObjCMethod method) =>
+      stripGeneratedNameSuffix(method.symbol.name);
+
+  String _joinProtocolParamStr(List<Parameter> params) {
+    if (params.isEmpty) return '';
+    String paramToStr(Parameter p) =>
+        '${p.type.getDartType(context)} ${p.name}';
+    String paramToNamed(Parameter p) =>
+        '${p.isNullable ? '' : 'required '}${paramToStr(p)}';
+    if (params.length == 1) return paramToStr(params.first);
+    final named = params.sublist(1).map(paramToNamed).join(',');
+    return '${paramToStr(params.first)}, {$named}';
+  }
+
+  String _protocolInterfaceMethodName(ObjCMethod method) {
+    final methodName = switch (method.kind) {
+      ObjCMethodKind.propertyGetter ||
+      ObjCMethodKind.propertySetter => _protocolPropertyName(method),
+      ObjCMethodKind.method => method.symbol.name,
+    };
+    final upperName = methodName[0].toUpperCase() + methodName.substring(1);
+    return switch (method.kind) {
+      ObjCMethodKind.method => methodName,
+      ObjCMethodKind.propertyGetter when method.isClassMethod =>
+        'get$upperName',
+      ObjCMethodKind.propertyGetter => methodName,
+      ObjCMethodKind.propertySetter when method.isClassMethod =>
+        'set$upperName',
+      ObjCMethodKind.propertySetter => methodName,
+    };
+  }
+
+  String _protocolInterfaceDeclaration(ObjCMethod method, String targetType) {
+    final returnTypeStr = _convertedReturnType(method, targetType);
+    final params = method.returnsNSErrorByOutParam
+        ? method.params.toList().sublist(0, method.params.length - 1)
+        : method.params.toList();
+    final paramStr = _joinProtocolParamStr(params);
+    final methodName = _protocolInterfaceMethodName(method);
+
+    return switch (method.kind) {
+      ObjCMethodKind.method => '$returnTypeStr $methodName($paramStr);',
+      ObjCMethodKind.propertyGetter when method.isClassMethod =>
+        '$returnTypeStr $methodName($paramStr);',
+      ObjCMethodKind.propertyGetter => '$returnTypeStr get $methodName;',
+      ObjCMethodKind.propertySetter when method.isClassMethod =>
+        '$returnTypeStr $methodName($paramStr);',
+      ObjCMethodKind.propertySetter => 'set $methodName($paramStr);',
+    };
+  }
+
+  String _protocolInvocationArgumentList(ObjCMethod method) {
+    final params = method.returnsNSErrorByOutParam
+        ? method.params.toList().sublist(0, method.params.length - 1)
+        : method.params.toList();
+    if (params.isEmpty) return '';
+    if (params.length == 1) return params.first.name;
+
+    final positional = params.first.name;
+    final named = params.skip(1).map((p) => '${p.name}: ${p.name}').join(', ');
+    return '$positional, $named';
+  }
+
+  String _protocolImplementationInvocation(
+    ObjCMethod method,
+    String implementationVar,
+  ) {
+    final methodName = _protocolInterfaceMethodName(method);
+    final args = _protocolInvocationArgumentList(method);
+
+    return switch (method.kind) {
+      ObjCMethodKind.method => '$implementationVar.$methodName($args)',
+      ObjCMethodKind.propertyGetter when method.isClassMethod =>
+        '$implementationVar.$methodName($args)',
+      ObjCMethodKind.propertyGetter => '$implementationVar.$methodName',
+      ObjCMethodKind.propertySetter when method.isClassMethod =>
+        '$implementationVar.$methodName($args)',
+      ObjCMethodKind.propertySetter => '$implementationVar.$methodName = $args',
+    };
+  }
+
+  String _protocolAdapterClosure(ObjCMethod method, String implementationVar) {
+    final closureParams = method.params
+        .map((p) => '${p.type.getDartType(context)} ${p.name}')
+        .join(', ');
+    final invocation = _protocolImplementationInvocation(
+      method,
+      implementationVar,
+    );
+
+    if (method.returnType == voidType) {
+      return '($closureParams) { $invocation; }';
+    }
+    return '($closureParams) => $invocation';
+  }
+
+  static String _trampolineAddress(Writer w, ObjCBlock block) {
+    final func = block.protocolTrampoline!.func;
+    final type = NativeFunc(
+      func.functionType,
+    ).getCType(w.context, writeArgumentNames: false);
+    return '${w.context.libs.prefix(ffiImport)}.Native.addressOf<$type>('
+        '${func.name}).cast()';
+  }
+
   @override
   BindingString toBindingString(Writer w) {
     final protocolClass = ObjCBuiltInFunctions.protocolClass.gen(context);
@@ -79,6 +196,10 @@ class ObjCProtocol extends BindingType with ObjCMethods, HasLocalScope {
     final getSignature = ObjCBuiltInFunctions.getProtocolMethodSignature.gen(
       context,
     );
+    final specClass = '${name}Spec';
+    final optionalClass = '${name}Optional';
+    final defaultsMixin = '${name}Defaults';
+    final adapterMixin = '${name}Adapter';
 
     final s = StringBuffer();
     s.write('\n');
@@ -139,6 +260,60 @@ ${generateInstanceMethodBindings(w, this)}
 
     if (!generateAsStub) {
       final builder = '$name\$Builder';
+      final targetType = getDartType(context);
+      final requiredDeclarations = StringBuffer();
+      final optionalDeclarations = StringBuffer();
+      final adapterGetters = StringBuffer();
+      final requiredMethods = methods
+          .where((method) => !method.isOptional)
+          .toList();
+      final optionalMethods = methods
+          .where((method) => method.isOptional)
+          .toList();
+      final availableRequiredMethods = requiredMethods
+          .where(_isAvailableInProtocolAdapter)
+          .toList();
+      final availableOptionalMethods = optionalMethods
+          .where(_isAvailableInProtocolAdapter)
+          .toList();
+
+      for (final method in availableRequiredMethods) {
+        requiredDeclarations.write(
+          makeDartDoc(method.dartDoc ?? method.originalName),
+        );
+        requiredDeclarations.write(
+          '  ${_protocolInterfaceDeclaration(method, targetType)}\n',
+        );
+      }
+      for (final method in availableOptionalMethods) {
+        optionalDeclarations.write(
+          makeDartDoc(method.dartDoc ?? method.originalName),
+        );
+        optionalDeclarations.write(
+          '  ${_protocolInterfaceDeclaration(method, targetType)}\n',
+        );
+      }
+
+      s.write('''
+abstract interface class $specClass {
+${requiredDeclarations.toString()}
+}
+
+abstract interface class $optionalClass {
+${optionalDeclarations.toString()}
+}
+
+''');
+      if (availableOptionalMethods.isNotEmpty) {
+        s.write('''
+mixin $defaultsMixin implements $optionalClass {
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+}
+
+''');
+      }
+
       s.write('''
   interface class $builder {
   ''');
@@ -147,14 +322,19 @@ ${generateInstanceMethodBindings(w, this)}
       final buildImplementations = StringBuffer();
       final buildListenerImplementations = StringBuffer();
       final buildBlockingImplementations = StringBuffer();
+      final buildFromImplementations = StringBuffer();
+      final buildFromListenerImplementations = StringBuffer();
+      final buildFromBlockingImplementations = StringBuffer();
       final methodFields = StringBuffer();
 
       var anyListeners = false;
+      final hasOptionalMethods = availableOptionalMethods.isNotEmpty;
       for (final method in methods) {
         final methodName = method.protocolMethodName!.name;
         final fieldName = methodName;
         final argName = methodName;
         final block = method.protocolBlock!;
+        block.fillProtocolTrampoline();
         final blockUtils = block.name;
         final methodClass = block.hasListener
             ? protocolListenableMethod
@@ -201,12 +381,31 @@ ${generateInstanceMethodBindings(w, this)}
     $builder.$fieldName.$maybeImplementAsListener(builder, $argName);''');
         buildBlockingImplementations.write('''
     $builder.$fieldName.$maybeImplementAsBlocking(builder, $argName);''');
+        if (_isAvailableInProtocolAdapter(method)) {
+          final implementationVar = method.isOptional
+              ? 'optionalImplementation'
+              : 'implementation';
+          final adapterClosure = _protocolAdapterClosure(
+            method,
+            implementationVar,
+          );
+          final adapterExpr = method.isOptional
+              ? '$builder.$fieldName.isAvailable && '
+                    'optionalImplementation != null ? $adapterClosure : null'
+              : adapterClosure;
+          buildFromImplementations.write('''
+      $argName: $adapterExpr,''');
+          buildFromListenerImplementations.write('''
+      $argName: $adapterExpr,''');
+          buildFromBlockingImplementations.write('''
+      $argName: $adapterExpr,''');
+        }
 
         methodFields.write(makeDartDoc(method.dartDoc ?? method.originalName));
         methodFields.write('''static final $fieldName = $methodClass<$funcType>(
       ${_protocolPointer.name},
       ${method.selObject.name},
-      ${_trampolineAddress(block)},
+      ${_trampolineAddress(w, block)},
       $getSignature(
           ${_protocolPointer.name},
           ${method.selObject.name},
@@ -248,6 +447,15 @@ ${generateInstanceMethodBindings(w, this)}
     builder.addProtocol(\$protocol);
   }
 ''';
+
+      final optionalImplementationDecl = hasOptionalMethods
+          ? '''
+    final $optionalClass? optionalImplementation =
+        implementation is $optionalClass
+            ? implementation as $optionalClass
+            : null;
+'''
+          : '';
 
       var listenerBuilders = '';
       if (anyListeners) {
@@ -298,16 +506,121 @@ ${generateInstanceMethodBindings(w, this)}
     $buildBlockingImplementations
     builder.addProtocol(\$protocol);
   }
+
+  /// Builds an object that implements the $originalName protocol using members
+  /// from [implementation]. Methods that support listener implementations will
+  /// use them.
+  static $name implementFromAsListener(
+    $specClass implementation, {
+    bool \$keepIsolateAlive = true,
+  }) {
+$optionalImplementationDecl    return implementAsListener(
+$buildFromListenerImplementations
+      \$keepIsolateAlive: \$keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the $originalName protocol to an existing
+  /// [$protocolBuilder] using members from [implementation]. Methods that
+  /// support listener implementations will use them.
+  static void addToBuilderFromAsListener(
+    $protocolBuilder builder,
+    $specClass implementation,
+  ) {
+$optionalImplementationDecl    addToBuilderAsListener(
+      builder,
+$buildFromListenerImplementations    );
+  }
+
+  /// Builds an object that implements the $originalName protocol using members
+  /// from [implementation]. Methods that support blocking listener
+  /// implementations will use them.
+  static $name implementFromAsBlocking(
+    $specClass implementation, {
+    bool \$keepIsolateAlive = true,
+  }) {
+$optionalImplementationDecl    return implementAsBlocking(
+$buildFromBlockingImplementations
+      \$keepIsolateAlive: \$keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the $originalName protocol to an existing
+  /// [$protocolBuilder] using members from [implementation]. Methods that
+  /// support blocking listener implementations will use them.
+  static void addToBuilderFromAsBlocking(
+    $protocolBuilder builder,
+    $specClass implementation,
+  ) {
+$optionalImplementationDecl    addToBuilderAsBlocking(
+      builder,
+$buildFromBlockingImplementations    );
+  }
 ''';
       }
+
+      final implementFromBuilders =
+          '''
+  /// Builds an object that implements the $originalName protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [$optionalClass].
+  static $name implementFrom(
+    $specClass implementation, {
+    bool \$keepIsolateAlive = true,
+  }) {
+$optionalImplementationDecl    return implement(
+$buildFromImplementations
+      \$keepIsolateAlive: \$keepIsolateAlive,
+    );
+  }
+
+  /// Adds an implementation of the $originalName protocol to an existing
+  /// [$protocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    $protocolBuilder builder,
+    $specClass implementation,
+  ) {
+$optionalImplementationDecl    addToBuilder(
+      builder,
+$buildFromImplementations    );
+  }
+''';
 
       s.write('''
 
   $builders
+  $implementFromBuilders
   $listenerBuilders
   $methodFields
 }
 ''');
+
+      adapterGetters.write('''
+mixin $adapterMixin {
+  /// Lazily creates a native adapter for this Dart implementation.
+  late final $name as$name = $builder.implementFrom(this as $specClass);
+''');
+      if (anyListeners) {
+        adapterGetters.write('''
+
+  /// Lazily creates a listener-backed native adapter for this Dart
+  /// implementation.
+  late final $name as${name}Listener =
+      $builder.implementFromAsListener(this as $specClass);
+
+  /// Lazily creates a blocking-listener-backed native adapter for this Dart
+  /// implementation.
+  late final $name as${name}Blocking =
+      $builder.implementFromAsBlocking(this as $specClass);
+''');
+      }
+      adapterGetters.write('''
+}
+
+''');
+      s.write(adapterGetters.toString());
     }
 
     return BindingString(
@@ -316,31 +629,8 @@ ${generateInstanceMethodBindings(w, this)}
     );
   }
 
-  String _trampolineAddress(ObjCBlock block) {
-    final func = block.protocolTrampoline!.func;
-    final type = NativeFunc(
-      func.functionType,
-    ).getCType(context, writeArgumentNames: false);
-    final ffiPrefix = context.libs.prefix(ffiImport);
-    return '$ffiPrefix.Native.addressOf<$type>(${func.name}).cast()';
-  }
-
   @override
-  BindingString? toObjCBindingString(Writer w) {
-    if (generateAsStub) return null;
-
-    final libraryId = context.objCBuiltInFunctions.libraryId;
-    final mainString =
-        '''
-
-Protocol* _${libraryId}_$originalName(void) { return @protocol($originalName); }
-''';
-
-    return BindingString(
-      type: BindingStringType.objcProtocol,
-      string: mainString,
-    );
-  }
+  BindingString? toObjCBindingString(Writer w) => null;
 
   @override
   String getCType(Context context) =>

@@ -10,20 +10,23 @@ import 'package:ffi/ffi.dart';
 
 import 'c_bindings_generated.dart' as c;
 import 'internal.dart'
-    show FailedToLoadProtocolMethodException, GetProtocolName, ObjCBlockBase;
+    show
+        FailedToLoadProtocolMethodException,
+        GetProtocolName,
+        ObjCBlockBase,
+        getClass;
 import 'objective_c_bindings_generated.dart' as objc;
 import 'runtime_bindings_generated.dart' as r;
 import 'selector.dart';
 
 /// Helper class for building Objective C objects that implement protocols.
-class ObjCProtocolBuilder {
+class _ObjCGeneratedClassBuilder {
   final objc.DartProtocolBuilder _builder;
   var _built = false;
 
   objc.DartProtocolBuilder get builder => _builder;
 
-  ObjCProtocolBuilder({String debugName = 'DOBJCDartProtocol'})
-    : _builder = _createBuilder(debugName);
+  _ObjCGeneratedClassBuilder.fromBuilder(this._builder);
 
   /// Add a method implementation to the protocol.
   ///
@@ -64,18 +67,12 @@ class ObjCProtocolBuilder {
       keepAlivePort = RawReceivePort((_) => keepAlivePort.close());
       disposePort = keepAlivePort.sendPort.nativePort;
     }
-    return _builder.buildInstance(disposePort);
+    return _builder.buildObject(disposePort);
   }
 
-  /// Add the [protocol] to this implementation.
-  ///
-  /// This essentially declares that the implementation implements the protocol.
-  /// There is no automatic check that ensures that the implementation actually
-  /// implements all the methods of the protocol.
-  void addProtocol(objc.Protocol protocol) => _builder.addProtocol(protocol);
-
   static final _rand = Random();
-  static objc.DartProtocolBuilder _createBuilder(String debugName) {
+
+  static objc.DartProtocolBuilder createProtocolBuilder(String debugName) {
     final name = '${debugName}_${_rand.nextInt(1 << 32)}'.toNativeUtf8();
     final builder = objc.DartProtocolBuilder.alloc().initWithClassName(
       name.cast(),
@@ -83,6 +80,52 @@ class ObjCProtocolBuilder {
     calloc.free(name);
     return builder;
   }
+
+  static objc.DartProtocolBuilder createSubclassBuilder(
+    String debugName,
+    String superclassName,
+  ) {
+    final name = '${debugName}_${_rand.nextInt(1 << 32)}'.toNativeUtf8();
+    final superclass = getClass(superclassName);
+    final builder = objc.DartProtocolBuilder.alloc()
+        .initWithClassNameSuperclass(
+          name.cast(),
+          superclass: superclass.cast(),
+        );
+    calloc.free(name);
+    return builder;
+  }
+}
+
+/// Helper class for building Objective C objects that implement protocols.
+class ObjCProtocolBuilder extends _ObjCGeneratedClassBuilder {
+  ObjCProtocolBuilder({String debugName = 'DOBJCDartProtocol'})
+    : super.fromBuilder(
+        _ObjCGeneratedClassBuilder.createProtocolBuilder(debugName),
+      );
+
+  /// Add the [protocol] to this implementation.
+  ///
+  /// This essentially declares that the implementation implements the protocol.
+  /// There is no automatic check that ensures that the implementation actually
+  /// implements all the methods of the protocol.
+  void addProtocol(objc.Protocol protocol) => _builder.addProtocol(protocol);
+}
+
+/// Helper class for building Objective C subclasses with Dart method bodies.
+class ObjCSubclassBuilder extends _ObjCGeneratedClassBuilder {
+  ObjCSubclassBuilder({
+    required String superclassName,
+    String debugName = 'DOBJCDartSubclass',
+  }) : super.fromBuilder(
+         _ObjCGeneratedClassBuilder.createSubclassBuilder(
+           debugName,
+           superclassName,
+         ),
+       );
+
+  /// Add the [protocol] to this subclass implementation.
+  void addProtocol(objc.Protocol protocol) => _builder.addProtocol(protocol);
 }
 
 /// A method in an ObjC protocol.

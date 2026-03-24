@@ -587,6 +587,9 @@ final class Interfaces extends Declarations {
   /// transitively included interfaces will be generated as stubs instead.
   final bool includeTransitive;
 
+  /// Whether to emit subclass helper APIs for the given interface.
+  final bool Function(Declaration declaration) includeSubclassHelpers;
+
   /// The module that the Objective-C interface belongs to.
   final String? Function(Declaration declaration) module;
 
@@ -596,6 +599,7 @@ final class Interfaces extends Declarations {
     super.rename,
     super.renameMember,
     this.includeTransitive = false,
+    this.includeSubclassHelpers = excludeSubclassHelpers,
     this.module = noModule,
   });
 
@@ -606,6 +610,7 @@ final class Interfaces extends Declarations {
   static Interfaces includeSet(Set<String> names) =>
       Interfaces(include: Declarations.includeSet(names));
 
+  static bool excludeSubclassHelpers(Declaration declaration) => false;
   static String? noModule(Declaration declaration) => null;
 }
 

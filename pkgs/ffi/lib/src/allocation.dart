@@ -3,7 +3,11 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'dart:ffi';
-import 'dart:io';
+
+bool get _isWindows {
+  final abi = Abi.current();
+  return abi == Abi.windowsArm64 || abi == Abi.windowsX64;
+}
 
 typedef PosixMallocNative = Pointer Function(IntPtr);
 
@@ -60,7 +64,7 @@ final class MallocAllocator implements Allocator {
   @override
   Pointer<T> allocate<T extends NativeType>(int byteCount, {int? alignment}) {
     Pointer<T> result;
-    if (Platform.isWindows) {
+    if (_isWindows) {
       result = winCoTaskMemAlloc(byteCount).cast();
     } else {
       result = posixMalloc(byteCount).cast();
@@ -78,7 +82,7 @@ final class MallocAllocator implements Allocator {
   /// manner equivalent to [allocate].
   @override
   void free(Pointer pointer) {
-    if (Platform.isWindows) {
+    if (_isWindows) {
       winCoTaskMemFree(pointer);
     } else {
       posixFree(pointer);
@@ -114,7 +118,7 @@ final class MallocAllocator implements Allocator {
   /// ```
   ///
   Pointer<NativeFinalizerFunction> get nativeFree =>
-      Platform.isWindows ? winCoTaskMemFreePointer : posixFreePointer;
+      _isWindows ? winCoTaskMemFreePointer : posixFreePointer;
 }
 
 /// Manages memory on the native heap.
@@ -160,7 +164,7 @@ final class CallocAllocator implements Allocator {
   @override
   Pointer<T> allocate<T extends NativeType>(int byteCount, {int? alignment}) {
     Pointer<T> result;
-    if (Platform.isWindows) {
+    if (_isWindows) {
       result = winCoTaskMemAlloc(byteCount).cast();
     } else {
       result = posixCalloc(byteCount, 1).cast();
@@ -168,7 +172,7 @@ final class CallocAllocator implements Allocator {
     if (result.address == 0) {
       throw ArgumentError('Could not allocate $byteCount bytes.');
     }
-    if (Platform.isWindows) {
+    if (_isWindows) {
       _zeroMemory(result, byteCount);
     }
     return result;
@@ -181,7 +185,7 @@ final class CallocAllocator implements Allocator {
   /// manner equivalent to [allocate].
   @override
   void free(Pointer pointer) {
-    if (Platform.isWindows) {
+    if (_isWindows) {
       winCoTaskMemFree(pointer);
     } else {
       posixFree(pointer);
@@ -217,7 +221,7 @@ final class CallocAllocator implements Allocator {
   /// ```
   ///
   Pointer<NativeFinalizerFunction> get nativeFree =>
-      Platform.isWindows ? winCoTaskMemFreePointer : posixFreePointer;
+      _isWindows ? winCoTaskMemFreePointer : posixFreePointer;
 }
 
 /// Manages memory on the native heap.

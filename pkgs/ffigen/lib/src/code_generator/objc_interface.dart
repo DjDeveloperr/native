@@ -28,6 +28,7 @@ class ObjCInterface extends BindingType with ObjCMethods, HasLocalScope {
 
   // Filled by ListBindingsVisitation.
   bool generateAsStub = false;
+  bool generateSubclassHelpers = false;
 
   ObjCInterface({
     super.usr,
@@ -75,6 +76,266 @@ class ObjCInterface extends BindingType with ObjCMethods, HasLocalScope {
       null;
 
   bool get unavailable => apiAvailability.availability == Availability.none;
+
+  bool _supportsSubclassHelper(ObjCMethod method) {
+    if (method.isClassMethod) return false;
+    if (method.apiAvailability.availability == Availability.none) return false;
+    if (method.originalName == 'dealloc') return false;
+    return switch (method.family) {
+      ObjCMethodFamily.alloc ||
+      ObjCMethodFamily.init ||
+      ObjCMethodFamily.new_ ||
+      ObjCMethodFamily.copy ||
+      ObjCMethodFamily.mutableCopy => false,
+      _ => true,
+    };
+  }
+
+  String _subclassPropertyName(ObjCMethod method) =>
+      stripGeneratedNameSuffix(method.symbol.name);
+
+  String _subclassMethodName(ObjCMethod method) {
+    final methodName = switch (method.kind) {
+      ObjCMethodKind.propertyGetter ||
+      ObjCMethodKind.propertySetter => _subclassPropertyName(method),
+      ObjCMethodKind.method => method.symbol.name,
+    };
+    return switch (method.kind) {
+      ObjCMethodKind.method => methodName,
+      ObjCMethodKind.propertyGetter => methodName,
+      ObjCMethodKind.propertySetter => methodName,
+    };
+  }
+
+  String _subclassReturnType(ObjCMethod method, String targetType) {
+    if (method.returnType is ObjCInstanceType) return targetType;
+    final baseType = method.returnType.typealiasType;
+    if (baseType is ObjCNullable && baseType.child is ObjCInstanceType) {
+      return '$targetType?';
+    }
+    return method.returnType.getDartType(context);
+  }
+
+  String _joinSubclassParamStr(List<Parameter> params) {
+    if (params.isEmpty) return '';
+    String paramToStr(Parameter p) =>
+        '${p.type.getDartType(context)} ${p.name}';
+    String paramToNamed(Parameter p) =>
+        '${p.isNullable ? '' : 'required '}${paramToStr(p)}';
+    if (params.length == 1) return paramToStr(params.first);
+    final named = params.sublist(1).map(paramToNamed).join(',');
+    return '${paramToStr(params.first)}, {$named}';
+  }
+
+  String _subclassInterfaceDeclaration(ObjCMethod method, String targetType) {
+    final returnTypeStr = _subclassReturnType(method, targetType);
+    final params = method.returnsNSErrorByOutParam
+        ? method.params.toList().sublist(0, method.params.length - 1)
+        : method.params.toList();
+    final paramStr = _joinSubclassParamStr(params);
+    final methodName = _subclassMethodName(method);
+
+    return switch (method.kind) {
+      ObjCMethodKind.method => '$returnTypeStr $methodName($paramStr);',
+      ObjCMethodKind.propertyGetter => '$returnTypeStr get $methodName;',
+      ObjCMethodKind.propertySetter => 'set $methodName($paramStr);',
+    };
+  }
+
+  String _subclassInvocationArgumentList(ObjCMethod method) {
+    final params = method.returnsNSErrorByOutParam
+        ? method.params.toList().sublist(0, method.params.length - 1)
+        : method.params.toList();
+    if (params.isEmpty) return '';
+    if (params.length == 1) return params.first.name;
+
+    final positional = params.first.name;
+    final named = params.skip(1).map((p) => '${p.name}: ${p.name}').join(', ');
+    return '$positional, $named';
+  }
+
+  String _subclassImplementationInvocation(
+    ObjCMethod method,
+    String implementationVar,
+  ) {
+    final methodName = _subclassMethodName(method);
+    final args = _subclassInvocationArgumentList(method);
+
+    return switch (method.kind) {
+      ObjCMethodKind.method => '$implementationVar.$methodName($args)',
+      ObjCMethodKind.propertyGetter => '$implementationVar.$methodName',
+      ObjCMethodKind.propertySetter => '$implementationVar.$methodName = $args',
+    };
+  }
+
+  String _subclassAdapterClosure(ObjCMethod method, String implementationVar) {
+    final invocation = _subclassImplementationInvocation(
+      method,
+      implementationVar,
+    );
+    final blockFirstArg = method.protocolBlock!.params.first.type.getDartType(
+      context,
+    );
+    final closureParams = method.params
+        .map((p) => '${p.type.getDartType(context)} ${p.name}')
+        .join(', ');
+    final argList = closureParams.isEmpty
+        ? '$blockFirstArg _'
+        : '$blockFirstArg _, $closureParams';
+
+    if (method.returnType == voidType) {
+      return '($argList) { $invocation; }';
+    }
+    return '($argList) => $invocation';
+  }
+
+  String _subclassSelectorField(ObjCMethod method) =>
+      _selectorFieldName(method.originalName);
+
+  String _selectorFieldName(String selector) {
+    final parts = selector.split(':').where((part) => part.isNotEmpty).toList();
+    if (parts.isEmpty) {
+      return selector;
+    }
+    if (parts.length == 1) {
+      return parts.single;
+    }
+
+    final head = parts.first;
+    final tail = parts
+        .skip(1)
+        .map((part) => part[0].toUpperCase() + part.substring(1))
+        .join();
+    return '$head$tail';
+  }
+
+  static String _trampolineAddress(Writer w, ObjCBlock block) {
+    final func = block.protocolTrampoline!.func;
+    final type = NativeFunc(
+      func.functionType,
+    ).getCType(w.context, writeArgumentNames: false);
+    return '${w.context.libs.prefix(ffiImport)}.Native.addressOf<$type>('
+        '${func.name}).cast()';
+  }
+
+  String _generateSubclassHelpers(Writer w) {
+    final subclassMethods = methods.where(_supportsSubclassHelper).toList();
+    if (subclassMethods.isEmpty) return '';
+
+    final subclassBuilder = ObjCBuiltInFunctions.subclassBuilder.gen(context);
+    final getSignature = ObjCBuiltInFunctions.getInterfaceMethodSignature.gen(
+      context,
+    );
+    final objCRuntimeError = ObjCBuiltInFunctions.objCRuntimeError.gen(context);
+    final specClass = '${name}Overrides';
+    final defaultsMixin = '${name}Defaults';
+    final selectorsClass = '${name}OverrideSelectors';
+    final builderClass = '${name}SubclassBuilder';
+    final subclassMixin = '${name}Subclass';
+    final targetType = getDartType(context);
+
+    final declarations = StringBuffer();
+    final selectorConstants = StringBuffer();
+    final builderImplementations = StringBuffer();
+    final selectorSetEntries = StringBuffer();
+
+    for (final method in subclassMethods) {
+      declarations.write(makeDartDoc(method.dartDoc ?? method.originalName));
+      declarations.write(
+        '  ${_subclassInterfaceDeclaration(method, targetType)}\n',
+      );
+
+      final selectorField = _subclassSelectorField(method);
+      selectorConstants.write(
+        makeDartDoc(method.dartDoc ?? method.originalName),
+      );
+      selectorConstants.write(
+        "  static const $selectorField = '${method.originalName}';\n",
+      );
+      selectorSetEntries.write('''
+    $selectorsClass.$selectorField,''');
+
+      final adapterClosure = _subclassAdapterClosure(method, 'implementation');
+      final block = method.protocolBlock!;
+      block.fillProtocolTrampoline();
+      builderImplementations.write('''
+    if (overrideSelectors.contains($selectorsClass.$selectorField)) {
+      final signature = $getSignature(${classObject.name}, ${method.selObject.name});
+      if (signature == null) {
+        throw $objCRuntimeError(
+          'Failed to load Objective-C method signature: $originalName.${method.originalName}',
+        );
+      }
+      builder.implementMethod(
+        ${method.selObject.name},
+        signature,
+        ${_trampolineAddress(w, block)},
+        ${block.name}.fromFunction($adapterClosure),
+      );
+    }
+''');
+    }
+
+    return '''
+abstract interface class $specClass {
+${declarations.toString()}
+}
+
+mixin $defaultsMixin implements $specClass {
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+}
+
+abstract final class $selectorsClass {
+${selectorConstants.toString()}
+
+  static Set<String> get all => {
+$selectorSetEntries
+  };
+}
+
+interface class $builderClass {
+  /// Builds a Dart-backed subclass of $originalName using members from
+  /// [implementation].
+  static $name buildFrom(
+    $specClass implementation, {
+    required Set<String> overrideSelectors,
+    bool \$keepIsolateAlive = true,
+  }) {
+    final builder = $subclassBuilder(
+      superclassName: '$lookupName',
+      debugName: '$originalName',
+    );
+    addToBuilderFrom(
+      builder,
+      implementation,
+      overrideSelectors: overrideSelectors,
+    );
+    return $name.as(builder.build(keepIsolateAlive: \$keepIsolateAlive));
+  }
+
+  /// Adds Dart overrides for $originalName to an existing [$subclassBuilder].
+  static void addToBuilderFrom(
+    $subclassBuilder builder,
+    $specClass implementation, {
+    required Set<String> overrideSelectors,
+  }) {
+$builderImplementations  }
+}
+
+mixin $subclassMixin {
+  /// The Objective-C selectors that this Dart class overrides.
+  Set<String> get objcOverrideSelectors;
+
+  /// Lazily creates a native subclass instance for this Dart implementation.
+  late final $name as$name = $builderClass.buildFrom(
+    this as $specClass,
+    overrideSelectors: objcOverrideSelectors,
+  );
+}
+
+''';
+  }
 
   @override
   BindingString toBindingString(Writer w) {
@@ -131,6 +392,9 @@ ${generateInstanceMethodBindings(w, this)}
 }
 
 ''');
+      if (generateSubclassHelpers) {
+        s.write(_generateSubclassHelpers(w));
+      }
     }
 
     return BindingString(

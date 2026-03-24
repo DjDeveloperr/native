@@ -45,6 +45,14 @@ void main() {
       expect(objcBindings, contains('class NSObject'));
       expect(objcBindings, contains('class NSString'));
       expect(objcBindings, contains('NSString(String str)'));
+      expect(
+        objcBindings,
+        contains('final nsstr = stringWithCharacters(cstr.cast(), length: str.length);'),
+      );
+      expect(
+        objcBindings,
+        contains('static NSData dataWithBytes(\n    ffi.Pointer<ffi.Void> bytes, {\n    required int length,'),
+      );
     });
   });
 }

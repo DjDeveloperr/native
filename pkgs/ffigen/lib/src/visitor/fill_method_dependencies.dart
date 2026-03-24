@@ -27,6 +27,11 @@ class FillMethodDependenciesVisitation extends Visitation {
     if (!node.generateAsStub) {
       node.visitChildren(visitor);
       for (final method in node.methods) {
+        if (node.generateSubclassHelpers && method.isInstanceMethod) {
+          final block = method.fillProtocolBlock();
+          block.fillProtocolTrampoline();
+          _adder.visit(block);
+        }
         _adder.visit(method.fillMsgSend());
       }
     }
@@ -49,7 +54,9 @@ class FillMethodDependenciesVisitation extends Visitation {
     if (!node.generateAsStub) {
       node.visitChildren(visitor);
       for (final method in node.methods) {
-        _adder.visit(method.fillProtocolBlock());
+        final block = method.fillProtocolBlock();
+        block.fillProtocolTrampoline();
+        _adder.visit(block);
         _adder.visit(method.fillMsgSend());
       }
     }
@@ -86,10 +93,10 @@ class _MethodDepAdderVisitation extends Visitation {
   void visitFunc(Func node) => finalBindings.add(node);
 
   @override
-  void visitObjCProtocolMethodTrampoline(ObjCProtocolMethodTrampoline node) =>
+  void visitObjCBlockWrapperFuncs(ObjCBlockWrapperFuncs node) =>
       node.visitChildren(visitor);
 
   @override
-  void visitObjCBlockWrapperFuncs(ObjCBlockWrapperFuncs node) =>
+  void visitObjCProtocolMethodTrampoline(ObjCProtocolMethodTrampoline node) =>
       node.visitChildren(visitor);
 }

@@ -255,6 +255,19 @@ abstract final class $name {
 
 ''');
 
+    if (protocolTrampoline != null) {
+      final func = protocolTrampoline!.func;
+      final type = NativeFunc(
+        func.functionType,
+      ).getCType(context, writeArgumentNames: false);
+      s.write('''
+  /// Native method trampoline for this block signature.
+  static $voidPtrCType get protocolTrampoline =>
+      $ffiPrefix.Native.addressOf<$type>(${func.name}).cast();
+
+''');
+    }
+
     // Listener block constructor is only available for void blocks.
     if (hasListener) {
       // This snippet is the same as the convFn above, except that the params
@@ -402,18 +415,50 @@ ref.pointer.ref.invoke.cast<${_helper.trampNatFnCType}>()
 
   @override
   BindingString? toObjCBindingString(Writer w) {
-    final chunks = [
-      _blockWrappersBindingString(w),
+    final parts = [
+      _blockWrappersBindingString(),
       _protocolTrampolineBindingString(w),
-    ].nonNulls;
-    if (chunks.isEmpty) return null;
-    return BindingString(
-      type: BindingStringType.objcBlock,
-      string: chunks.join(''),
-    );
+    ].nonNulls.join();
+    return parts.isEmpty
+        ? null
+        : BindingString(type: BindingStringType.objcBlock, string: parts);
   }
 
-  String? _blockWrappersBindingString(Writer w) {
+  String? _protocolTrampolineBindingString(Writer w) {
+    if (protocolTrampoline?.objCBindingsGenerated ?? true) return null;
+    protocolTrampoline!.objCBindingsGenerated = true;
+
+    final argsReceived = ['void * sel'];
+    final argsPassed = ['sel'];
+    for (var i = 1; i < params.length; ++i) {
+      final param = params[i];
+      final argName = 'arg$i';
+      argsReceived.add(param.getNativeType(varName: argName));
+      argsPassed.add(argName);
+    }
+
+    final ret = returnType.getNativeType();
+    final argRecv = argsReceived.join(', ');
+    final argPass = argsPassed.join(', ');
+    final fnName = protocolTrampoline!.func.name;
+    final block = Namer.cSafeName(
+      context.rootObjCScope.addPrivate('_ProtocolTrampoline'),
+    );
+    final msgSend = '((id (*)(id, SEL, SEL))objc_msgSend)';
+    final getterSel = '@selector(getDOBJCDartProtocolMethodForSelector:)';
+    final blockGetter = '(($block)$msgSend(target, $getterSel, sel))';
+
+    return '''
+
+typedef $ret (^$block)($argRecv);
+__attribute__((visibility("default"))) __attribute__((used))
+$ret $fnName(id target, $argRecv) {
+  return $blockGetter($argPass);
+}
+''';
+  }
+
+  String? _blockWrappersBindingString() {
     if (_blockWrappers?.objCBindingsGenerated ?? true) return null;
     _blockWrappers!.objCBindingsGenerated = true;
 
@@ -467,40 +512,6 @@ $listenerName $blockingWrapper(
     ${generateRetain('listenerBlock')};
     listenerBlock(${blockingListenerRetains.join(', ')});
   });
-}
-''';
-  }
-
-  String? _protocolTrampolineBindingString(Writer w) {
-    if (protocolTrampoline?.objCBindingsGenerated ?? true) return null;
-    protocolTrampoline!.objCBindingsGenerated = true;
-
-    final argsReceived = <String>[];
-    final argsPassed = <String>[];
-    for (var i = 0; i < params.length; ++i) {
-      final param = params[i];
-      final argName = i == 0 ? 'sel' : 'arg$i';
-      argsReceived.add(param.getNativeType(varName: argName));
-      argsPassed.add(argName);
-    }
-
-    final ret = returnType.getNativeType();
-    final argRecv = argsReceived.join(', ');
-    final argPass = argsPassed.join(', ');
-    final fnName = protocolTrampoline!.func.name;
-    final block = Namer.cSafeName(
-      context.rootObjCScope.addPrivate('_ProtocolTrampoline'),
-    );
-    final msgSend = '((id (*)(id, SEL, SEL))objc_msgSend)';
-    final getterSel = '@selector(getDOBJCDartProtocolMethodForSelector:)';
-    final blkGetter = '(($block)$msgSend(target, $getterSel, sel))';
-
-    return '''
-
-typedef $ret (^$block)($argRecv);
-__attribute__((visibility("default"))) __attribute__((used))
-$ret $fnName(id target, $argRecv) {
-  return $blkGetter($argPass);
 }
 ''';
   }

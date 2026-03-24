@@ -93,6 +93,17 @@ external ffi.Pointer<ffi.Pointer<ObjCObjectImpl>> copyClassList(
 external ffi.Pointer<ObjCObjectImpl> getClass(ffi.Pointer<ffi.Char> name);
 
 @ffi.Native<
+  ffi.Pointer<ObjCMethodImpl> Function(
+    ffi.Pointer<ObjCObjectImpl>,
+    ffi.Pointer<ObjCSelector>,
+  )
+>(symbol: 'class_getInstanceMethod', isLeaf: true)
+external ffi.Pointer<ObjCMethodImpl> getInstanceMethod(
+  ffi.Pointer<ObjCObjectImpl> cls,
+  ffi.Pointer<ObjCSelector> name,
+);
+
+@ffi.Native<
   ObjCMethodDesc Function(
     ffi.Pointer<ObjCProtocolImpl>,
     ffi.Pointer<ObjCSelector>,
@@ -133,6 +144,14 @@ external ffi.Pointer<ObjCProtocolImpl> getProtocol(ffi.Pointer<ffi.Char> name);
 )
 external ffi.Pointer<ffi.Char> getProtocolName(
   ffi.Pointer<ObjCProtocolImpl> proto,
+);
+
+@ffi.Native<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ObjCMethodImpl>)>(
+  symbol: 'method_getTypeEncoding',
+  isLeaf: true,
+)
+external ffi.Pointer<ffi.Char> getTypeEncoding(
+  ffi.Pointer<ObjCMethodImpl> method,
 );
 
 @ffi.Native<ffi.Void Function()>(symbol: 'objc_msgSend')
@@ -185,6 +204,8 @@ final class ObjCMethodDesc extends ffi.Struct {
     ..ref.name = name
     ..ref.types = types;
 }
+
+final class ObjCMethodImpl extends ffi.Opaque {}
 
 final class ObjCObjectImpl extends ffi.Opaque {}
 

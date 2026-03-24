@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 #import <Foundation/NSObject.h>
+#import <Foundation/NSError.h>
 #import <Foundation/NSString.h>
 
 const char* getClassName(void* cls);
@@ -52,6 +53,9 @@ typedef struct {
 @optional
 - (void)intPtrMethod:(int32_t*)ptr;
 
+@optional
+- (BOOL)methodWithError:(BOOL)isOk error:(NSError**)error;
+
 @end
 
 
@@ -88,6 +92,7 @@ typedef struct {
 - (void)callMethodOnRandomThread:(id<MyProtocol>)protocol;
 - (void)callBlockingMethodOnRandomThread:(id<MyProtocol>)protocol;
 - (int32_t)callTwoMethods:(id<MyProtocol, SecondaryProtocol>)protocol;
+- (BOOL)callMethodWithError:(id<MyProtocol>)protocol;
 @end
 
 

@@ -78,7 +78,7 @@ void main(List<String> args) async {
       minVersion,
     ];
     final mFlags = [...cFlags, ...objCFlags];
-    final linkFlags = cFlags;
+    final linkFlags = <String>[...cFlags];
 
     final builder = await Builder.create(input, input.packageRoot.toFilePath());
 

@@ -22,7 +22,5 @@ int main() {
   ASSERT_SYMBOL("DOBJC_runOnMainThread");             // objective_c.m
   ASSERT_SYMBOL("OBJC_CLASS_$_DOBJCDartProtocol");    // protocol.m
   ASSERT_SYMBOL("OBJC_CLASS_$_DOBJCObservation");     // observer.m
-  // objective_c_bindings_generated.m
-  ASSERT_SYMBOL("_ObjectiveCBindings_wrapListenerBlock_ovsamd");
   return 0;
 }

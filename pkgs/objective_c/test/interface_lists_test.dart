@@ -32,6 +32,7 @@ void expectSetsEqual(String name, Set<String> expected, Set<String> actual) {
 
 void mergeLinewithNext(List<String> lines, String toMerge) {
   final i = lines.indexOf(toMerge);
+  if (i < 0 || i + 1 >= lines.length) return;
   lines[i] += lines.removeAt(i + 1);
 }
 
