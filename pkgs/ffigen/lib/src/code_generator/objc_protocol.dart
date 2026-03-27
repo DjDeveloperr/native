@@ -210,7 +210,7 @@ class ObjCProtocol extends BindingType with ObjCMethods, HasLocalScope {
 ///
 ''');
     }
-    s.write(makeDartDoc(dartDoc ?? originalName));
+    s.write(makeDartDoc(dartDoc));
 
     final sp = [
       protocolBase,
@@ -278,17 +278,13 @@ ${generateInstanceMethodBindings(w, this)}
           .toList();
 
       for (final method in availableRequiredMethods) {
-        requiredDeclarations.write(
-          makeDartDoc(method.dartDoc ?? method.originalName),
-        );
+        requiredDeclarations.write(makeDartDoc(method.dartDoc));
         requiredDeclarations.write(
           '  ${_protocolInterfaceDeclaration(method, targetType)}\n',
         );
       }
       for (final method in availableOptionalMethods) {
-        optionalDeclarations.write(
-          makeDartDoc(method.dartDoc ?? method.originalName),
-        );
+        optionalDeclarations.write(makeDartDoc(method.dartDoc));
         optionalDeclarations.write(
           '  ${_protocolInterfaceDeclaration(method, targetType)}\n',
         );
@@ -401,7 +397,7 @@ mixin $defaultsMixin implements $optionalClass {
       $argName: $adapterExpr,''');
         }
 
-        methodFields.write(makeDartDoc(method.dartDoc ?? method.originalName));
+        methodFields.write(makeDartDoc(method.dartDoc));
         methodFields.write('''static final $fieldName = $methodClass<$funcType>(
       ${_protocolPointer.name},
       ${method.selObject.name},

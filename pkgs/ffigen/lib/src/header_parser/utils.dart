@@ -293,6 +293,10 @@ String? getCursorDocComment(
   String? fallbackComment,
   String? availability,
 }) {
+  if (context.config.output.commentType.length == CommentLength.none) {
+    return null;
+  }
+
   String? formattedDocComment;
   final currentCommentRange = clang.clang_Cursor_getCommentRange(cursor);
 

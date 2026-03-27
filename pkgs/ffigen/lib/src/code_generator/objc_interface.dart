@@ -240,15 +240,13 @@ class ObjCInterface extends BindingType with ObjCMethods, HasLocalScope {
     final selectorSetEntries = StringBuffer();
 
     for (final method in subclassMethods) {
-      declarations.write(makeDartDoc(method.dartDoc ?? method.originalName));
+      declarations.write(makeDartDoc(method.dartDoc));
       declarations.write(
         '  ${_subclassInterfaceDeclaration(method, targetType)}\n',
       );
 
       final selectorField = _subclassSelectorField(method);
-      selectorConstants.write(
-        makeDartDoc(method.dartDoc ?? method.originalName),
-      );
+      selectorConstants.write(makeDartDoc(method.dartDoc));
       selectorConstants.write(
         "  static const $selectorField = '${method.originalName}';\n",
       );
