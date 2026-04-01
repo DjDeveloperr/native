@@ -49,6 +49,7 @@ class ImportedType extends Type {
   final String dartType;
   final String nativeType;
   final String? defaultValue;
+  final String? publicDartType;
 
   /// Whether the [dartType] is an import from the [libraryImport].
   final bool importedDartType;
@@ -60,6 +61,7 @@ class ImportedType extends Type {
     this.nativeType, {
     this.defaultValue,
     this.importedDartType = false,
+    this.publicDartType,
   });
 
   @override
@@ -95,6 +97,131 @@ class ImportedType extends Type {
     super.visitChildren(visitor);
     visitor.visit(libraryImport);
   }
+}
+
+class ImportedEnumType extends ImportedType {
+  final String enumName;
+  final String ffiCType;
+  final String ffiDartType;
+
+  ImportedEnumType(
+    LibraryImport libraryImport, {
+    required this.enumName,
+    required this.ffiCType,
+    required this.ffiDartType,
+  }) : super(libraryImport, ffiCType, ffiDartType, ffiCType);
+
+  @override
+  String getCType(Context context) => ffiCType;
+
+  @override
+  String getFfiDartType(Context context) => ffiDartType;
+
+  @override
+  String getDartType(Context context) =>
+      '${context.libs.prefix(libraryImport)}.$enumName';
+
+  @override
+  bool get sameDartAndFfiDartType => false;
+
+  @override
+  String convertDartTypeToFfiDartType(
+    Context context,
+    String value, {
+    required bool objCRetain,
+    required bool objCAutorelease,
+  }) => '$value.value';
+
+  @override
+  String convertFfiDartTypeToDartType(
+    Context context,
+    String value, {
+    required bool objCRetain,
+    String? objCEnclosingClass,
+  }) => '${context.libs.prefix(libraryImport)}.$enumName.fromValue($value)';
+
+  @override
+  String? getDefaultValue(Context context) => '0';
+
+  @override
+  String cacheKey() => 'ImportedEnum(${libraryImport.name}.$enumName)';
+}
+
+class ImportedTypealias extends ImportedType {
+  final String cTypeName;
+  final String ffiDartTypeName;
+  final String dartTypeName;
+
+  ImportedTypealias(
+    LibraryImport libraryImport, {
+    required this.cTypeName,
+    required this.ffiDartTypeName,
+    required this.dartTypeName,
+  }) : super(libraryImport, cTypeName, ffiDartTypeName, cTypeName);
+
+  @override
+  String getCType(Context context) =>
+      '${context.libs.prefix(libraryImport)}.$cTypeName';
+
+  @override
+  String getFfiDartType(Context context) =>
+      '${context.libs.prefix(libraryImport)}.$ffiDartTypeName';
+
+  @override
+  String getDartType(Context context) =>
+      '${context.libs.prefix(libraryImport)}.$dartTypeName';
+
+  @override
+  bool get sameFfiDartAndCType => cTypeName == ffiDartTypeName;
+
+  @override
+  bool get sameDartAndFfiDartType => dartTypeName == ffiDartTypeName;
+
+  @override
+  String cacheKey() =>
+      'ImportedTypealias(${libraryImport.name}.$cTypeName->$dartTypeName)';
+}
+
+class ImportedObjCInstanceType extends ImportedTypealias {
+  ImportedObjCInstanceType(
+    super.libraryImport, {
+    required super.cTypeName,
+    required super.ffiDartTypeName,
+    required super.dartTypeName,
+  });
+
+  @override
+  String convertDartTypeToFfiDartType(
+    Context context,
+    String value, {
+    required bool objCRetain,
+    required bool objCAutorelease,
+  }) => objCRetain
+      ? (objCAutorelease
+            ? '$value.ref.retainAndAutorelease()'
+            : '$value.ref.retainAndReturnPointer()')
+      : (objCAutorelease ? '$value.ref.autorelease()' : '$value.ref.pointer');
+
+  @override
+  String convertFfiDartTypeToDartType(
+    Context context,
+    String value, {
+    required bool objCRetain,
+    String? objCEnclosingClass,
+  }) {
+    if (objCEnclosingClass != null) {
+      return '$objCEnclosingClass.fromPointer('
+          '$value, retain: $objCRetain, release: true)';
+    }
+    return 'objc.ObjCObject('
+        '$value, retain: $objCRetain, release: true)';
+  }
+
+  @override
+  String getNativeType({String varName = ''}) => 'id $varName';
+
+  @override
+  String cacheKey() => 'ImportedObjCInstanceType(${libraryImport.name})';
 }
 
 /// An unchecked type similar to [ImportedType] which exists in the generated

@@ -171,7 +171,9 @@ Type? _createTypeFromCursor(
   final logger = context.logger;
   final config = context.config;
   final usr = cursor.usr();
-  if (config.importedTypesByUsr.containsKey(usr)) {
+  if (config.importedTypesByUsr.containsKey(usr) &&
+      cxtype.kind != clang_types.CXTypeKind.CXType_ObjCInterface &&
+      cxtype.kind != clang_types.CXTypeKind.CXType_ObjCObject) {
     logger.fine('  Type $usr mapped from usr');
     return config.importedTypesByUsr[usr]!;
   }

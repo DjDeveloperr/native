@@ -40,7 +40,6 @@ class ObjCBlock extends BindingType with HasLocalScope {
     ];
 
     final usr = _getBlockUsr(returnType, renamedParams, returnsRetained);
-
     final newBlockName = _getBlockName(
       returnType,
       renamedParams.map((a) => a.type),
@@ -59,6 +58,22 @@ class ObjCBlock extends BindingType with HasLocalScope {
         );
       }
       return oldBlock;
+    }
+
+    final importedType = context.config.importedTypesByUsr[usr];
+    if (importedType != null) {
+      final block = ImportedObjCBlock._(
+        context,
+        usr: usr,
+        name: importedType.dartType,
+        publicDartType: importedType.publicDartType,
+        libraryImport: importedType.libraryImport,
+        returnType: returnType,
+        params: renamedParams,
+        returnsRetained: returnsRetained,
+      );
+      context.bindingsIndex.addObjCBlockToSeen(usr, block);
+      return block;
     }
 
     final block = ObjCBlock._(
@@ -106,6 +121,17 @@ class ObjCBlock extends BindingType with HasLocalScope {
     protocolTrampoline ??= context.objCBuiltInFunctions
         .getProtocolMethodTrampoline(this);
   }
+
+  String protocolTrampolineAccessor(Context context) {
+    final func = protocolTrampoline!.func;
+    final type = NativeFunc(
+      func.functionType,
+    ).getCType(context, writeArgumentNames: false);
+    return '${context.libs.prefix(ffiImport)}.Native.addressOf<$type>('
+        '${func.name}).cast()';
+  }
+
+  String helperClassRef(Context context) => name;
 
   // Generates a human readable name for the block based on the args and return
   // type. These names will be pretty verbose and unweildy, but they're at least
@@ -592,6 +618,76 @@ $listenerName $blockingWrapper(
       );
     }
     return false;
+  }
+
+  @override
+  String cacheKey() => 'ObjCBlock($usr)';
+}
+
+class ImportedObjCBlock extends ObjCBlock {
+  final String? publicDartType;
+  final LibraryImport libraryImport;
+
+  ImportedObjCBlock._(
+    Context context, {
+    required String usr,
+    required String name,
+    required this.publicDartType,
+    required this.libraryImport,
+    required Type returnType,
+    required List<Parameter> params,
+    required bool returnsRetained,
+  }) : super._(
+         context,
+         usr: usr,
+         name: name,
+         returnType: returnType,
+         params: params,
+         returnsRetained: returnsRetained,
+       );
+
+  @override
+  bool get isObjCImport => true;
+
+  @override
+  String getDartType(Context context) =>
+      publicDartType ??
+      '${context.libs.prefix(libraryImport)}.${symbol.oldName}';
+
+  @override
+  String protocolTrampolineAccessor(Context context) =>
+      '${context.libs.prefix(libraryImport)}.${symbol.oldName}.protocolTrampoline';
+
+  @override
+  String helperClassRef(Context context) =>
+      '${context.libs.prefix(libraryImport)}.${symbol.oldName}';
+
+  @override
+  BindingString toBindingString(Writer w) => const BindingString(
+    type: BindingStringType.objcBlock,
+    string: '',
+  );
+
+  @override
+  BindingString? toObjCBindingString(Writer w) => null;
+
+  @override
+  String convertFfiDartTypeToDartType(
+    Context context,
+    String value, {
+    required bool objCRetain,
+    String? objCEnclosingClass,
+  }) => ObjCInterface.generateConstructor(
+    '${context.libs.prefix(libraryImport)}.${symbol.oldName}',
+    value,
+    objCRetain,
+  );
+
+  @override
+  void visitChildren(Visitor visitor) {
+    visitor.visit(returnType);
+    visitor.visitAll(params);
+    visitor.visit(libraryImport);
   }
 }
 

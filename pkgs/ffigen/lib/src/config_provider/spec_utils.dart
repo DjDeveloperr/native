@@ -31,6 +31,33 @@ Map<String, LibraryImport> libraryImportsExtractor(
   return resultMap;
 }
 
+ImportedType? _builtinImportedTypeFromSymbolCType(String cType) => switch (
+  cType
+) {
+  'ffi.Void' => voidType,
+  'ffi.UnsignedChar' => unsignedCharType,
+  'ffi.SignedChar' => signedCharType,
+  'ffi.Char' => charType,
+  'ffi.UnsignedShort' => unsignedShortType,
+  'ffi.Short' => shortType,
+  'ffi.UnsignedInt' => unsignedIntType,
+  'ffi.Int' => intType,
+  'ffi.UnsignedLong' => unsignedLongType,
+  'ffi.Long' => longType,
+  'ffi.UnsignedLongLong' => unsignedLongLongType,
+  'ffi.LongLong' => longLongType,
+  'ffi.Float' => floatType,
+  'ffi.Double' => doubleType,
+  'ffi.Size' => sizeType,
+  'ffi.WChar' => wCharType,
+  'objc.ObjCObjectImpl' => objCObjectType,
+  'objc.ObjCSelector' => objCSelType,
+  'objc.ObjCBlockImpl' => objCBlockType,
+  'objc.ObjCProtocolImpl' => objCProtocolType,
+  'objc.DOBJC_Context' => objCContextType,
+  _ => null,
+};
+
 void loadImportedTypes(
   YamlMap fileConfig,
   Map<String, ImportedType> usrTypeMappings,
@@ -40,15 +67,52 @@ void loadImportedTypes(
   for (final key in symbols.keys) {
     final usr = key as String;
     final value = symbols[usr]! as YamlMap;
+    final kind = value[strings.kind] as String?;
     final name = value[strings.name] as String;
     final dartName = (value[strings.dartName] as String?) ?? name;
-    usrTypeMappings[usr] = ImportedType(
-      libraryImport,
-      name,
-      dartName,
-      name,
-      importedDartType: true,
-    );
+    final dartType = (value[strings.dartType] as String?) ?? dartName;
+    final publicDartType = value[strings.publicDartType] as String?;
+    final cType = (value[strings.cType] as String?) ?? name;
+    final ffiDartType = (value[strings.ffiDartType] as String?) ?? cType;
+    usrTypeMappings[usr] = switch (kind) {
+      strings.symbolKindEnum when dartType == ffiDartType =>
+        _builtinImportedTypeFromSymbolCType(cType) ??
+            ImportedType(
+              libraryImport,
+              cType,
+              dartType,
+              cType,
+            ),
+      strings.symbolKindEnum => ImportedEnumType(
+        libraryImport,
+        enumName: name,
+        ffiCType: cType,
+        ffiDartType: ffiDartType,
+      ),
+      strings.symbolKindTypedef
+          when name == strings.objcInstanceType ||
+              cType == strings.objcInstanceType =>
+        ImportedObjCInstanceType(
+          libraryImport,
+          cTypeName: name,
+          ffiDartTypeName: ffiDartType,
+          dartTypeName: dartName,
+        ),
+      strings.symbolKindTypedef => ImportedTypealias(
+        libraryImport,
+        cTypeName: name,
+        ffiDartTypeName: ffiDartType,
+        dartTypeName: dartName,
+      ),
+      _ => ImportedType(
+        libraryImport,
+        name,
+        dartName,
+        name,
+        importedDartType: true,
+        publicDartType: publicDartType,
+      ),
+    };
   }
 }
 

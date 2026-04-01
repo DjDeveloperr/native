@@ -169,10 +169,20 @@ const formatVersion = 'format_version';
 /// This is generated when generating any symbol file. When importing any other
 /// symbol file, this version is compared according to `semantic` versioning
 /// to determine compatibility.
-const symbolFileFormatVersion = '1.0.0';
+const symbolFileFormatVersion = '1.2.0';
 const files = 'files';
 const usedConfig = 'used-config';
+const kind = 'kind';
 const dartName = 'dart-name';
+const ffiDartType = 'ffi-dart-type';
+const publicDartType = 'public-dart-type';
+
+const symbolKindType = 'type';
+const symbolKindTypedef = 'typedef';
+const symbolKindEnum = 'enum';
+const symbolKindObjCBlock = 'objc-block';
+const symbolKindObjCInterface = 'objc-interface';
+const symbolKindObjCProtocol = 'objc-protocol';
 
 const import = 'import';
 const defaultSymbolFileImportPrefix = 'imp';

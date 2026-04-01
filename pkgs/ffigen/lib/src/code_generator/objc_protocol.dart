@@ -174,12 +174,7 @@ class ObjCProtocol extends BindingType with ObjCMethods, HasLocalScope {
   }
 
   static String _trampolineAddress(Writer w, ObjCBlock block) {
-    final func = block.protocolTrampoline!.func;
-    final type = NativeFunc(
-      func.functionType,
-    ).getCType(w.context, writeArgumentNames: false);
-    return '${w.context.libs.prefix(ffiImport)}.Native.addressOf<$type>('
-        '${func.name}).cast()';
+    return block.protocolTrampolineAccessor(w.context);
   }
 
   @override
@@ -331,7 +326,7 @@ mixin $defaultsMixin implements $optionalClass {
         final argName = methodName;
         final block = method.protocolBlock!;
         block.fillProtocolTrampoline();
-        final blockUtils = block.name;
+        final blockUtils = block.helperClassRef(context);
         final methodClass = block.hasListener
             ? protocolListenableMethod
             : protocolMethod;
@@ -718,6 +713,39 @@ mixin $adapterMixin {
       visitor.visit(ffiImport);
       visitor.visit(objcPkgImport);
     }
+    visitor.visitAll(superProtocols);
+  }
+
+  @override
+  String cacheKey() => 'ObjCProtocol($usr)';
+}
+
+class ImportedObjCProtocol extends ObjCProtocol {
+  final LibraryImport libraryImport;
+
+  ImportedObjCProtocol({
+    required super.usr,
+    required super.originalName,
+    required super.context,
+    required this.libraryImport,
+    String? name,
+    String? lookupName,
+  }) : super(
+         name: name,
+         lookupName: lookupName,
+         apiAvailability: ApiAvailability(externalVersions: null),
+       );
+
+  @override
+  bool get isObjCImport => true;
+
+  @override
+  String getDartType(Context context) =>
+      '${context.libs.prefix(libraryImport)}.${symbol.oldName}';
+
+  @override
+  void visitChildren(Visitor visitor, {bool typeGraphOnly = false}) {
+    visitor.visit(libraryImport);
     visitor.visitAll(superProtocols);
   }
 }

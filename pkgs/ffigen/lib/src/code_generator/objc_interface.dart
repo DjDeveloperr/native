@@ -210,12 +210,7 @@ class ObjCInterface extends BindingType with ObjCMethods, HasLocalScope {
   }
 
   static String _trampolineAddress(Writer w, ObjCBlock block) {
-    final func = block.protocolTrampoline!.func;
-    final type = NativeFunc(
-      func.functionType,
-    ).getCType(w.context, writeArgumentNames: false);
-    return '${w.context.libs.prefix(ffiImport)}.Native.addressOf<$type>('
-        '${func.name}).cast()';
+    return block.protocolTrampolineAccessor(w.context);
   }
 
   String _generateSubclassHelpers(Writer w) {
@@ -268,7 +263,7 @@ class ObjCInterface extends BindingType with ObjCMethods, HasLocalScope {
         ${method.selObject.name},
         signature,
         ${_trampolineAddress(w, block)},
-        ${block.name}.fromFunction($adapterClosure),
+        ${block.helperClassRef(context)}.fromFunction($adapterClosure),
       );
     }
 ''');
@@ -433,7 +428,7 @@ ${generateInstanceMethodBindings(w, this)}
     if (newMethod != null && originalName != 'NSString') {
       s.write('''
   /// Returns a new instance of $name constructed with the default `new` method.
-  $name() : this.as(${newMethod.name}().object\$);
+  $name() : this.as(${newMethod.name}());
 ''');
     }
 
@@ -544,5 +539,39 @@ ${generateInstanceMethodBindings(w, this)}
       }
     }
     return false;
+  }
+
+  @override
+  String cacheKey() => 'ObjCInterface($usr)';
+}
+
+class ImportedObjCInterface extends ObjCInterface {
+  final LibraryImport libraryImport;
+
+  ImportedObjCInterface({
+    required super.usr,
+    required super.originalName,
+    required super.context,
+    required this.libraryImport,
+    String? name,
+    String? lookupName,
+  }) : super(
+         name: name,
+         lookupName: lookupName,
+         apiAvailability: ApiAvailability(externalVersions: null),
+       );
+
+  @override
+  bool get isObjCImport => true;
+
+  @override
+  String getDartType(Context context) =>
+      '${context.libs.prefix(libraryImport)}.${symbol.oldName}';
+
+  @override
+  void visitChildren(Visitor visitor, {bool typeGraphOnly = false}) {
+    visitor.visit(libraryImport);
+    visitor.visit(superType);
+    visitor.visitAll(protocols);
   }
 }

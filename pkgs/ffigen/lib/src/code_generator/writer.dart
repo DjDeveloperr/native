@@ -222,9 +222,10 @@ class Writer {
       );
     }
 
-    // Remove internal bindings and macros.
+    // Remove internal bindings, imported bindings, and macros.
     bindings.removeWhere((element) {
       return element.isInternal ||
+          element.symbol.isImported ||
           (element is Constant && element.usr.contains('@macro@'));
     });
 
@@ -250,8 +251,27 @@ class Writer {
 
   Map<String, String> _makeSymbolMapValue(Binding b) {
     final dartName = b is Typealias ? getTypedefDartAliasName(b) : null;
-    return {strings.name: b.name, strings.dartName: ?dartName};
+    final publicDartType = b is ObjCBlock ? b.getDartType(context) : null;
+    final Type? type = b is Type ? b as Type : null;
+    return {
+      strings.kind: _symbolKindFor(b),
+      strings.name: b.name,
+      if (type != null) strings.cType: type.getCType(context),
+      strings.dartName: ?dartName,
+      if (type != null) strings.dartType: type.getDartType(context),
+      if (type != null) strings.ffiDartType: type.getFfiDartType(context),
+      strings.publicDartType: ?publicDartType,
+    };
   }
+
+  String _symbolKindFor(Binding b) => switch (b) {
+    EnumClass _ => strings.symbolKindEnum,
+    Typealias _ => strings.symbolKindTypedef,
+    ObjCBlock _ => strings.symbolKindObjCBlock,
+    ObjCInterface _ => strings.symbolKindObjCInterface,
+    ObjCProtocol _ => strings.symbolKindObjCProtocol,
+    _ => strings.symbolKindType,
+  };
 
   String? getTypedefDartAliasName(Type b) {
     if (b is! Typealias) return null;
