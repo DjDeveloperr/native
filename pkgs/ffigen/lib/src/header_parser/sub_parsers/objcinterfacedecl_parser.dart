@@ -33,6 +33,21 @@ Type? parseObjCInterfaceDeclaration(
     return null;
   }
 
+  final isExplicitlyIncluded = objcInterfaces.include(decl);
+  final importedType = config.importedTypesByUsr[usr];
+  if (importedType != null && !isExplicitlyIncluded) {
+    final imported = ImportedObjCInterface(
+      context: context,
+      usr: usr,
+      originalName: name,
+      name: importedType.dartType,
+      lookupName: applyModulePrefix(name, objcInterfaces.module(decl)),
+      libraryImport: importedType.libraryImport,
+    );
+    context.bindingsIndex.addObjCInterfaceToSeen(usr, imported);
+    return imported;
+  }
+
   context.logger.fine(
     '++++ Adding ObjC interface: '
     'Name: $name, ${cursor.completeStringRepr()}',

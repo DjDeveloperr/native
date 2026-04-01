@@ -54,6 +54,21 @@ ObjCProtocol? parseObjCProtocolDeclaration(
 
   final apiAvailability = ApiAvailability.fromCursor(cursor, context);
 
+  final importedType = config.importedTypesByUsr[usr];
+  final isExplicitlyIncluded = objcProtocols.include(decl);
+  if (importedType != null && !isExplicitlyIncluded) {
+    final imported = ImportedObjCProtocol(
+      context: context,
+      usr: usr,
+      originalName: name,
+      name: importedType.dartType,
+      lookupName: applyModulePrefix(name, objcProtocols.module(decl)),
+      libraryImport: importedType.libraryImport,
+    );
+    bindingsIndex.addObjCProtocolToSeen(usr, imported);
+    return imported;
+  }
+
   logger.fine(
     '++++ Adding ObjC protocol: '
     'Name: $name, ${cursor.completeStringRepr()}',
