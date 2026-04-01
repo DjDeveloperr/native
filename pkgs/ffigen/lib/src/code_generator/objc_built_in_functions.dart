@@ -87,7 +87,7 @@ class ObjCBuiltInFunctions {
   ObjCMsgSendFunc getMsgSendFunc(Type returnType, List<Parameter> params) {
     params = _methodSigParams(params);
     returnType = _methodSigType(returnType);
-    final (id, idHash) = _methodSigId(returnType, params);
+    final (id, idHash) = _msgSendSigId(returnType, params);
     return _msgSendFuncs[id] ??= ObjCMsgSendFunc._(
       '_objc_msgSend_$idHash',
       returnType,
@@ -102,6 +102,56 @@ class ObjCBuiltInFunctions {
       '_sel_${methodName.replaceAll(":", "_")}',
       () => '${registerName.gen(context)}("$methodName")',
     );
+  }
+
+  (String, String) _msgSendSigId(Type returnType, List<Parameter> params) {
+    final normalType = NativeFunc(
+      FunctionType(
+        returnType: returnType,
+        parameters: [
+          Parameter(
+            name: 'receiver',
+            type: PointerType(objCObjectType),
+            objCConsumed: false,
+          ),
+          Parameter(
+            name: 'sel',
+            type: PointerType(objCSelType),
+            objCConsumed: false,
+          ),
+          ...params,
+        ],
+      ),
+    ).cacheKey();
+
+    final variant = ObjCMsgSendVariant.fromReturnType(returnType);
+    final stretType = variant == ObjCMsgSendVariant.stret
+        ? NativeFunc(
+            FunctionType(
+              returnType: voidType,
+              parameters: [
+                Parameter(
+                  name: 'result',
+                  type: PointerType(returnType),
+                  objCConsumed: false,
+                ),
+                Parameter(
+                  name: 'receiver',
+                  type: PointerType(objCObjectType),
+                  objCConsumed: false,
+                ),
+                Parameter(
+                  name: 'sel',
+                  type: PointerType(objCSelType),
+                  objCConsumed: false,
+                ),
+                ...params,
+              ],
+            ),
+          ).cacheKey()
+        : null;
+    final id = '$variant|$normalType|${stretType ?? ''}';
+    return (id, fnvHash32(id).toRadixString(36));
   }
 
   (String, String) _methodSigId(Type returnType, List<Parameter> params) {
