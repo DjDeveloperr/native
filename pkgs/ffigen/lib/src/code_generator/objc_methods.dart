@@ -491,9 +491,14 @@ class ObjCMethod extends AstNode with HasLocalScope {
       '$originalName(${_params.join(', ')})';
 
   bool get returnsInstanceType {
-    if (returnType is ObjCInstanceType) return true;
+    if (returnType is ObjCInstanceType ||
+        returnType is ImportedObjCInstanceType) {
+      return true;
+    }
     final baseType = returnType.typealiasType;
-    if (baseType is ObjCNullable && baseType.child is ObjCInstanceType) {
+    if (baseType is ObjCNullable &&
+        (baseType.child is ObjCInstanceType ||
+            baseType.child is ImportedObjCInstanceType)) {
       return true;
     }
     return false;
@@ -522,9 +527,14 @@ class ObjCMethod extends AstNode with HasLocalScope {
   static const _errorOutParamNames = {'error', 'outError'};
 
   String _getConvertedReturnType(Context context, String instanceType) {
-    if (returnType is ObjCInstanceType) return instanceType;
+    if (returnType is ObjCInstanceType ||
+        returnType is ImportedObjCInstanceType) {
+      return instanceType;
+    }
     final baseType = returnType.typealiasType;
-    if (baseType is ObjCNullable && baseType.child is ObjCInstanceType) {
+    if (baseType is ObjCNullable &&
+        (baseType.child is ObjCInstanceType ||
+            baseType.child is ImportedObjCInstanceType)) {
       return '$instanceType?';
     }
     return returnType.getDartType(context);

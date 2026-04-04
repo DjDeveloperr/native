@@ -108,9 +108,14 @@ class ObjCInterface extends BindingType with ObjCMethods, HasLocalScope {
   }
 
   String _subclassReturnType(ObjCMethod method, String targetType) {
-    if (method.returnType is ObjCInstanceType) return targetType;
+    if (method.returnType is ObjCInstanceType ||
+        method.returnType is ImportedObjCInstanceType) {
+      return targetType;
+    }
     final baseType = method.returnType.typealiasType;
-    if (baseType is ObjCNullable && baseType.child is ObjCInstanceType) {
+    if (baseType is ObjCNullable &&
+        (baseType.child is ObjCInstanceType ||
+            baseType.child is ImportedObjCInstanceType)) {
       return '$targetType?';
     }
     return method.returnType.getDartType(context);
@@ -553,13 +558,9 @@ class ImportedObjCInterface extends ObjCInterface {
     required super.originalName,
     required super.context,
     required this.libraryImport,
-    String? name,
-    String? lookupName,
-  }) : super(
-         name: name,
-         lookupName: lookupName,
-         apiAvailability: ApiAvailability(externalVersions: null),
-       );
+    super.name,
+    super.lookupName,
+  }) : super(apiAvailability: ApiAvailability(externalVersions: null));
 
   @override
   bool get isObjCImport => true;

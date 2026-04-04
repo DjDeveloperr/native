@@ -273,9 +273,13 @@ class ObjCBuiltInFunctions {
   );
 
   static bool isInstanceType(Type type) {
-    if (type is ObjCInstanceType) return true;
+    if (type is ObjCInstanceType || type is ImportedObjCInstanceType) {
+      return true;
+    }
     final baseType = type.typealiasType;
-    return baseType is ObjCNullable && baseType.child is ObjCInstanceType;
+    return baseType is ObjCNullable &&
+        (baseType.child is ObjCInstanceType ||
+            baseType.child is ImportedObjCInstanceType);
   }
 
   // A unique (but not human readable) ID for the generated library based on

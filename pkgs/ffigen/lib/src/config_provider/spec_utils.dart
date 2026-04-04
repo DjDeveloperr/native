@@ -58,6 +58,12 @@ ImportedType? _builtinImportedTypeFromSymbolCType(String cType) => switch (
   _ => null,
 };
 
+String _nativeTypeForImportedSymbol(String usr, String cType) {
+  if (usr.contains('@S@')) return 'struct $cType';
+  if (usr.contains('@U@')) return 'union $cType';
+  return cType;
+}
+
 void loadImportedTypes(
   YamlMap fileConfig,
   Map<String, ImportedType> usrTypeMappings,
@@ -81,7 +87,7 @@ void loadImportedTypes(
               libraryImport,
               cType,
               dartType,
-              cType,
+              _nativeTypeForImportedSymbol(usr, cType),
             ),
       strings.symbolKindEnum => ImportedEnumType(
         libraryImport,
@@ -108,7 +114,7 @@ void loadImportedTypes(
         libraryImport,
         name,
         dartName,
-        name,
+        _nativeTypeForImportedSymbol(usr, name),
         importedDartType: true,
         publicDartType: publicDartType,
       ),

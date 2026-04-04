@@ -60,22 +60,6 @@ class ObjCBlock extends BindingType with HasLocalScope {
       return oldBlock;
     }
 
-    final importedType = context.config.importedTypesByUsr[usr];
-    if (importedType != null) {
-      final block = ImportedObjCBlock._(
-        context,
-        usr: usr,
-        name: importedType.dartType,
-        publicDartType: importedType.publicDartType,
-        libraryImport: importedType.libraryImport,
-        returnType: returnType,
-        params: renamedParams,
-        returnsRetained: returnsRetained,
-      );
-      context.bindingsIndex.addObjCBlockToSeen(usr, block);
-      return block;
-    }
-
     final block = ObjCBlock._(
       context,
       usr: usr,
@@ -625,38 +609,25 @@ $listenerName $blockingWrapper(
 }
 
 class ImportedObjCBlock extends ObjCBlock {
-  final String? publicDartType;
   final LibraryImport libraryImport;
 
   ImportedObjCBlock._(
-    Context context, {
-    required String usr,
-    required String name,
-    required this.publicDartType,
+    super.context, {
+    required super.usr,
+    required super.name,
     required this.libraryImport,
-    required Type returnType,
-    required List<Parameter> params,
-    required bool returnsRetained,
-  }) : super._(
-         context,
-         usr: usr,
-         name: name,
-         returnType: returnType,
-         params: params,
-         returnsRetained: returnsRetained,
-       );
+    required super.returnType,
+    required super.params,
+    required super.returnsRetained,
+  }) : super._();
 
   @override
   bool get isObjCImport => true;
 
   @override
-  String getDartType(Context context) =>
-      publicDartType ??
-      '${context.libs.prefix(libraryImport)}.${symbol.oldName}';
-
-  @override
   String protocolTrampolineAccessor(Context context) =>
-      '${context.libs.prefix(libraryImport)}.${symbol.oldName}.protocolTrampoline';
+      '${context.libs.prefix(libraryImport)}.'
+      '${symbol.oldName}.protocolTrampoline';
 
   @override
   String helperClassRef(Context context) =>

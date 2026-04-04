@@ -109,7 +109,12 @@ class ImportedEnumType extends ImportedType {
     required this.enumName,
     required this.ffiCType,
     required this.ffiDartType,
-  }) : super(libraryImport, ffiCType, ffiDartType, ffiCType);
+  }) : super(
+         libraryImport,
+         ffiCType,
+         ffiDartType,
+         _nativeTypeForImportedFfiCType(ffiCType),
+       );
 
   @override
   String getCType(Context context) => ffiCType;
@@ -146,6 +151,26 @@ class ImportedEnumType extends ImportedType {
   @override
   String cacheKey() => 'ImportedEnum(${libraryImport.name}.$enumName)';
 }
+
+String _nativeTypeForImportedFfiCType(String ffiCType) => switch (ffiCType) {
+  'ffi.Void' => 'void',
+  'ffi.UnsignedChar' => 'unsigned char',
+  'ffi.SignedChar' => 'signed char',
+  'ffi.Char' => 'char',
+  'ffi.UnsignedShort' => 'unsigned short',
+  'ffi.Short' => 'short',
+  'ffi.UnsignedInt' => 'unsigned',
+  'ffi.Int' => 'int',
+  'ffi.UnsignedLong' => 'unsigned long',
+  'ffi.Long' => 'long',
+  'ffi.UnsignedLongLong' => 'unsigned long long',
+  'ffi.LongLong' => 'long long',
+  'ffi.Float' => 'float',
+  'ffi.Double' => 'double',
+  'ffi.Size' => 'intptr_t',
+  'ffi.WChar' => 'wchar_t',
+  _ => ffiCType,
+};
 
 class ImportedTypealias extends ImportedType {
   final String cTypeName;
