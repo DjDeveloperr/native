@@ -72,6 +72,13 @@ final class FfiGenerator {
   )
   final List<LibraryImport> libraryImports;
 
+  /// Dart names that generated top-level declarations must not use.
+  ///
+  /// This is useful when the generated library will be exported together with
+  /// another declaration library. Reserving that library's public names keeps
+  /// generated helpers and categories from creating ambiguous exports.
+  final Set<String> reservedNames;
+
   /// Path to the clang library.
   ///
   /// Only visible for YamlConfig plumbing.
@@ -101,6 +108,7 @@ final class FfiGenerator {
       'https://github.com/dart-lang/native/issues/2597.',
     )
     this.libraryImports = const <LibraryImport>[],
+    this.reservedNames = const <String>{},
     @Deprecated('Only visible for YamlConfig plumbing.') this.libclangDylib,
   });
 

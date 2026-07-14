@@ -25,8 +25,10 @@ class Scope {
 
   Scope._(this._parent, this._debugName, this._preUsedNames);
 
-  static Scope createRoot(String debugName) =>
-      Scope._(null, debugName, const {});
+  static Scope createRoot(
+    String debugName, {
+    Set<String> preUsedNames = const {},
+  }) => Scope._(null, debugName, preUsedNames);
 
   /// Create a new [Scope] as a child of this one.
   ///
@@ -77,6 +79,12 @@ class Scope {
     assert(!_filled);
     final namer = Namer(parentUsedNames.union(_preUsedNames));
     _namer = namer;
+    // Imported declarations keep their published Dart names, but those names
+    // are still occupied in the generated library. Reserve them before naming
+    // local declarations so the result is independent of set iteration order.
+    for (final symbol in _symbols.where((symbol) => symbol.isImported)) {
+      namer.markUsed(symbol.oldName);
+    }
     for (final symbol in _symbols) {
       if (symbol._name == null) {
         symbol._name = symbol.isImported

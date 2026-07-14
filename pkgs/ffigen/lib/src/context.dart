@@ -28,13 +28,17 @@ class Context {
   final libs = LibraryImports();
   late final compilerOpts =
       config.headers.compilerOptions ?? defaultCompilerOpts(logger);
-  final Scope rootScope = Scope.createRoot('root');
+  final Scope rootScope;
   final Scope rootObjCScope = Scope.createRoot('objc_root');
   late final ExtraSymbols extraSymbols;
 
   Context(this.logger, FfiGenerator generator, {Uri? libclangDylib})
     : config = Config(generator),
-      cursorIndex = CursorIndex(logger) {
+      cursorIndex = CursorIndex(logger),
+      rootScope = Scope.createRoot(
+        'root',
+        preUsedNames: generator.reservedNames,
+      ) {
     objCBuiltInFunctions = ObjCBuiltInFunctions(
       this,
       // ignore: deprecated_member_use_from_same_package

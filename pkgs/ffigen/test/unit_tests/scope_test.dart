@@ -147,5 +147,35 @@ void main() {
       expect(childSymbol.name, 'bar\$2');
       expect(uncleSymbol.name, 'bar');
     });
+
+    test('root preUsedNames', () {
+      final root = Scope.createRoot('root', preUsedNames: {'NSDeprecated'});
+      final symbol = Symbol('NSDeprecated', SymbolKind.klass);
+      root.add(symbol);
+
+      root.fillNames();
+      expect(symbol.name, 'NSDeprecated\$1');
+    });
+
+    test('imported names are reserved before local naming', () {
+      for (final importedFirst in [false, true]) {
+        final root = Scope.createRoot('root');
+        final imported = Symbol('NSDeprecated', SymbolKind.klass)
+          ..isImported = true;
+        final local = Symbol('NSDeprecated', SymbolKind.klass);
+
+        if (importedFirst) {
+          root.add(imported);
+          root.add(local);
+        } else {
+          root.add(local);
+          root.add(imported);
+        }
+
+        root.fillNames();
+        expect(imported.name, 'NSDeprecated');
+        expect(local.name, 'NSDeprecated\$1');
+      }
+    });
   });
 }
