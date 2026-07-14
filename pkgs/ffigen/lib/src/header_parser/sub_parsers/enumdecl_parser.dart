@@ -25,6 +25,8 @@ EnumClass parseEnumDeclaration(clang_types.CXCursor cursor, Context context) {
   final cachedEnum = context.bindingsIndex.getSeenEnum(usr);
   if (cachedEnum != null) return cachedEnum;
 
+  final importedType = config.importedTypesByUsr[usr];
+
   final String enumName;
   // Only set name using USR if the type is not Anonymous (i.e not inside
   // any typedef and declared inplace inside another type).
@@ -44,6 +46,38 @@ EnumClass parseEnumDeclaration(clang_types.CXCursor cursor, Context context) {
 
   // An enum declared with NS_OPTIONS.
   var isNSOptions = false;
+
+  if (importedType != null) {
+    cursor.visitChildren((clang_types.CXCursor child) {
+      switch (clang.clang_getCursorKind(child)) {
+        case clang_types.CXCursorKind.CXCursor_EnumConstantDecl:
+          if (clang.clang_getEnumConstantDeclValue(child) < 0) {
+            hasNegativeEnumConstants = true;
+          }
+          break;
+        case clang_types.CXCursorKind.CXCursor_FlagEnum:
+          isNSOptions = true;
+          break;
+      }
+    });
+    if (hasNegativeEnumConstants) {
+      nativeType = unsignedToSignedNativeIntType[nativeType] ?? nativeType;
+    }
+    final decl = Declaration(usr: usr, originalName: enumName);
+    final enumClass = ImportedEnumClass(
+      usr: usr,
+      originalName: enumName,
+      nativeType: nativeType,
+      context: context,
+      style: config.enums.style(
+        decl,
+        isNSOptions ? EnumStyle.intConstants : null,
+      ),
+      importedType: importedType,
+    );
+    context.bindingsIndex.addEnumToSeen(usr, enumClass);
+    return enumClass;
+  }
 
   final apiAvailability = ApiAvailability.fromCursor(cursor, context);
   if (apiAvailability.availability == Availability.none) {

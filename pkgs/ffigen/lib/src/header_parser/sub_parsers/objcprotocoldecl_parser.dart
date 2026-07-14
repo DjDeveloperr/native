@@ -36,6 +36,19 @@ ObjCProtocol? parseObjCProtocolDeclaration(
     return cachedProtocol;
   }
 
+  final importedType = config.importedTypesByUsr[usr];
+  if (importedType != null) {
+    final protocol = ImportedObjCProtocol(
+      context: context,
+      usr: usr,
+      originalName: name,
+      importedType: importedType,
+      apiAvailability: ApiAvailability.fromCursor(cursor, context),
+    );
+    bindingsIndex.addObjCProtocolToSeen(usr, protocol);
+    return protocol;
+  }
+
   // There's a strange shape in the AST for protocols seen in certain contexts,
   // where instead of the AST looking like (decl -> methods/etc), it looks like
   // (stubDecl --superProto-> decl -> methods/etc). If we try and parse the stub

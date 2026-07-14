@@ -622,6 +622,18 @@ final class Protocols extends Declarations {
   /// transitively included protocols will not be generated at all.
   final bool includeTransitive;
 
+  /// Whether to generate listener and blocking-listener variants for protocol
+  /// implementation helpers.
+  final bool generateListenerHelpers;
+
+  /// Whether to generate protocol implementation helpers that take one
+  /// function argument per protocol method.
+  ///
+  /// The typed `Spec`, `Defaults`, and `Adapter` APIs are generated regardless.
+  /// Disabling these function-based convenience helpers can substantially
+  /// reduce output for frameworks with large protocols.
+  final bool generateFunctionHelpers;
+
   /// The module that the Objective-C protocol belongs to.
   final String? Function(Declaration declaration) module;
 
@@ -631,6 +643,8 @@ final class Protocols extends Declarations {
     super.rename,
     super.renameMember,
     this.includeTransitive = false,
+    this.generateListenerHelpers = true,
+    this.generateFunctionHelpers = true,
     this.module = noModule,
   });
 

@@ -222,10 +222,16 @@ class Writer {
       );
     }
 
-    // Remove internal bindings and macros.
+    // Remove internal bindings, macros, and Objective-C stubs. A stub is only
+    // emitted so declarations in this library can name a type owned elsewhere;
+    // advertising it as shared would prevent the owning library from emitting
+    // the complete interface or protocol.
     bindings.removeWhere((element) {
       return element.isInternal ||
-          (element is Constant && element.usr.contains('@macro@'));
+          (element is Constant && element.usr.contains('@macro@')) ||
+          (element is ObjCInterface &&
+              (element.generateAsStub || !element.filled)) ||
+          (element is ObjCProtocol && element.generateAsStub);
     });
 
     // Sort bindings alphabetically by USR.

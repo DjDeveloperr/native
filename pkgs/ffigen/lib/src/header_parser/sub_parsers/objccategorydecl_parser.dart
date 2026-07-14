@@ -24,6 +24,13 @@ ObjCCategory? parseObjCCategoryDeclaration(
   final usr = cursor.usr();
   final name = cursor.spelling();
 
+  // The imported library already generated this category. Categories that are
+  // new in the current headers have different USRs and are still generated,
+  // including categories that extend an imported interface.
+  if (context.config.importedTypesByUsr.containsKey(usr)) {
+    return null;
+  }
+
   final decl = Declaration(usr: usr, originalName: name);
 
   final cachedCategory = context.bindingsIndex.getSeenObjCCategory(usr);

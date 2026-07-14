@@ -57,6 +57,26 @@ Type? parseObjCInterfaceDeclaration(
   return itf;
 }
 
+ObjCInterface parseImportedObjCInterfaceDeclaration(
+  Context context,
+  clang_types.CXCursor cursor,
+  ImportedType importedType,
+) {
+  final usr = cursor.usr();
+  final cachedItf = context.bindingsIndex.getSeenObjCInterface(usr);
+  if (cachedItf != null) return cachedItf;
+
+  final itf = ImportedObjCInterface(
+    context: context,
+    usr: usr,
+    originalName: cursor.spelling(),
+    importedType: importedType,
+    apiAvailability: ApiAvailability.fromCursor(cursor, context),
+  );
+  context.bindingsIndex.addObjCInterfaceToSeen(usr, itf);
+  return itf;
+}
+
 void fillObjCInterfaceMethodsIfNeeded(
   Context context,
   ObjCInterface itf,

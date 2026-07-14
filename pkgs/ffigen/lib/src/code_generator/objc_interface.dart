@@ -240,15 +240,13 @@ class ObjCInterface extends BindingType with ObjCMethods, HasLocalScope {
     final selectorSetEntries = StringBuffer();
 
     for (final method in subclassMethods) {
-      declarations.write(makeDartDoc(method.dartDoc ?? method.originalName));
+      declarations.write(makeDartDoc(method.dartDoc));
       declarations.write(
         '  ${_subclassInterfaceDeclaration(method, targetType)}\n',
       );
 
       final selectorField = _subclassSelectorField(method);
-      selectorConstants.write(
-        makeDartDoc(method.dartDoc ?? method.originalName),
-      );
+      selectorConstants.write(makeDartDoc(method.dartDoc));
       selectorConstants.write(
         "  static const $selectorField = '${method.originalName}';\n",
       );
@@ -546,5 +544,42 @@ ${generateInstanceMethodBindings(w, this)}
       }
     }
     return false;
+  }
+}
+
+/// An Objective-C interface whose Dart wrapper is supplied by another library.
+///
+/// Imported symbol files normally represent declarations as [ImportedType]s.
+/// Objective-C interfaces need a little more structure than a generic imported
+/// type, though: locally generated categories can extend them and locally
+/// generated interfaces can inherit from them. This adapter preserves the
+/// Objective-C type behavior without emitting a duplicate wrapper.
+class ImportedObjCInterface extends ObjCInterface {
+  final ImportedType importedType;
+
+  ImportedObjCInterface({
+    required super.context,
+    required super.usr,
+    required super.originalName,
+    required this.importedType,
+    required super.apiAvailability,
+  }) : super(name: importedType.dartType, lookupName: originalName) {
+    // The imported library owns the methods and declaration for this type.
+    filled = true;
+  }
+
+  @override
+  bool get isObjCImport => true;
+
+  @override
+  String getDartType(Context context) => importedType.getDartType(context);
+
+  @override
+  String getObjCBlockSignatureType(Context context) => getDartType(context);
+
+  @override
+  void visitChildren(Visitor visitor, {bool typeGraphOnly = false}) {
+    super.visitChildren(visitor, typeGraphOnly: typeGraphOnly);
+    visitor.visit(importedType);
   }
 }

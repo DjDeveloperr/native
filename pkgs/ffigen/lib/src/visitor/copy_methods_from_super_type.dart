@@ -65,8 +65,10 @@ class CopyMethodsFromSuperTypesVisitation extends Visitation {
       }
     }
 
-    // Copy all methods from all the interface's protocols.
-    _copyMethodFromProtocols(node, node.protocols, node.addMethod);
+    // Protocol extension methods are applicable to an interface extension type
+    // that implements the protocol. Only copy the methods needed to resolve an
+    // ambiguity between otherwise equally applicable extensions.
+    _copyAmbiguousInheritedMethods(node);
 
     // Copy methods from all the categories that extend this interface, if those
     // methods return instancetype, because the Dart inheritance rules don't
@@ -101,6 +103,64 @@ class CopyMethodsFromSuperTypesVisitation extends Visitation {
     }
   }
 
+  void _copyAmbiguousInheritedMethods(ObjCInterface node) {
+    final providers = <_MethodProvider>[];
+    final seenTypes = Set<BindingType>.identity();
+
+    void addProvider(BindingType type, ObjCMethods methods) {
+      if (seenTypes.add(type)) {
+        providers.add(_MethodProvider(type, methods));
+      }
+    }
+
+    void addProtocol(ObjCProtocol protocol) {
+      addProvider(protocol, protocol);
+      for (final superProtocol in protocol.superProtocols) {
+        addProtocol(superProtocol);
+      }
+    }
+
+    for (
+      ObjCInterface? interface = node;
+      interface != null;
+      interface = interface.superType
+    ) {
+      addProvider(interface, interface);
+      for (final protocol in interface.protocols) {
+        addProtocol(protocol);
+      }
+    }
+
+    final candidatesByName = <String, List<_MethodCandidate>>{};
+    for (final provider in providers) {
+      for (final method in provider.methods.methods) {
+        if (method.isClassMethod) continue;
+        candidatesByName
+            .putIfAbsent(method.symbol.oldName, () => [])
+            .add(_MethodCandidate(provider.type, method));
+      }
+    }
+
+    for (final candidates in candidatesByName.values) {
+      final mostSpecific = candidates.where((candidate) {
+        return !candidates.any(
+          (other) =>
+              !identical(candidate, other) &&
+              _isStrictSubtype(other.type, candidate.type),
+        );
+      }).toList();
+      final mostSpecificTypes = mostSpecific.map((e) => e.type).toSet();
+      if (mostSpecificTypes.length < 2) continue;
+
+      for (final candidate in mostSpecific) {
+        node.addMethod(candidate.method.copyForInheritance());
+      }
+    }
+  }
+
+  bool _isStrictSubtype(BindingType left, BindingType right) =>
+      left.isSubtypeOf(right) && !right.isSubtypeOf(left);
+
   @override
   void visitObjCCategory(ObjCCategory node) {
     node.visitChildren(visitor, typeGraphOnly: true);
@@ -123,12 +183,25 @@ class CopyMethodsFromSuperTypesVisitation extends Visitation {
         continue;
       }
 
-      // Protocols have very different inheritance semantics than Dart classes.
-      // So copy across all the methods explicitly, rather than trying to use
-      // Dart inheritance to get them implicitly.
+      // Protocol adapters have to implement inherited requirements too, so
+      // keep these methods directly on the child protocol binding.
       for (final method in superProtocol.methods) {
         node.addMethod(method.copyForInheritance());
       }
     }
   }
+}
+
+class _MethodProvider {
+  final BindingType type;
+  final ObjCMethods methods;
+
+  _MethodProvider(this.type, this.methods);
+}
+
+class _MethodCandidate {
+  final BindingType type;
+  final ObjCMethod method;
+
+  _MethodCandidate(this.type, this.method);
 }

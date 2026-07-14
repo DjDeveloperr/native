@@ -171,9 +171,21 @@ Type? _createTypeFromCursor(
   final logger = context.logger;
   final config = context.config;
   final usr = cursor.usr();
-  if (config.importedTypesByUsr.containsKey(usr)) {
+  final importedType = config.importedTypesByUsr[usr];
+  if (importedType != null) {
     logger.fine('  Type $usr mapped from usr');
-    return config.importedTypesByUsr[usr]!;
+    if (cxtype.kind == clang_types.CXTypeKind.CXType_Enum) {
+      return parseEnumDeclaration(cursor, context);
+    }
+    if (cxtype.kind == clang_types.CXTypeKind.CXType_ObjCInterface ||
+        cxtype.kind == clang_types.CXTypeKind.CXType_ObjCObject) {
+      return parseImportedObjCInterfaceDeclaration(
+        context,
+        cursor,
+        importedType,
+      );
+    }
+    return importedType;
   }
   switch (cxtype.kind) {
     case clang_types.CXTypeKind.CXType_Typedef:

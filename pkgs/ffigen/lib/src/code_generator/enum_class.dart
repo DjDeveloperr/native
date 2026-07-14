@@ -314,3 +314,35 @@ class EnumConstant extends AstNode {
     visitor.visit(_symbol);
   }
 }
+
+/// An enum whose public Dart declaration is supplied by another library.
+///
+/// The native representation is still derived from the current Clang AST so
+/// generated FFI signatures use the ABI type, while public signatures refer
+/// to the imported Dart enum (or to `int` for integer-constant enums).
+class ImportedEnumClass extends EnumClass {
+  final ImportedType importedType;
+
+  ImportedEnumClass({
+    required super.usr,
+    required super.originalName,
+    required super.nativeType,
+    required super.context,
+    required super.style,
+    required this.importedType,
+  }) : super(name: importedType.dartType);
+
+  @override
+  bool get isObjCImport => true;
+
+  @override
+  String getDartType(Context context) => style == EnumStyle.intConstants
+      ? nativeType.getDartType(context)
+      : importedType.getDartType(context);
+
+  @override
+  void visitChildren(Visitor visitor) {
+    super.visitChildren(visitor);
+    visitor.visit(importedType);
+  }
+}

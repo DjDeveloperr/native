@@ -200,6 +200,11 @@ class ObjCProtocol extends BindingType with ObjCMethods, HasLocalScope {
     final optionalClass = '${name}Optional';
     final defaultsMixin = '${name}Defaults';
     final adapterMixin = '${name}Adapter';
+    final generateFunctionHelpers =
+        context.config.objectiveC!.protocols.generateFunctionHelpers;
+    final generateListenerHelpers =
+        generateFunctionHelpers &&
+        context.config.objectiveC!.protocols.generateListenerHelpers;
 
     final s = StringBuffer();
     s.write('\n');
@@ -210,7 +215,7 @@ class ObjCProtocol extends BindingType with ObjCMethods, HasLocalScope {
 ///
 ''');
     }
-    s.write(makeDartDoc(dartDoc ?? originalName));
+    s.write(makeDartDoc(dartDoc));
 
     final sp = [
       protocolBase,
@@ -278,17 +283,13 @@ ${generateInstanceMethodBindings(w, this)}
           .toList();
 
       for (final method in availableRequiredMethods) {
-        requiredDeclarations.write(
-          makeDartDoc(method.dartDoc ?? method.originalName),
-        );
+        requiredDeclarations.write(makeDartDoc(method.dartDoc));
         requiredDeclarations.write(
           '  ${_protocolInterfaceDeclaration(method, targetType)}\n',
         );
       }
       for (final method in availableOptionalMethods) {
-        optionalDeclarations.write(
-          makeDartDoc(method.dartDoc ?? method.originalName),
-        );
+        optionalDeclarations.write(makeDartDoc(method.dartDoc));
         optionalDeclarations.write(
           '  ${_protocolInterfaceDeclaration(method, targetType)}\n',
         );
@@ -323,6 +324,7 @@ mixin $defaultsMixin implements $optionalClass {
       final buildListenerImplementations = StringBuffer();
       final buildBlockingImplementations = StringBuffer();
       final buildFromImplementations = StringBuffer();
+      final buildFromDirectImplementations = StringBuffer();
       final buildFromListenerImplementations = StringBuffer();
       final buildFromBlockingImplementations = StringBuffer();
       final methodFields = StringBuffer();
@@ -336,7 +338,8 @@ mixin $defaultsMixin implements $optionalClass {
         final block = method.protocolBlock!;
         block.fillProtocolTrampoline();
         final blockUtils = block.name;
-        final methodClass = block.hasListener
+        final supportsListeners = block.hasListener && generateListenerHelpers;
+        final methodClass = supportsListeners
             ? protocolListenableMethod
             : protocolMethod;
 
@@ -364,7 +367,7 @@ mixin $defaultsMixin implements $optionalClass {
         var listenerBuilders = '';
         var maybeImplementAsListener = 'implement';
         var maybeImplementAsBlocking = 'implement';
-        if (block.hasListener) {
+        if (supportsListeners) {
           listenerBuilders =
               '''
     ($funcType func) => $blockUtils.listener($wrapper),
@@ -395,13 +398,15 @@ mixin $defaultsMixin implements $optionalClass {
               : adapterClosure;
           buildFromImplementations.write('''
       $argName: $adapterExpr,''');
+          buildFromDirectImplementations.write('''
+    $builder.$fieldName.implement(builder, $adapterExpr);''');
           buildFromListenerImplementations.write('''
       $argName: $adapterExpr,''');
           buildFromBlockingImplementations.write('''
       $argName: $adapterExpr,''');
         }
 
-        methodFields.write(makeDartDoc(method.dartDoc ?? method.originalName));
+        methodFields.write(makeDartDoc(method.dartDoc));
         methodFields.write('''static final $fieldName = $methodClass<$funcType>(
       ${_protocolPointer.name},
       ${method.selObject.name},
@@ -420,12 +425,15 @@ mixin $defaultsMixin implements $optionalClass {
 
       buildArgs.add('bool \$keepIsolateAlive = true');
       final args = '{${buildArgs.join(', ')}}';
-      final builders =
+      final protocolGetter =
           '''
   /// Returns the [$protocolClass] object for this protocol.
   static $protocolClass get \$protocol =>
       $protocolClass.fromPointer(${_protocolPointer.name}.cast());
+''';
 
+      final functionBuilders = generateFunctionHelpers
+          ? '''
   /// Builds an object that implements the $originalName protocol. To implement
   /// multiple protocols, use [addToBuilder] or [$protocolBuilder] directly.
   ///
@@ -446,7 +454,8 @@ mixin $defaultsMixin implements $optionalClass {
     $buildImplementations
     builder.addProtocol(\$protocol);
   }
-''';
+'''
+          : '';
 
       final optionalImplementationDecl = hasOptionalMethods
           ? '''
@@ -559,8 +568,8 @@ $buildFromBlockingImplementations    );
 ''';
       }
 
-      final implementFromBuilders =
-          '''
+      final implementFromBuilders = generateFunctionHelpers
+          ? '''
   /// Builds an object that implements the $originalName protocol using members
   /// from [implementation].
   ///
@@ -586,11 +595,36 @@ $optionalImplementationDecl    addToBuilder(
       builder,
 $buildFromImplementations    );
   }
+'''
+          : '''
+  /// Builds an object that implements the $originalName protocol using members
+  /// from [implementation].
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [$optionalClass].
+  static $name implementFrom(
+    $specClass implementation, {
+    bool \$keepIsolateAlive = true,
+  }) {
+    final builder = $protocolBuilder(debugName: '$originalName');
+    addToBuilderFrom(builder, implementation);
+    return $name.as(builder.build(keepIsolateAlive: \$keepIsolateAlive));
+  }
+
+  /// Adds an implementation of the $originalName protocol to an existing
+  /// [$protocolBuilder] using members from [implementation].
+  static void addToBuilderFrom(
+    $protocolBuilder builder,
+    $specClass implementation,
+  ) {
+$optionalImplementationDecl$buildFromDirectImplementations
+    builder.addProtocol(\$protocol);
+  }
 ''';
 
       s.write('''
-
-  $builders
+  $protocolGetter
+  $functionBuilders
   $implementFromBuilders
   $listenerBuilders
   $methodFields
@@ -723,5 +757,33 @@ mixin $adapterMixin {
       visitor.visit(objcPkgImport);
     }
     visitor.visitAll(superProtocols);
+  }
+}
+
+/// An Objective-C protocol whose Dart wrapper is supplied by another library.
+class ImportedObjCProtocol extends ObjCProtocol {
+  final ImportedType importedType;
+
+  ImportedObjCProtocol({
+    required super.context,
+    required super.usr,
+    required super.originalName,
+    required this.importedType,
+    required super.apiAvailability,
+  }) : super(name: importedType.dartType, lookupName: originalName);
+
+  @override
+  bool get isObjCImport => true;
+
+  @override
+  String getDartType(Context context) => importedType.getDartType(context);
+
+  @override
+  String getObjCBlockSignatureType(Context context) => getDartType(context);
+
+  @override
+  void visitChildren(Visitor visitor, {bool typeGraphOnly = false}) {
+    super.visitChildren(visitor, typeGraphOnly: typeGraphOnly);
+    visitor.visit(importedType);
   }
 }
