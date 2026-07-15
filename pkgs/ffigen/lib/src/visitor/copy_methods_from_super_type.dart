@@ -131,6 +131,22 @@ class CopyMethodsFromSuperTypesVisitation extends Visitation {
       }
     }
 
+    // Dart extension methods make included protocol instance methods directly
+    // available on conforming interfaces. Class methods are not inherited in
+    // Dart, however, and a protocol emitted only as a stub has no extension
+    // methods. Keep those methods on the interface itself.
+    for (final provider in providers) {
+      final protocol = provider.type;
+      if (protocol is! ObjCProtocol) continue;
+      for (final method in protocol.methods) {
+        if (_excludedNSObjectMethods.contains(method.originalName)) continue;
+        if (method.isClassMethod ||
+            !_isGeneratedProtocolInstanceMethod(protocol, method)) {
+          node.addMethod(method.copyForInheritance());
+        }
+      }
+    }
+
     final candidatesByName = <String, List<_MethodCandidate>>{};
     for (final provider in providers) {
       for (final method in provider.methods.methods) {
@@ -160,6 +176,21 @@ class CopyMethodsFromSuperTypesVisitation extends Visitation {
 
   bool _isStrictSubtype(BindingType left, BindingType right) =>
       left.isSubtypeOf(right) && !right.isSubtypeOf(left);
+
+  bool _isGeneratedProtocolInstanceMethod(
+    ObjCProtocol protocol,
+    ObjCMethod method,
+  ) {
+    if (protocol.isObjCImport) return true;
+    if (protocol.unavailable) return false;
+
+    final protocols = visitor.context.config.objectiveC?.protocols;
+    if (protocols == null) return false;
+    final generatesProtocol =
+        protocols.include(protocol) || protocols.includeTransitive;
+    return generatesProtocol &&
+        protocols.includeMember(protocol, method.originalName);
+  }
 
   @override
   void visitObjCCategory(ObjCCategory node) {

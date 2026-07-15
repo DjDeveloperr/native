@@ -33,6 +33,8 @@
   in `$implementedOptionalMethods`. This prevents unimplemented selectors from
   being advertised to the Objective-C runtime and invoked through
   `noSuchMethod`.
+- Restore protocol-declared class methods and methods from filtered protocols
+  on conforming ObjC interfaces.
 
 ## 20.1.1
 
