@@ -29,6 +29,15 @@ final class MyProtocolSugar
     implements MyProtocolSpec {
   MyProtocolSugar({this.onVoidMethod, this.onIntPtrMethod});
 
+  @override
+  Set<ObjCProtocolMethod<dynamic>> get $implementedOptionalMethods => {
+    MyProtocol$Builder.disabledMethod,
+    MyProtocol$Builder.intPtrMethod_,
+    MyProtocol$Builder.methodWithError_error_,
+    MyProtocol$Builder.optionalMethod_,
+    MyProtocol$Builder.voidMethod_,
+  };
+
   final void Function(int value)? onVoidMethod;
   final void Function(Pointer<Int32> ptr)? onIntPtrMethod;
 
@@ -65,6 +74,15 @@ final class MyProtocolSugar
 final class CombinedProtocolSugar
     with MyProtocolDefaults, MyProtocolAdapter, SecondaryProtocolAdapter
     implements MyProtocolSpec, SecondaryProtocolSpec {
+  @override
+  Set<ObjCProtocolMethod<dynamic>> get $implementedOptionalMethods => {
+    MyProtocol$Builder.disabledMethod,
+    MyProtocol$Builder.intPtrMethod_,
+    MyProtocol$Builder.methodWithError_error_,
+    MyProtocol$Builder.optionalMethod_,
+    MyProtocol$Builder.voidMethod_,
+  };
+
   @override
   int disabledMethod() => 999;
 

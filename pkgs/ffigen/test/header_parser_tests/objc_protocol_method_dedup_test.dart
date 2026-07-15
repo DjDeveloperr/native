@@ -48,6 +48,7 @@ void main() {
     expect(output, isNot(contains('implementAsBlocking')));
     expect(output, isNot(contains('static ChildProtocol implement({')));
     expect(output, isNot(contains('static void addToBuilder(')));
+    expect(output, isNot(contains(r'$implementedOptionalMethods')));
     expect(output, contains('static ChildProtocol implementFrom('));
     expect(output, contains('static void addToBuilderFrom('));
     final consumerMethods = _extensionBody(

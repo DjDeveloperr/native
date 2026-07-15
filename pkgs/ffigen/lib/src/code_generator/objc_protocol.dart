@@ -281,6 +281,17 @@ ${generateInstanceMethodBindings(w, this)}
       final availableOptionalMethods = optionalMethods
           .where(_isAvailableInProtocolAdapter)
           .toList();
+      final hasOptionalMethods = availableOptionalMethods.isNotEmpty;
+      final optionalImplementationDocs = hasOptionalMethods
+          ? '''
+  ///
+  /// Optional methods are only implemented when [implementation] also
+  /// implements [$optionalClass].
+  ///
+  /// The corresponding method from this builder must also be included in
+  /// [$optionalClass.\$implementedOptionalMethods].
+'''
+          : '';
 
       for (final method in availableRequiredMethods) {
         requiredDeclarations.write(makeDartDoc(method.dartDoc));
@@ -301,13 +312,22 @@ ${requiredDeclarations.toString()}
 }
 
 abstract interface class $optionalClass {
+${hasOptionalMethods ? '''
+  /// Optional protocol methods implemented by this Dart object.
+  ///
+  /// Only methods in this set are registered with the Objective-C runtime.
+  Set<$protocolMethod<dynamic>> get \$implementedOptionalMethods;
+''' : ''}
 ${optionalDeclarations.toString()}
 }
 
 ''');
-      if (availableOptionalMethods.isNotEmpty) {
+      if (hasOptionalMethods) {
         s.write('''
 mixin $defaultsMixin implements $optionalClass {
+  @override
+  Set<$protocolMethod<dynamic>> get \$implementedOptionalMethods => const {};
+
   @override
   dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
@@ -330,7 +350,6 @@ mixin $defaultsMixin implements $optionalClass {
       final methodFields = StringBuffer();
 
       var anyListeners = false;
-      final hasOptionalMethods = availableOptionalMethods.isNotEmpty;
       for (final method in methods) {
         final methodName = method.protocolMethodName!.name;
         final fieldName = methodName;
@@ -394,7 +413,10 @@ mixin $defaultsMixin implements $optionalClass {
           );
           final adapterExpr = method.isOptional
               ? '$builder.$fieldName.isAvailable && '
-                    'optionalImplementation != null ? $adapterClosure : null'
+                    'optionalImplementation != null && '
+                    'optionalImplementation.\$implementedOptionalMethods'
+                    '.contains($builder.$fieldName) '
+                    '? $adapterClosure : null'
               : adapterClosure;
           buildFromImplementations.write('''
       $argName: $adapterExpr,''');
@@ -572,10 +594,7 @@ $buildFromBlockingImplementations    );
           ? '''
   /// Builds an object that implements the $originalName protocol using members
   /// from [implementation].
-  ///
-  /// Optional methods are only implemented when [implementation] also
-  /// implements [$optionalClass].
-  static $name implementFrom(
+$optionalImplementationDocs  static $name implementFrom(
     $specClass implementation, {
     bool \$keepIsolateAlive = true,
   }) {
@@ -599,10 +618,7 @@ $buildFromImplementations    );
           : '''
   /// Builds an object that implements the $originalName protocol using members
   /// from [implementation].
-  ///
-  /// Optional methods are only implemented when [implementation] also
-  /// implements [$optionalClass].
-  static $name implementFrom(
+$optionalImplementationDocs  static $name implementFrom(
     $specClass implementation, {
     bool \$keepIsolateAlive = true,
   }) {

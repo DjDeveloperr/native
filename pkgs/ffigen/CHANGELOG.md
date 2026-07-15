@@ -28,6 +28,11 @@
   Xcode installations. [#3134](https://github.com/dart-lang/native/issues/3134)
 - Add allocate constructor for native C structs:
   `$allocate(Allocator $allocator, {required ...})`
+- __Breaking change__: ObjC protocol class adapters now require implementations
+  using a generated `Defaults` mixin to list their implemented optional methods
+  in `$implementedOptionalMethods`. This prevents unimplemented selectors from
+  being advertised to the Objective-C runtime and invoked through
+  `noSuchMethod`.
 
 ## 20.1.1
 
