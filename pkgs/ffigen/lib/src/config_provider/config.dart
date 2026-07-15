@@ -634,6 +634,10 @@ final class Protocols extends Declarations {
   /// implementation helpers.
   final bool generateListenerHelpers;
 
+  /// Selects which protocols receive listener and blocking-listener variants
+  /// when [generateListenerHelpers] is enabled.
+  final bool Function(Declaration declaration) includeListenerHelpers;
+
   /// Whether to generate protocol implementation helpers that take one
   /// function argument per protocol method.
   ///
@@ -652,6 +656,7 @@ final class Protocols extends Declarations {
     super.renameMember,
     this.includeTransitive = false,
     this.generateListenerHelpers = true,
+    this.includeListenerHelpers = Declarations.includeAll,
     this.generateFunctionHelpers = true,
     this.module = noModule,
   });

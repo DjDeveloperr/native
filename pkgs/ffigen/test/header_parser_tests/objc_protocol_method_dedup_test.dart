@@ -13,35 +13,7 @@ import '../test_utils.dart';
 
 void main() {
   test('copies only protocol methods needed for extension disambiguation', () {
-    final library = parse(
-      testContext(
-        FfiGenerator(
-          headers: Headers(
-            entryPoints: [
-              Uri.file(
-                absPath(
-                  'test/header_parser_tests/objc_protocol_method_dedup.h',
-                ),
-              ),
-            ],
-          ),
-          objectiveC: const ObjectiveC(
-            interfaces: Interfaces.includeAll,
-            protocols: Protocols(
-              include: Declarations.includeAll,
-              generateFunctionHelpers: false,
-              generateListenerHelpers: false,
-            ),
-          ),
-          output: Output(
-            dartFile: Uri.file('unused'),
-            commentType: const CommentType.none(),
-          ),
-        ),
-      ),
-    );
-
-    final output = library.generate();
+    final output = _generate();
     expect(output, isNot(contains('/// ProtocolConsumer')));
     expect(output, isNot(contains('/// collidingMethod')));
     expect(output, isNot(contains('implementAsListener')));
@@ -67,6 +39,54 @@ void main() {
     expect(childMethods, contains('inheritedMethod'));
     expect(childMethods, contains('childMethod'));
   });
+
+  test('retains typed listener adapters without function helpers', () {
+    final output = _generate(listenerProtocols: {'ChildProtocol'});
+
+    expect(output, isNot(contains('static ChildProtocol implement({')));
+    expect(
+      output,
+      isNot(contains('static ChildProtocol implementAsBlocking({')),
+    );
+    expect(output, contains('static ChildProtocol implementFromAsListener('));
+    expect(output, contains('static ChildProtocol implementFromAsBlocking('));
+    expect(output, contains('asChildProtocolListener'));
+    expect(output, contains('asChildProtocolBlocking'));
+    expect(output, contains('ObjCProtocolListenableMethod<void Function()>'));
+    expect(output, isNot(contains('asUniqueProtocolListener')));
+    expect(output, isNot(contains('asUniqueProtocolBlocking')));
+  });
+}
+
+String _generate({Set<String> listenerProtocols = const {}}) {
+  final library = parse(
+    testContext(
+      FfiGenerator(
+        headers: Headers(
+          entryPoints: [
+            Uri.file(
+              absPath('test/header_parser_tests/objc_protocol_method_dedup.h'),
+            ),
+          ],
+        ),
+        objectiveC: ObjectiveC(
+          interfaces: Interfaces.includeAll,
+          protocols: Protocols(
+            include: Declarations.includeAll,
+            generateFunctionHelpers: false,
+            generateListenerHelpers: listenerProtocols.isNotEmpty,
+            includeListenerHelpers: (declaration) =>
+                listenerProtocols.contains(declaration.originalName),
+          ),
+        ),
+        output: Output(
+          dartFile: Uri.file('unused'),
+          commentType: const CommentType.none(),
+        ),
+      ),
+    ),
+  );
+  return library.generate();
 }
 
 String _extensionBody(String output, String declaration) {

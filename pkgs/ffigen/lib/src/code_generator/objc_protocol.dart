@@ -202,9 +202,10 @@ class ObjCProtocol extends BindingType with ObjCMethods, HasLocalScope {
     final adapterMixin = '${name}Adapter';
     final generateFunctionHelpers =
         context.config.objectiveC!.protocols.generateFunctionHelpers;
+    final protocolConfig = context.config.objectiveC!.protocols;
     final generateListenerHelpers =
-        generateFunctionHelpers &&
-        context.config.objectiveC!.protocols.generateListenerHelpers;
+        protocolConfig.generateListenerHelpers &&
+        protocolConfig.includeListenerHelpers(this);
 
     final s = StringBuffer();
     s.write('\n');
@@ -345,6 +346,8 @@ mixin $defaultsMixin implements $optionalClass {
       final buildBlockingImplementations = StringBuffer();
       final buildFromImplementations = StringBuffer();
       final buildFromDirectImplementations = StringBuffer();
+      final buildFromDirectListenerImplementations = StringBuffer();
+      final buildFromDirectBlockingImplementations = StringBuffer();
       final buildFromListenerImplementations = StringBuffer();
       final buildFromBlockingImplementations = StringBuffer();
       final methodFields = StringBuffer();
@@ -422,6 +425,10 @@ mixin $defaultsMixin implements $optionalClass {
       $argName: $adapterExpr,''');
           buildFromDirectImplementations.write('''
     $builder.$fieldName.implement(builder, $adapterExpr);''');
+          buildFromDirectListenerImplementations.write('''
+    $builder.$fieldName.$maybeImplementAsListener(builder, $adapterExpr);''');
+          buildFromDirectBlockingImplementations.write('''
+    $builder.$fieldName.$maybeImplementAsBlocking(builder, $adapterExpr);''');
           buildFromListenerImplementations.write('''
       $argName: $adapterExpr,''');
           buildFromBlockingImplementations.write('''
@@ -490,8 +497,8 @@ mixin $defaultsMixin implements $optionalClass {
 
       var listenerBuilders = '';
       if (anyListeners) {
-        listenerBuilders =
-            '''
+        listenerBuilders = generateFunctionHelpers
+            ? '''
   /// Builds an object that implements the $originalName protocol. To implement
   /// multiple protocols, use [addToBuilder] or [$protocolBuilder] directly. All
   /// methods that can be implemented as listeners will be.
@@ -586,6 +593,53 @@ $buildFromBlockingImplementations
 $optionalImplementationDecl    addToBuilderAsBlocking(
       builder,
 $buildFromBlockingImplementations    );
+  }
+'''
+            : '''
+  /// Builds an object that implements the $originalName protocol using members
+  /// from [implementation]. Methods that support listener implementations will
+  /// use them.
+  static $name implementFromAsListener(
+    $specClass implementation, {
+    bool \$keepIsolateAlive = true,
+  }) {
+    final builder = $protocolBuilder(debugName: '$originalName');
+    addToBuilderFromAsListener(builder, implementation);
+    return $name.as(builder.build(keepIsolateAlive: \$keepIsolateAlive));
+  }
+
+  /// Adds an implementation of the $originalName protocol to an existing
+  /// [$protocolBuilder] using members from [implementation]. Methods that
+  /// support listener implementations will use them.
+  static void addToBuilderFromAsListener(
+    $protocolBuilder builder,
+    $specClass implementation,
+  ) {
+$optionalImplementationDecl$buildFromDirectListenerImplementations
+    builder.addProtocol(\$protocol);
+  }
+
+  /// Builds an object that implements the $originalName protocol using members
+  /// from [implementation]. Methods that support blocking listener
+  /// implementations will use them.
+  static $name implementFromAsBlocking(
+    $specClass implementation, {
+    bool \$keepIsolateAlive = true,
+  }) {
+    final builder = $protocolBuilder(debugName: '$originalName');
+    addToBuilderFromAsBlocking(builder, implementation);
+    return $name.as(builder.build(keepIsolateAlive: \$keepIsolateAlive));
+  }
+
+  /// Adds an implementation of the $originalName protocol to an existing
+  /// [$protocolBuilder] using members from [implementation]. Methods that
+  /// support blocking listener implementations will use them.
+  static void addToBuilderFromAsBlocking(
+    $protocolBuilder builder,
+    $specClass implementation,
+  ) {
+$optionalImplementationDecl$buildFromDirectBlockingImplementations
+    builder.addProtocol(\$protocol);
   }
 ''';
       }
